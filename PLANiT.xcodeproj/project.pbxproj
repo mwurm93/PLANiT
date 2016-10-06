@@ -97,12 +97,12 @@
 		FAF533C01DA604EC00BBE2C7 /* PLANiT */ = {
 			isa = PBXGroup;
 			children = (
-				FAF533C11DA604EC00BBE2C7 /* AppDelegate.swift */,
-				FAF533C31DA604EC00BBE2C7 /* ViewController.swift */,
-				FAF533C51DA604EC00BBE2C7 /* Main.storyboard */,
-				FAF533C81DA604EC00BBE2C7 /* Assets.xcassets */,
-				FAF533CA1DA604EC00BBE2C7 /* LaunchScreen.storyboard */,
-				FAF533CD1DA604EC00BBE2C7 /* Info.plist */,
+				FAF533F61DA60C5B00BBE2C7 /* Supporting Files */,
+				FAF533EF1DA60B7200BBE2C7 /* App */,
+				FAF533F01DA60BCD00BBE2C7 /* Controllers */,
+				FAF533F11DA60BD800BBE2C7 /* Views */,
+				FAF533F51DA60C4E00BBE2C7 /* Model */,
+				FAF533F31DA60C1200BBE2C7 /* Resources */,
 			);
 			path = PLANiT;
 			sourceTree = "<group>";
@@ -123,6 +123,62 @@
 				FAF533E31DA604EC00BBE2C7 /* Info.plist */,
 			);
 			path = PLANiTUITests;
+			sourceTree = "<group>";
+		};
+		FAF533EF1DA60B7200BBE2C7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FAF533C11DA604EC00BBE2C7 /* AppDelegate.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		FAF533F01DA60BCD00BBE2C7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAF533C31DA604EC00BBE2C7 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FAF533F11DA60BD800BBE2C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAF533F41DA60C4700BBE2C7 /* Network */,
+				FAF533C51DA604EC00BBE2C7 /* Main.storyboard */,
+				FAF533CA1DA604EC00BBE2C7 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FAF533F31DA60C1200BBE2C7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAF533C81DA604EC00BBE2C7 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FAF533F41DA60C4700BBE2C7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		FAF533F51DA60C4E00BBE2C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FAF533F61DA60C5B00BBE2C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAF533CD1DA604EC00BBE2C7 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
