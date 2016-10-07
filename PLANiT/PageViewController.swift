@@ -8,40 +8,8 @@
 
 import UIKit
 
-class PreferencesPageViewController: UIPageViewController {
+class PreferencesViewController: UIView {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        dataSource = self
-    }
     
-    private(set) var orderedViewControllers: [UIViewController] = {
-        return [self.newColoredViewController("Green"),
-                self.newColoredViewController("Red"),
-                self.newColoredViewController("Blue")]
-    }()
-    
-    private func newColoredViewController(color: String) -> UIViewController {
-        return UIStoryboard(name: "Main", bundle: nil) .
-            instantiateViewController(withIdentifier: "\(color)ViewController")
-    }
-}
-
-// MARK: UIPageViewControllerDataSource
-
-extension PreferencesPageViewController: UIPageViewControllerDataSource {
-    
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return nil
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController,
-                            viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return nil
-
-    }
     
 }
-
