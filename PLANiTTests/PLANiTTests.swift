@@ -11,26 +11,22 @@ import XCTest
 
 class PLANiTTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    // MARK: PLANiT Tests
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    // Tests to confirm that the User initializer returns when no user or password is provided
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testUserInitialization() {
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        // Success case
+        let potentialUser = User(username: "John Smith", password: "abc123")
+        XCTAssertNotNil(potentialUser)
+        
+        // Failure cases
+        let noUsername = User(username: "", password: "abc123")
+        XCTAssertNil(noUsername, "Empty username is invalid")
+        
+        let noPassword = User(username: "John Smith", password: "")
+        XCTAssertNil(noPassword, "Empty password is invalid")
     }
     
 }
