@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="LoginView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -48,7 +48,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="c7O-w7-no5" kind="show" animates="NO" id="ySZ-4A-zuZ"/>
+                                    <segue destination="c7O-w7-no5" kind="custom" identifier="BlurLogin2TripListSegue" customClass="BlurLogin2TripList" customModule="PLANiT" customModuleProvider="target" animates="NO" id="ySZ-4A-zuZ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLANiT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27G-aq-pXe">
@@ -85,7 +85,7 @@
                         <viewControllerLayoutGuide type="top" id="5xe-Ql-1yC"/>
                         <viewControllerLayoutGuide type="bottom" id="kP1-SU-YCA"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="7sJ-IY-O0R">
+                    <view key="view" contentMode="scaleToFill" id="7sJ-IY-O0R" customClass="SignUpView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -109,7 +109,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="c7O-w7-no5" kind="show" animates="NO" id="zep-QQ-sYZ"/>
+                                    <segue destination="c7O-w7-no5" kind="custom" identifier="BlurSignUp2TripListSegue" customClass="BlurSignUp2TripList" customModule="PLANiT" customModuleProvider="target" animates="NO" id="zep-QQ-sYZ"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First name" borderStyle="roundedRect" placeholder="First name" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xda-0G-C81">
@@ -159,15 +159,15 @@
             </objects>
             <point key="canvasLocation" x="936.79999999999995" y="126.38680659670166"/>
         </scene>
-        <!--View Controller-->
+        <!--Trip List View Controller-->
         <scene sceneID="iu3-GD-Dwe">
             <objects>
-                <viewController id="c7O-w7-no5" sceneMemberID="viewController">
+                <viewController id="c7O-w7-no5" customClass="TripListViewController" customModule="PLANiT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T0t-SQ-CR4"/>
                         <viewControllerLayoutGuide type="bottom" id="9qd-3O-iZj"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="b70-PB-evZ">
+                    <view key="view" contentMode="scaleToFill" id="b70-PB-evZ" customClass="TripListView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -280,7 +280,7 @@
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Home city (preferred airport)" borderStyle="roundedRect" placeholder="Home city (preferred airport)" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Fiv-Fa-mFo">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Home city (preferred airport)" borderStyle="roundedRect" placeholder="Home city (preferred airport)" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Fiv-Fa-mFo">
                                 <frame key="frameInset" minX="48" minY="399" width="278" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.74652183220000001" colorSpace="calibratedWhite"/>
@@ -931,8 +931,8 @@
         <segue reference="WPa-uC-4D6"/>
         <segue reference="sVN-Dc-ox3"/>
         <segue reference="jUh-jF-uyN"/>
-        <segue reference="kW0-1E-zEP"/>
-        <segue reference="dKy-M3-oeB"/>
-        <segue reference="DOh-tv-hPm"/>
+        <segue reference="zep-QQ-sYZ"/>
+        <segue reference="IZk-qu-g2N"/>
+        <segue reference="LZB-az-vlQ"/>
     </inferredMetricsTieBreakers>
 </document>
