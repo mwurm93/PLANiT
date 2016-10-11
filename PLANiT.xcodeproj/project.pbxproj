@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA93E57A1DAC53F400631767 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93E5791DAC53F400631767 /* SignUpViewController.swift */; };
 		FAF533C21DA604EC00BBE2C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533C11DA604EC00BBE2C7 /* AppDelegate.swift */; };
-		FAF533C41DA604EC00BBE2C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533C31DA604EC00BBE2C7 /* ViewController.swift */; };
+		FAF533C41DA604EC00BBE2C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533C31DA604EC00BBE2C7 /* LoginViewController.swift */; };
 		FAF533C71DA604EC00BBE2C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF533C51DA604EC00BBE2C7 /* Main.storyboard */; };
 		FAF533C91DA604EC00BBE2C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF533C81DA604EC00BBE2C7 /* Assets.xcassets */; };
 		FAF533CC1DA604EC00BBE2C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF533CA1DA604EC00BBE2C7 /* LaunchScreen.storyboard */; };
@@ -35,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA93E5791DAC53F400631767 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FAF533BE1DA604EC00BBE2C7 /* PLANiT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLANiT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF533C11DA604EC00BBE2C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FAF533C31DA604EC00BBE2C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAF533C31DA604EC00BBE2C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FAF533C61DA604EC00BBE2C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAF533C81DA604EC00BBE2C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAF533CB1DA604EC00BBE2C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -138,7 +140,8 @@
 		FAF533F01DA60BCD00BBE2C7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FAF533C31DA604EC00BBE2C7 /* ViewController.swift */,
+				FAF533C31DA604EC00BBE2C7 /* LoginViewController.swift */,
+				FA93E5791DAC53F400631767 /* SignUpViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -318,8 +321,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAF533C41DA604EC00BBE2C7 /* ViewController.swift in Sources */,
+				FAF533C41DA604EC00BBE2C7 /* LoginViewController.swift in Sources */,
 				FAF533C21DA604EC00BBE2C7 /* AppDelegate.swift in Sources */,
+				FA93E57A1DAC53F400631767 /* SignUpViewController.swift in Sources */,
 				FAF533F81DA7024F00BBE2C7 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,6 +569,7 @@
 				FAF533E81DA604EC00BBE2C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAF533E91DA604EC00BBE2C7 /* Build configuration list for PBXNativeTarget "PLANiTTests" */ = {
 			isa = XCConfigurationList;
@@ -573,6 +578,7 @@
 				FAF533EB1DA604EC00BBE2C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAF533EC1DA604EC00BBE2C7 /* Build configuration list for PBXNativeTarget "PLANiTUITests" */ = {
 			isa = XCConfigurationList;
@@ -581,6 +587,7 @@
 				FAF533EE1DA604EC00BBE2C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
