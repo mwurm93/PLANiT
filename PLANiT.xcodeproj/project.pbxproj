@@ -116,6 +116,7 @@
 		FAF533C01DA604EC00BBE2C7 /* PLANiT */ = {
 			isa = PBXGroup;
 			children = (
+				FAF533F41DA60C4700BBE2C7 /* Network */,
 				FAC95ED01DAD6B45006CD790 /* Transitions */,
 				FAF533F61DA60C5B00BBE2C7 /* Supporting Files */,
 				FAF533EF1DA60B7200BBE2C7 /* App */,
@@ -166,7 +167,6 @@
 		FAF533F11DA60BD800BBE2C7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FAF533F41DA60C4700BBE2C7 /* Network */,
 				FAF533C51DA604EC00BBE2C7 /* Main.storyboard */,
 				FAF533CA1DA604EC00BBE2C7 /* LaunchScreen.storyboard */,
 			);

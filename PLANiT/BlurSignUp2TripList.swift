@@ -27,9 +27,8 @@ class BlurSignUp2TripList: UIStoryboardSegue {
         
         //create UIAnimation- change the views's position when present it
         UIView.transition(from: sourceView!, to: destinationView!, duration: 1.0 , options: UIViewAnimationOptions.transitionCrossDissolve, completion: {
-                (value: Bool) in
-                self.source.navigationController?.pushViewController(self.destination, animated: false)
-                
+            (value: Bool) in
+            self.source.navigationController?.pushViewController(self.destination, animated: false)
         })
     }
 }
