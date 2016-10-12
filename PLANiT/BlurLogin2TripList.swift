@@ -16,7 +16,7 @@ class BlurLogin2TripList: UIStoryboardSegue {
         
         let sourceView = self.source.view as UIView!
         let destinationView = self.destination.view as UIView!
-        
+        var completionvariable = false
         
         let window = UIApplication.shared.delegate?.window!
         //set the destination View center
@@ -26,9 +26,8 @@ class BlurLogin2TripList: UIStoryboardSegue {
         window?.insertSubview(destinationView!, aboveSubview: sourceView!)
         
         //create UIAnimation- change the views's position when present it
-        UIView.transition(from: sourceView!, to: destinationView!, duration: 1.0 , options: UIViewAnimationOptions.transitionCrossDissolve, completion: {
-            (value: Bool) in
-            self.source.navigationController?.pushViewController(self.destination, animated: false)
-        })
+        UIView.transition(from: sourceView!, to: destinationView!, duration: 1.3 , options: UIViewAnimationOptions.transitionCrossDissolve, completion: {(finished: Bool) -> Void in completeTransition(_, didComplete: Bool)
+            }
+        )
     }
 }
