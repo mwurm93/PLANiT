@@ -3,7 +3,6 @@
 //  PLANiT
 //
 //  Created by MICHAEL WURM on 10/6/16.
-//  First commit - Sahil.
 //  Copyright © 2016 MICHAEL WURM. All rights reserved.
 //
 

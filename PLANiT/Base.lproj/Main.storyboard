@@ -9,7 +9,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="PLANiT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="PLANiT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -48,7 +48,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="c7O-w7-no5" kind="custom" identifier="BlurLogin2TripListSegue" customClass="BlurLogin2TripList" customModule="PLANiT" customModuleProvider="target" animates="NO" id="ySZ-4A-zuZ"/>
+                                    <segue destination="c7O-w7-no5" kind="presentation" identifier="" modalTransitionStyle="crossDissolve" id="ySZ-4A-zuZ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLANiT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27G-aq-pXe">
@@ -80,7 +80,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="4X5-PG-FNp">
             <objects>
-                <viewController id="bhU-Qo-H8O" customClass="SignUpViewController" customModule="PLANiT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" id="bhU-Qo-H8O" customClass="SignUpViewController" customModule="PLANiT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5xe-Ql-1yC"/>
                         <viewControllerLayoutGuide type="bottom" id="kP1-SU-YCA"/>
@@ -109,7 +109,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="c7O-w7-no5" kind="custom" identifier="BlurSignUp2TripListSegue" customClass="BlurSignUp2TripList" customModule="PLANiT" customModuleProvider="target" animates="NO" id="zep-QQ-sYZ"/>
+                                    <segue destination="c7O-w7-no5" kind="presentation" identifier="" modalTransitionStyle="crossDissolve" id="zep-QQ-sYZ"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First name" borderStyle="roundedRect" placeholder="First name" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xda-0G-C81">
@@ -162,7 +162,7 @@
         <!--Trip List View Controller-->
         <scene sceneID="iu3-GD-Dwe">
             <objects>
-                <viewController id="c7O-w7-no5" customClass="TripListViewController" customModule="PLANiT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TripListViewController" id="c7O-w7-no5" customClass="TripListViewController" customModule="PLANiT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T0t-SQ-CR4"/>
                         <viewControllerLayoutGuide type="bottom" id="9qd-3O-iZj"/>
@@ -194,7 +194,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="wic-7a-ba2" kind="show" id="h08-QA-l1v"/>
+                                    <segue destination="wic-7a-ba2" kind="presentation" modalTransitionStyle="coverVertical" id="h08-QA-l1v"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gv2-0S-s0c">
@@ -286,13 +286,13 @@
                                 <frame key="frameInset" minX="27" minY="281" width="321" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="Travel only with group"/>
+                                    <segment title="Travel with group only"/>
                                     <segment title="Maximize my travel time"/>
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Home city (preferred airport)" borderStyle="roundedRect" placeholder="Home city (preferred airport)" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Fiv-Fa-mFo">
-                                <frame key="frameInset" minX="48" minY="399" width="278" height="30"/>
+                                <frame key="frameInset" minX="48" minY="383" width="278" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.74652183220000001" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.50190365309999996" green="0.50199371579999996" blue="0.50189799069999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -300,20 +300,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Redress Number" borderStyle="roundedRect" placeholder="Redress Number" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QDa-3D-rcT">
-                                <frame key="frameInset" minX="48" minY="466" width="278" height="30"/>
+                                <frame key="frameInset" minX="48" minY="450" width="278" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.74652183220000001" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.50190365309999996" green="0.50199371579999996" blue="0.50189799069999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flg-hn-Twv">
-                                <frame key="frameInset" minX="16" minY="511" width="65" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gsk-he-W5R">
                                 <frame key="frameInset" minX="47" minY="534" height="51" maxX="47"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -325,7 +318,7 @@
                                 </date>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Known Traveler Number" borderStyle="roundedRect" placeholder="Known Traveler Number" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pWs-7t-pE2">
-                                <frame key="frameInset" minX="48" minY="433" width="278" height="30"/>
+                                <frame key="frameInset" minX="48" minY="417" width="278" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.74652183220000001" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.50190365309999996" green="0.50199371579999996" blue="0.50189799069999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -370,9 +363,9 @@
                                 <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Travel details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PG-uB-3u8">
-                                <frame key="frameInset" minX="13" minY="366" width="91" height="21"/>
+                                <frame key="frameInset" minX="13" minY="350" width="133" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -405,13 +398,21 @@
                                     <segue destination="c7O-w7-no5" kind="show" id="DOh-tv-hPm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flg-hn-Twv">
+                                <frame key="frameInset" minX="13" minY="512" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="u9b-9T-h9Z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roS-jx-Ggn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1271" y="884"/>
+            <point key="canvasLocation" x="1269.5999999999999" y="883.80809595202402"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0B5-fl-ALR">
@@ -445,26 +446,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please select below:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNH-ez-kwT">
-                                <frame key="frameInset" minX="16" minY="121" width="156" height="21"/>
+                                <frame key="frameInset" minX="16" minY="136" width="156" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OAX-FL-ejh">
-                                <frame key="frameInset" minX="16" minY="145" width="149" height="81"/>
+                                <frame key="frameInset" minX="16" minY="160" width="149" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CVa-r7-63C">
-                                <frame key="frameInset" minX="16" minY="234" width="149" height="81"/>
+                                <frame key="frameInset" minX="16" minY="249" width="149" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oFz-TJ-FBc">
-                                <frame key="frameInset" minX="210" minY="234" width="149" height="81"/>
+                                <frame key="frameInset" minX="210" minY="249" width="149" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHj-Ug-grv">
-                                <frame key="frameInset" minX="210" minY="145" width="149" height="81"/>
+                                <frame key="frameInset" minX="210" minY="160" width="149" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hgb-xj-PDm">
@@ -477,27 +478,27 @@
                                 <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vzU-90-nDd">
-                                <frame key="frameInset" minX="16" minY="323" width="149" height="81"/>
+                                <frame key="frameInset" minX="16" minY="338" width="149" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ruC-6f-QwR">
-                                <frame key="frameInset" minX="210" minY="323" width="149" height="81"/>
+                                <frame key="frameInset" minX="210" minY="338" width="149" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ys-Q4-zql">
-                                <frame key="frameInset" minX="16" minY="412" width="149" height="81"/>
+                                <frame key="frameInset" minX="16" minY="427" width="149" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yK-Hn-mL6">
-                                <frame key="frameInset" minX="210" minY="412" width="149" height="81"/>
+                                <frame key="frameInset" minX="210" minY="427" width="149" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SvU-m1-lwp">
-                                <frame key="frameInset" minX="16" minY="501" width="149" height="81"/>
+                                <frame key="frameInset" minX="16" minY="516" width="149" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UdK-2r-BxF">
-                                <frame key="frameInset" minX="209" minY="501" width="149" height="81"/>
+                                <frame key="frameInset" minX="209" minY="516" width="149" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egc-an-Lm6">
@@ -938,12 +939,12 @@
         <image name="washedBermudaSunset" width="287" height="510"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sVN-Dc-ox3"/>
+        <segue reference="DOh-tv-hPm"/>
+        <segue reference="dKy-M3-oeB"/>
+        <segue reference="LZB-az-vlQ"/>
+        <segue reference="aUn-qb-KIc"/>
+        <segue reference="w4v-Aa-bsl"/>
         <segue reference="IHk-iy-G7U"/>
         <segue reference="WPa-uC-4D6"/>
-        <segue reference="jUh-jF-uyN"/>
-        <segue reference="h08-QA-l1v"/>
-        <segue reference="ySZ-4A-zuZ"/>
-        <segue reference="LZB-az-vlQ"/>
     </inferredMetricsTieBreakers>
 </document>
