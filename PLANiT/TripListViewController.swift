@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyTrips: UIViewController {
+class TripListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

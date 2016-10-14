@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA5A15621DB14E1200D70483 /* VotingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A15611DB14E1200D70483 /* VotingViewController.swift */; };
 		FA93E57A1DAC53F400631767 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93E5791DAC53F400631767 /* SignUpViewController.swift */; };
 		FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */; };
+		FAE518181DB1920D00177731 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE518171DB1920D00177731 /* SettingsViewController.swift */; };
 		FAF533C21DA604EC00BBE2C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533C11DA604EC00BBE2C7 /* AppDelegate.swift */; };
 		FAF533C41DA604EC00BBE2C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533C31DA604EC00BBE2C7 /* LoginViewController.swift */; };
 		FAF533C71DA604EC00BBE2C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF533C51DA604EC00BBE2C7 /* Main.storyboard */; };
@@ -37,8 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA5A15611DB14E1200D70483 /* VotingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingViewController.swift; sourceTree = "<group>"; };
 		FA93E5791DAC53F400631767 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
+		FAE518171DB1920D00177731 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FAF533BE1DA604EC00BBE2C7 /* PLANiT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLANiT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF533C11DA604EC00BBE2C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF533C31DA604EC00BBE2C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				FAF533C31DA604EC00BBE2C7 /* LoginViewController.swift */,
 				FA93E5791DAC53F400631767 /* SignUpViewController.swift */,
 				FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */,
+				FAE518171DB1920D00177731 /* SettingsViewController.swift */,
+				FA5A15611DB14E1200D70483 /* VotingViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -334,7 +340,9 @@
 			files = (
 				FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */,
 				FAF533C41DA604EC00BBE2C7 /* LoginViewController.swift in Sources */,
+				FAE518181DB1920D00177731 /* SettingsViewController.swift in Sources */,
 				FAF533C21DA604EC00BBE2C7 /* AppDelegate.swift in Sources */,
+				FA5A15621DB14E1200D70483 /* VotingViewController.swift in Sources */,
 				FA93E57A1DAC53F400631767 /* SignUpViewController.swift in Sources */,
 				FAF533F81DA7024F00BBE2C7 /* DataModel.swift in Sources */,
 			);
