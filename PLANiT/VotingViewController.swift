@@ -44,7 +44,10 @@ class VotingViewController: UIViewController {
     }
     
     func animatePopupRationaleViewToCreateView() {
+        
         self.view.addSubview(NoGoodOptionsCreateNewView)
+        self.NoGoodOptionsCreateNewView.alpha = 1
+        self.NoGoodOptionsCreateNewView.transform = CGAffineTransform.identity
         NoGoodOptionsCreateNewView.center = self.view.center
         NoGoodOptionsRationaleView.alpha = 0
         self.NoGoodOptionsRationaleView.removeFromSuperview()
