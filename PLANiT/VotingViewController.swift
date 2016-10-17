@@ -14,6 +14,8 @@ class VotingViewController: UIViewController {
     @IBOutlet weak var popupBlurView: UIVisualEffectView!
     @IBOutlet var NoGoodOptionsRationaleView: UIView!
     @IBOutlet var NoGoodOptionsCreateNewView: UIView!
+    @IBOutlet var AdjustItineraryView: UIView!
+    @IBOutlet weak var adjustItineraryTextRequest: UITextView!
     
     // Create visual effect variable
     var effect:UIVisualEffect!
@@ -27,9 +29,12 @@ class VotingViewController: UIViewController {
         
         NoGoodOptionsRationaleView.layer.cornerRadius = 5
         NoGoodOptionsCreateNewView.layer.cornerRadius = 5
+        AdjustItineraryView.layer.cornerRadius = 5
+        adjustItineraryTextRequest.layer.cornerRadius = 5
     }
     
-    
+    // Functions for Creating New Itinerary
+
     func animatePopupIn() {
         self.view.addSubview(NoGoodOptionsRationaleView)
         NoGoodOptionsRationaleView.center = self.view.center
@@ -53,29 +58,101 @@ class VotingViewController: UIViewController {
         self.NoGoodOptionsRationaleView.removeFromSuperview()
     }
     
-    func dismissPopup() {
-        UIView.animate(withDuration: 0.4, animations: { 
+    func dismissCreateNewView() {
+        UIView.animate(withDuration: 0.3, animations: {
             self.NoGoodOptionsCreateNewView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
-            self.NoGoodOptionsCreateNewView.alpha = 0
-            
             self.popupBlurView.effect = nil
+            self.NoGoodOptionsCreateNewView.alpha = 0
         }) { (Success:Bool) in
-                self.NoGoodOptionsCreateNewView.removeFromSuperview()
+            self.NoGoodOptionsCreateNewView.removeFromSuperview()
         }
-        self.NoGoodOptionsCreateNewView.removeFromSuperview()
+    }
+    
+    func cancelRationaleView() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.NoGoodOptionsRationaleView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.popupBlurView.effect = nil
+            self.NoGoodOptionsRationaleView.alpha = 0
+        }) { (Success:Bool) in
+            self.NoGoodOptionsRationaleView.removeFromSuperview()
+        }
+    }
+    
+    func cancelCreateNewView() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.NoGoodOptionsCreateNewView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.popupBlurView.effect = nil
+            self.NoGoodOptionsCreateNewView.alpha = 0
+        }) { (Success:Bool) in
+            self.NoGoodOptionsCreateNewView.removeFromSuperview()
+        }
+    }
+    
+    
+    // Functions for Adjusting an Itinerary
+    func animateAdjustItineraryPopupIn() {
+        self.view.addSubview(AdjustItineraryView)
+        AdjustItineraryView.center = self.view.center
+        AdjustItineraryView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        AdjustItineraryView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4) {
+            self.popupBlurView.effect = self.effect
+            self.AdjustItineraryView.alpha = 1
+            self.AdjustItineraryView.transform = CGAffineTransform.identity
+        }
+    }
+
+    
+    func cancelAdjustItineraryView() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.AdjustItineraryView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.popupBlurView.effect = nil
+            self.AdjustItineraryView.alpha = 0
+        }) { (Success:Bool) in
+            self.AdjustItineraryView.removeFromSuperview()
+        }
+    }
+    
+    func dismissAdjustItineraryView() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.AdjustItineraryView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.popupBlurView.effect = nil
+            self.AdjustItineraryView.alpha = 0
+        }) { (Success:Bool) in
+            self.AdjustItineraryView.removeFromSuperview()
+        }
     }
     
     //MARK: Actions
+    //Actions for Creating a New Itinerary
     @IBAction func proposeDIfferentItinerary(_ sender: AnyObject) {
         animatePopupIn()
     }
     @IBAction func createDIfferentItinerary(_ sender: AnyObject) {
         animatePopupRationaleViewToCreateView()
     }
-    
     @IBAction func dismissPopupView(_ sender: AnyObject) {
-        dismissPopup()
+        dismissCreateNewView()
     }
+    @IBAction func cancelPopupRatinonaleView(_ sender: AnyObject) {
+        cancelRationaleView()
+    }
+    @IBAction func cancelPopupCreateNewView(_ sender: AnyObject) {
+        cancelCreateNewView()
+    }
+    
+    //Actions for Adjusting and Itinerary
+    @IBAction func adjustItinerary(_ sender: AnyObject) {
+        animateAdjustItineraryPopupIn()
+    }
+    @IBAction func cancelAdjustItinerary(_ sender: AnyObject) {
+        cancelAdjustItineraryView()
+    }
+    @IBAction func dismissAdjustItinerary(_ sender: AnyObject) {
+        dismissAdjustItineraryView()
+    }
+    
     
     // didReceiveMemoryWarning
     override func didReceiveMemoryWarning() {
