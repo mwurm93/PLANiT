@@ -15,7 +15,7 @@
 		FAD890411DB5C18800753FC9 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890401DB5C18800753FC9 /* BudgetViewController.swift */; };
 		FAD890431DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890421DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift */; };
 		FAD890451DB5C21400753FC9 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */; };
-		FAD890471DB5C25000753FC9 /* Birthday&HomeAirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890461DB5C25000753FC9 /* Birthday&HomeAirportViewController.swift */; };
+		FAD890471DB5C25000753FC9 /* TravelerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890461DB5C25000753FC9 /* TravelerDetailsViewController.swift */; };
 		FAD890491DB5C27800753FC9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890481DB5C27800753FC9 /* CalendarViewController.swift */; };
 		FAD8904B1DB5C2AF00753FC9 /* NewTripNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8904A1DB5C2AF00753FC9 /* NewTripNameViewController.swift */; };
 		FAD8904D1DB5C2E100753FC9 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8904C1DB5C2E100753FC9 /* BookingViewController.swift */; };
@@ -57,7 +57,7 @@
 		FAD890401DB5C18800753FC9 /* BudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
 		FAD890421DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalPreferencesViewController.swift; sourceTree = "<group>"; };
 		FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
-		FAD890461DB5C25000753FC9 /* Birthday&HomeAirportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Birthday&HomeAirportViewController.swift"; sourceTree = "<group>"; };
+		FAD890461DB5C25000753FC9 /* TravelerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelerDetailsViewController.swift; sourceTree = "<group>"; };
 		FAD890481DB5C27800753FC9 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		FAD8904A1DB5C2AF00753FC9 /* NewTripNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTripNameViewController.swift; sourceTree = "<group>"; };
 		FAD8904C1DB5C2E100753FC9 /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 				FAD890401DB5C18800753FC9 /* BudgetViewController.swift */,
 				FAD890421DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift */,
 				FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */,
-				FAD890461DB5C25000753FC9 /* Birthday&HomeAirportViewController.swift */,
+				FAD890461DB5C25000753FC9 /* TravelerDetailsViewController.swift */,
 				FAD890481DB5C27800753FC9 /* CalendarViewController.swift */,
 				FAD8904A1DB5C2AF00753FC9 /* NewTripNameViewController.swift */,
 				FAD8904C1DB5C2E100753FC9 /* BookingViewController.swift */,
@@ -370,7 +370,7 @@
 			files = (
 				FAD890491DB5C27800753FC9 /* CalendarViewController.swift in Sources */,
 				FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */,
-				FAD890471DB5C25000753FC9 /* Birthday&HomeAirportViewController.swift in Sources */,
+				FAD890471DB5C25000753FC9 /* TravelerDetailsViewController.swift in Sources */,
 				FAD8904B1DB5C2AF00753FC9 /* NewTripNameViewController.swift in Sources */,
 				FAF533C41DA604EC00BBE2C7 /* LoginViewController.swift in Sources */,
 				FAEF024F1DB5828800D4EF78 /* groupRankingViewController.swift in Sources */,

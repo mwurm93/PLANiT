@@ -10,9 +10,11 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    // MARK: Outlets
+    @IBOutlet weak var nameHeaderForSettings: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 

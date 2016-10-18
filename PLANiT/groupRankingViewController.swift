@@ -18,6 +18,10 @@ class groupRankingViewController: UIViewController {
     @IBOutlet weak var topItineraryTable: UITableView!
     @IBOutlet weak var userStatusIndicators: UITableView!
     
+    // Outlets for buttons
+    @IBOutlet weak var bookLaterButton: UIButton!
+    @IBOutlet weak var goBackToPreviousViewButton: UIButton!
+    
     // Create visual effect variable
     var effect:UIVisualEffect!
     
@@ -73,12 +77,24 @@ class groupRankingViewController: UIViewController {
     // MARK: Actions
     @IBAction func adjustMyTravelLogistics(_ sender: AnyObject) {
     animateAdjustLogisticsIn()
+        
+        // Disable main view buttons
+        goBackToPreviousViewButton.isEnabled = false
+        bookLaterButton.isEnabled = false
     }
     @IBAction func cancelAdjustLogistics(_ sender: AnyObject) {
     cancelAdjustLogisticsOut()
+     
+        // Enable main view buttons
+        goBackToPreviousViewButton.isEnabled = true
+        bookLaterButton.isEnabled = true
     }
     @IBAction func dismissAdjustLogistics(_ sender: AnyObject) {
     dismissAdjustLogisticsOut()
+        
+        // Enable main view buttons
+        goBackToPreviousViewButton.isEnabled = true
+        bookLaterButton.isEnabled = true
     }
     
         override func didReceiveMemoryWarning() {

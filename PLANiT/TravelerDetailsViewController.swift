@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Birthday_HomeAirportViewController: UIViewController {
+class TravelerDetails: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

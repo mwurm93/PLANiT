@@ -8,23 +8,46 @@
 
 import UIKit
 
-class User {
+class User: NSObject {
+    
+//    // MARK: Types
+//    struct PropertyKey {
+//        static let firstNameKey = "firstname"
+//        static let lastNameKey = "lastname"
+//        static let emailAddressKey = "email"
+//        static let passwordKey = "password"
+//    }
+    
     // MARK: Properties
     
-    var username: String
-    var password: String
-    
+    var userFirstName: String
+    var userLastName: String
+    var userEmailAddress: String
+    var userPassword: String
+
     // MARK: Initialization
     
-    init?(username: String, password: String) {
+    init?(userFirstName: String, userLastName: String, userEmailAddress: String, userPassword: String) {
         
         // Initialize stored properties
-        self.username = username
-        self.password = password
+        self.userFirstName = userFirstName
+        self.userLastName = userLastName
+        self.userEmailAddress = userEmailAddress
+        self.userPassword = userPassword
+
         
         // Initialization should fail if there is no username or password
-        if username.isEmpty || password.isEmpty {
+        if userPassword.isEmpty || userEmailAddress.isEmpty || userFirstName.isEmpty || userLastName.isEmpty {
             return nil
         }
      }
+    
+//    // MARK: NSCoding
+//    func encodeWithCoder(aCoder: NSCoder) {
+//        aCoder.encode(userFirstName, forKey: PropertyKey.firstNameKey)
+//        aCoder.encode(userLastName, forKey: PropertyKey.lastNameKey)
+//        aCoder.encode(userEmailAddress, forKey: PropertyKey.emailAddressKey)
+//        aCoder.encode(userPassword, forKey: PropertyKey.passwordKey)
+//    }
+    
 }

@@ -18,8 +18,14 @@ class VotingViewController: UIViewController {
     @IBOutlet weak var adjustItineraryTextRequest: UITextView!
     @IBOutlet weak var noGoodOptionsRationaleTable: UITableView!
     @IBOutlet weak var recommendationsTable: UITableView!
-    
     @IBOutlet weak var userStatusIndicators: UITableView!
+   
+    //Outlets for disabling buttons
+    @IBOutlet weak var proposeDifferentItineraryButton: UIButton!
+    @IBOutlet weak var askConciergeToAdjustItineraryButton: UIButton!
+    @IBOutlet weak var goToPreviousVCButton: UIButton!
+    @IBOutlet weak var goToRecommendationsVCButton: UIButton!
+    
     
     // Create visual effect variable
     var effect:UIVisualEffect!
@@ -48,6 +54,8 @@ class VotingViewController: UIViewController {
         NoGoodOptionsRationaleView.center = self.view.center
         NoGoodOptionsRationaleView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
         NoGoodOptionsRationaleView.alpha = 0
+        
+        
         
         UIView.animate(withDuration: 0.4) {
             self.popupBlurView.effect = self.effect
@@ -136,29 +144,67 @@ class VotingViewController: UIViewController {
     //Actions for Creating a New Itinerary
     @IBAction func proposeDIfferentItinerary(_ sender: AnyObject) {
         animatePopupIn()
+        
+        //disable main view VC buttons
+        proposeDifferentItineraryButton.isEnabled = false
+        askConciergeToAdjustItineraryButton.isEnabled = false
+        goToPreviousVCButton.isEnabled = false
+        goToRecommendationsVCButton.isEnabled = false
     }
     @IBAction func createDIfferentItinerary(_ sender: AnyObject) {
         animatePopupRationaleViewToCreateView()
     }
     @IBAction func dismissPopupView(_ sender: AnyObject) {
         dismissCreateNewView()
+       
+        //enable main view VC buttons
+        proposeDifferentItineraryButton.isEnabled = true
+        askConciergeToAdjustItineraryButton.isEnabled = true
+        goToPreviousVCButton.isEnabled = true
+        goToRecommendationsVCButton.isEnabled = true
+
     }
     @IBAction func cancelPopupRatinonaleView(_ sender: AnyObject) {
         cancelRationaleView()
+        //enable main view VC buttons
+        proposeDifferentItineraryButton.isEnabled = true
+        askConciergeToAdjustItineraryButton.isEnabled = true
+        goToPreviousVCButton.isEnabled = true
+        goToRecommendationsVCButton.isEnabled = true
     }
     @IBAction func cancelPopupCreateNewView(_ sender: AnyObject) {
         cancelCreateNewView()
+        //enable main view VC buttons
+        proposeDifferentItineraryButton.isEnabled = true
+        askConciergeToAdjustItineraryButton.isEnabled = true
+        goToPreviousVCButton.isEnabled = true
+        goToRecommendationsVCButton.isEnabled = true
     }
     
     //Actions for Adjusting and Itinerary
     @IBAction func adjustItinerary(_ sender: AnyObject) {
         animateAdjustItineraryPopupIn()
+        //disable main view VC buttons
+        proposeDifferentItineraryButton.isEnabled = false
+        askConciergeToAdjustItineraryButton.isEnabled = false
+        goToPreviousVCButton.isEnabled = false
+        goToRecommendationsVCButton.isEnabled = false
     }
     @IBAction func cancelAdjustItinerary(_ sender: AnyObject) {
         cancelAdjustItineraryView()
+        //enable main view VC buttons
+        proposeDifferentItineraryButton.isEnabled = true
+        askConciergeToAdjustItineraryButton.isEnabled = true
+        goToPreviousVCButton.isEnabled = true
+        goToRecommendationsVCButton.isEnabled = true
     }
     @IBAction func dismissAdjustItinerary(_ sender: AnyObject) {
         dismissAdjustItineraryView()
+        //enable main view VC buttons
+        proposeDifferentItineraryButton.isEnabled = true
+        askConciergeToAdjustItineraryButton.isEnabled = true
+        goToPreviousVCButton.isEnabled = true
+        goToRecommendationsVCButton.isEnabled = true
     }
     
     
