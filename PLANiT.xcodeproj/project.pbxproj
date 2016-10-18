@@ -10,7 +10,17 @@
 		FA5A15621DB14E1200D70483 /* VotingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A15611DB14E1200D70483 /* VotingViewController.swift */; };
 		FA93E57A1DAC53F400631767 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93E5791DAC53F400631767 /* SignUpViewController.swift */; };
 		FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */; };
+		FAD8903D1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8903C1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift */; };
+		FAD8903F1DB5C13200753FC9 /* AccomodationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8903E1DB5C13200753FC9 /* AccomodationsViewController.swift */; };
+		FAD890411DB5C18800753FC9 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890401DB5C18800753FC9 /* BudgetViewController.swift */; };
+		FAD890431DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890421DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift */; };
+		FAD890451DB5C21400753FC9 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */; };
+		FAD890471DB5C25000753FC9 /* Birthday&HomeAirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890461DB5C25000753FC9 /* Birthday&HomeAirportViewController.swift */; };
+		FAD890491DB5C27800753FC9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890481DB5C27800753FC9 /* CalendarViewController.swift */; };
+		FAD8904B1DB5C2AF00753FC9 /* NewTripNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8904A1DB5C2AF00753FC9 /* NewTripNameViewController.swift */; };
+		FAD8904D1DB5C2E100753FC9 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8904C1DB5C2E100753FC9 /* BookingViewController.swift */; };
 		FAE518181DB1920D00177731 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE518171DB1920D00177731 /* SettingsViewController.swift */; };
+		FAEF024F1DB5828800D4EF78 /* groupRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF024E1DB5828800D4EF78 /* groupRankingViewController.swift */; };
 		FAF533C21DA604EC00BBE2C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533C11DA604EC00BBE2C7 /* AppDelegate.swift */; };
 		FAF533C41DA604EC00BBE2C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533C31DA604EC00BBE2C7 /* LoginViewController.swift */; };
 		FAF533C71DA604EC00BBE2C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF533C51DA604EC00BBE2C7 /* Main.storyboard */; };
@@ -42,7 +52,17 @@
 		FA5A15611DB14E1200D70483 /* VotingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingViewController.swift; sourceTree = "<group>"; };
 		FA93E5791DAC53F400631767 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
+		FAD8903C1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreliminaryResultsViewController.swift; sourceTree = "<group>"; };
+		FAD8903E1DB5C13200753FC9 /* AccomodationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccomodationsViewController.swift; sourceTree = "<group>"; };
+		FAD890401DB5C18800753FC9 /* BudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
+		FAD890421DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalPreferencesViewController.swift; sourceTree = "<group>"; };
+		FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
+		FAD890461DB5C25000753FC9 /* Birthday&HomeAirportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Birthday&HomeAirportViewController.swift"; sourceTree = "<group>"; };
+		FAD890481DB5C27800753FC9 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		FAD8904A1DB5C2AF00753FC9 /* NewTripNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTripNameViewController.swift; sourceTree = "<group>"; };
+		FAD8904C1DB5C2E100753FC9 /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		FAE518171DB1920D00177731 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FAEF024E1DB5828800D4EF78 /* groupRankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupRankingViewController.swift; sourceTree = "<group>"; };
 		FAF533BE1DA604EC00BBE2C7 /* PLANiT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLANiT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF533C11DA604EC00BBE2C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF533C31DA604EC00BBE2C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +180,16 @@
 				FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */,
 				FAE518171DB1920D00177731 /* SettingsViewController.swift */,
 				FA5A15611DB14E1200D70483 /* VotingViewController.swift */,
+				FAD8903C1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift */,
+				FAEF024E1DB5828800D4EF78 /* groupRankingViewController.swift */,
+				FAD8903E1DB5C13200753FC9 /* AccomodationsViewController.swift */,
+				FAD890401DB5C18800753FC9 /* BudgetViewController.swift */,
+				FAD890421DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift */,
+				FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */,
+				FAD890461DB5C25000753FC9 /* Birthday&HomeAirportViewController.swift */,
+				FAD890481DB5C27800753FC9 /* CalendarViewController.swift */,
+				FAD8904A1DB5C2AF00753FC9 /* NewTripNameViewController.swift */,
+				FAD8904C1DB5C2E100753FC9 /* BookingViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -338,12 +368,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD890491DB5C27800753FC9 /* CalendarViewController.swift in Sources */,
 				FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */,
+				FAD890471DB5C25000753FC9 /* Birthday&HomeAirportViewController.swift in Sources */,
+				FAD8904B1DB5C2AF00753FC9 /* NewTripNameViewController.swift in Sources */,
 				FAF533C41DA604EC00BBE2C7 /* LoginViewController.swift in Sources */,
+				FAEF024F1DB5828800D4EF78 /* groupRankingViewController.swift in Sources */,
+				FAD8903F1DB5C13200753FC9 /* AccomodationsViewController.swift in Sources */,
+				FAD890451DB5C21400753FC9 /* ActivitiesViewController.swift in Sources */,
 				FAE518181DB1920D00177731 /* SettingsViewController.swift in Sources */,
+				FAD890411DB5C18800753FC9 /* BudgetViewController.swift in Sources */,
 				FAF533C21DA604EC00BBE2C7 /* AppDelegate.swift in Sources */,
+				FAD8904D1DB5C2E100753FC9 /* BookingViewController.swift in Sources */,
 				FA5A15621DB14E1200D70483 /* VotingViewController.swift in Sources */,
 				FA93E57A1DAC53F400631767 /* SignUpViewController.swift in Sources */,
+				FAD890431DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift in Sources */,
+				FAD8903D1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift in Sources */,
 				FAF533F81DA7024F00BBE2C7 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

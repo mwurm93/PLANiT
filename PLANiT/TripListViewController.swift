@@ -10,8 +10,15 @@ import UIKit
 
 class TripListViewController: UIViewController {
     
+    //MARK: Outlets
+    @IBOutlet weak var existingTripsTable: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        existingTripsTable.layer.cornerRadius = 5
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
