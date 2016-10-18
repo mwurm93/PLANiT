@@ -1689,6 +1689,8 @@
                     </view>
                     <connections>
                         <outlet property="adjustLogisticsView" destination="dXb-5M-bD5" id="bGa-Kb-wXD"/>
+                        <outlet property="adjustTravelLogisticsButton" destination="9qf-mF-s6C" id="DWl-6I-OUf"/>
+                        <outlet property="bookLaterButton" destination="NGG-bh-8He" id="bqo-pq-lqM"/>
                         <outlet property="editTextBox" destination="NFD-3n-NYw" id="HvM-9f-pnS"/>
                         <outlet property="goBackToPreviousViewButton" destination="ujt-8E-6vM" id="Edh-KE-DE7"/>
                         <outlet property="popupBlurView" destination="4C3-Cq-2uH" id="khK-NZ-AYY"/>
