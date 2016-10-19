@@ -107,7 +107,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.50190365309999996" green="0.50199371579999996" blue="0.50189799069999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last name" borderStyle="roundedRect" placeholder="Last name" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nDz-Gg-7LZ">
                                 <frame key="frameInset" minX="48" minY="417" width="278" height="30"/>
@@ -1920,13 +1920,13 @@
         <segue reference="rse-YU-FoM"/>
         <segue reference="GZ7-4I-pJB"/>
         <segue reference="KEA-Gv-QfA"/>
-        <segue reference="Pet-a8-jMH"/>
-        <segue reference="6Du-Cn-Hh3"/>
-        <segue reference="bcn-5K-HPT"/>
+        <segue reference="hmm-nX-3eg"/>
         <segue reference="8AW-mA-WOG"/>
         <segue reference="5Bq-VK-99m"/>
         <segue reference="5KP-56-RFK"/>
         <segue reference="XQu-rk-lhH"/>
+        <segue reference="zep-QQ-sYZ"/>
+        <segue reference="bcn-5K-HPT"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

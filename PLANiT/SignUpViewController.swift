@@ -14,58 +14,27 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var emailAddress: UITextField!
     @IBOutlet weak var password: UITextField!
-        
-    var currentUser = User(userFirstName:"", userLastName:"",userEmailAddress:"",userPassword:"")
-    
+    @IBOutlet weak var testLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        firstName.delegate = self
-        lastName.delegate = self
-        emailAddress.delegate = self
-        password.delegate = self
-    
-        
+        self.firstName.delegate = self
     }
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: UITextFieldDelegate
-    func textFieldShouldReturn(_ textField:  UITextField) -> Bool {
+    
+    func textFieldShouldReturn(_ firstName:  UITextField) -> Bool {
         // Hide the keyboard.
-        textField.resignFirstResponder()
+        firstName.resignFirstResponder()
         return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if (textField == firstName) {
-        firstName.text = textField.text
-        currentUser?.userFirstName = firstName.text!
-        }
-        if (textField == lastName) {
-            lastName.text = textField.text
-            currentUser?.userLastName = lastName.text!
-        }
-        if (textField == emailAddress) {
-            emailAddress.text = textField.text
-            currentUser?.userEmailAddress = emailAddress.text!
-        }
-        if (textField == password) {
-            password.text = textField.text
-            currentUser?.userPassword = password.text!
-        }
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        DataContainerSingleton.sharedDataContainer.firstName = firstName.text
+        return true
     }
-    
-    let settingsViewController = SettingsViewController()
-    
-    
-    // MARK: Actions
-    
-    
-    
 }
