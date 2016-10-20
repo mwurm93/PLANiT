@@ -8,17 +8,38 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
+    // MARK: Outlets
+    @IBOutlet weak var emailAddress: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.emailAddress.delegate = self
+        self.password.delegate = self
     }
  
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: UITextFieldDelegate for firstName
+    
+    func textFieldShouldReturn(_ textField:  UITextField) -> Bool {
+        // Hide the keyboard.
+        emailAddress.resignFirstResponder()
+        password.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        DataContainerSingleton.sharedDataContainer.emailAddress = emailAddress.text
+        DataContainerSingleton.sharedDataContainer.password = password.text
+        return true
     }
 
 }

@@ -14,6 +14,13 @@ struct DefaultKeys {
         static let lastName = "lastName"
         static let emailAddress = "emailAddress"
         static let password = "password"
+        static let gender = "gender"
+        static let phone = "phone"
+        static let homeAirport = "homeAirport"
+        static let passportNumber = "passportNumber"
+        static let knownTravelerNumber = "knownTravelerNumber"
+        static let redressNumber = "redressNumber"
+        static let birthdate = "birthdate"
     }
 
 
@@ -25,6 +32,13 @@ class DataContainerSingleton {
     var lastName: String?
     var emailAddress: String?
     var password: String?
+    var gender: String?
+    var phone: String?
+    var homeAirport: String?
+    var passportNumber: String?
+    var knownTravelerNumber: String?
+    var redressNumber: String?
+    var birthdate: String?
     
     var goToBackgroundObserver: AnyObject?
     
@@ -37,6 +51,14 @@ class DataContainerSingleton {
         lastName = defaults.object(forKey: DefaultKeys.lastName) as! String?
         emailAddress = defaults.object(forKey: DefaultKeys.emailAddress) as! String?
         password = defaults.object(forKey: DefaultKeys.password) as! String?
+        gender = defaults.object(forKey: DefaultKeys.gender) as! String?
+        phone = defaults.object(forKey: DefaultKeys.phone) as! String?
+        homeAirport = defaults.object(forKey: DefaultKeys.homeAirport) as! String?
+        passportNumber = defaults.object(forKey: DefaultKeys.passportNumber) as! String?
+        knownTravelerNumber = defaults.object(forKey: DefaultKeys.knownTravelerNumber) as! String?
+        redressNumber = defaults.object(forKey: DefaultKeys.redressNumber) as! String?
+        birthdate = defaults.object(forKey: DefaultKeys.birthdate) as! String?
+
 
         //-----------------------------------------------------------------------------
         
@@ -56,6 +78,12 @@ class DataContainerSingleton {
             defaults.set( self.lastName, forKey: DefaultKeys.lastName)
             defaults.set( self.emailAddress, forKey: DefaultKeys.emailAddress)
             defaults.set( self.password, forKey: DefaultKeys.password)
+            defaults.set( self.phone, forKey: DefaultKeys.phone)
+            defaults.set( self.homeAirport, forKey: DefaultKeys.homeAirport)
+            defaults.set( self.passportNumber, forKey: DefaultKeys.passportNumber)
+            defaults.set( self.knownTravelerNumber, forKey: DefaultKeys.knownTravelerNumber)
+            defaults.set( self.redressNumber, forKey: DefaultKeys.redressNumber)
+            defaults.set( self.birthdate, forKey: DefaultKeys.birthdate)
             //-----------------------------------------------------------------------------
             
             //Tell NSUserDefaults to save to disk now.
