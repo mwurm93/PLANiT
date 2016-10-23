@@ -20,7 +20,6 @@ class groupRankingViewController: UIViewController {
     
     // Outlets for buttons
     @IBOutlet weak var bookLaterButton: UIButton!
-    @IBOutlet weak var goBackToPreviousViewButton: UIButton!
     @IBOutlet weak var adjustTravelLogisticsButton: UIButton!
     
     // Create visual effect variable
@@ -80,7 +79,6 @@ class groupRankingViewController: UIViewController {
     animateAdjustLogisticsIn()
         
         // Disable main view buttons
-        goBackToPreviousViewButton.isEnabled = false
         bookLaterButton.isEnabled = false
         adjustTravelLogisticsButton.isEnabled = false
     }
@@ -88,7 +86,6 @@ class groupRankingViewController: UIViewController {
     cancelAdjustLogisticsOut()
      
         // Enable main view buttons
-        goBackToPreviousViewButton.isEnabled = true
         bookLaterButton.isEnabled = true
         adjustTravelLogisticsButton.isEnabled = true
     }
@@ -96,7 +93,6 @@ class groupRankingViewController: UIViewController {
     dismissAdjustLogisticsOut()
         
         // Enable main view buttons
-        goBackToPreviousViewButton.isEnabled = true
         bookLaterButton.isEnabled = true
         adjustTravelLogisticsButton.isEnabled = true
     }
