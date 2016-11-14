@@ -12,14 +12,12 @@ class ActivitiesViewController: UIViewController {
 
     //MARK: Outlets
     @IBOutlet weak var activitiesTable: UITableView!
-    @IBOutlet weak var activitiesSearchBarWindow: UISearchBar!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         activitiesTable.layer.cornerRadius = 5
-        activitiesSearchBarWindow.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
     }
 
