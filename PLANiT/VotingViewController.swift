@@ -18,7 +18,6 @@ class VotingViewController: UIViewController {
     @IBOutlet weak var adjustItineraryTextRequest: UITextView!
     @IBOutlet weak var noGoodOptionsRationaleTable: UITableView!
     @IBOutlet weak var recommendationsTable: UITableView!
-    @IBOutlet weak var userStatusIndicators: UITableView!
    
     //Outlets for disabling buttons
     @IBOutlet weak var proposeDifferentItineraryButton: UIButton!
@@ -44,7 +43,6 @@ class VotingViewController: UIViewController {
         adjustItineraryTextRequest.layer.cornerRadius = 5
         noGoodOptionsRationaleTable.layer.cornerRadius = 5
         recommendationsTable.layer.cornerRadius = 5
-        userStatusIndicators.layer.cornerRadius = 5
     }
     
     // Functions for Creating New Itinerary

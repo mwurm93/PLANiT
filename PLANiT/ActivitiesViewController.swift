@@ -13,12 +13,14 @@ class ActivitiesViewController: UIViewController {
     //MARK: Outlets
     @IBOutlet weak var activitiesTable: UITableView!
     
+    @IBOutlet weak var userToggles: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         activitiesTable.layer.cornerRadius = 5
-        // Do any additional setup after loading the view.
+        userToggles.layer.cornerRadius = 5
+        
     }
 
     override func didReceiveMemoryWarning() {
