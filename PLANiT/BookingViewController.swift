@@ -23,7 +23,6 @@ class BookingViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var knownTravelerNumber: UITextField!
     @IBOutlet weak var redressNumber: UITextField!
     @IBOutlet weak var passportNumber: UITextField!
-    @IBOutlet weak var bookingYesOrNo: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +30,6 @@ class BookingViewController: UIViewController, UITextFieldDelegate {
         // Round table corners
         userStatusIndicators.layer.cornerRadius = 5
         finalItineraryItemized.layer.cornerRadius = 5
-        bookingYesOrNo.layer.cornerRadius = 5
         
         // Create delegates for text fields
         self.firstName.delegate = self
