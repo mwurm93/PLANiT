@@ -490,6 +490,14 @@
                                 <rect key="frame" x="16" y="152" width="343" height="358"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75181934930000005" colorSpace="calibratedWhite"/>
+                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="os7-TD-BOa">
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="357"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <string key="text">"Tinder" view of itinerary recommendations, including: rough price range, dates, pictures from Tripadvisor, list of how available activities match group activities preferences, etc.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <sections/>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emptyHeart" translatesAutoresizingMaskIntoConstraints="NO" id="sCD-y0-ADa">
@@ -981,6 +989,14 @@
                                 <rect key="frame" x="17" y="172" width="341" height="326"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75181934930000005" colorSpace="calibratedWhite"/>
+                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vjv-RF-yAN">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="329"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <string key="text">Icon view of activities, both broad and granular mixed together, e.g.: Hiking, Italian food, shopping, bike tours, museums, beach volleyball, theatre, live music, etc...icons dissapear when selected and are repopulated with new activities...search bar allows for specific icons to be queried and selected</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What do you want to do on the trip?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XuI-02-Ryt">
                                 <rect key="frame" x="17" y="137" width="321" height="24"/>
@@ -1748,8 +1764,7 @@
         <image name="x" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hmm-nX-3eg"/>
-        <segue reference="avQ-77-Lg5"/>
+        <segue reference="Pet-a8-jMH"/>
         <segue reference="zFn-X6-rPT"/>
         <segue reference="zQA-c3-mCq"/>
         <segue reference="n5E-ZI-v5B"/>
@@ -1757,6 +1772,7 @@
         <segue reference="Aol-8v-Jj3"/>
         <segue reference="8AW-mA-WOG"/>
         <segue reference="LQb-2v-DXD"/>
+        <segue reference="avQ-77-Lg5"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
