@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		FA5A15621DB14E1200D70483 /* VotingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A15611DB14E1200D70483 /* VotingViewController.swift */; };
 		FA93E57A1DAC53F400631767 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93E5791DAC53F400631767 /* SignUpViewController.swift */; };
+		FAA68BC41DECF368000FB313 /* ExistingTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */; };
+		FAA68BC61DECFB0D000FB313 /* TripDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BC51DECFB0D000FB313 /* TripDataModel.swift */; };
+		FAA68BC91DECFE6B000FB313 /* TripLibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BC81DECFE6B000FB313 /* TripLibraryAPI.swift */; };
+		FAA68BCB1DECFECF000FB313 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BCA1DECFECF000FB313 /* PersistencyManager.swift */; };
+		FAA68BCD1DEE54A5000FB313 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BCC1DEE54A5000FB313 /* HTTPClient.swift */; };
 		FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */; };
 		FAD8903D1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8903C1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift */; };
 		FAD8903F1DB5C13200753FC9 /* AccomodationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8903E1DB5C13200753FC9 /* AccomodationsViewController.swift */; };
@@ -29,7 +34,6 @@
 		FAF533CC1DA604EC00BBE2C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF533CA1DA604EC00BBE2C7 /* LaunchScreen.storyboard */; };
 		FAF533D71DA604EC00BBE2C7 /* PLANiTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533D61DA604EC00BBE2C7 /* PLANiTTests.swift */; };
 		FAF533E21DA604EC00BBE2C7 /* PLANiTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533E11DA604EC00BBE2C7 /* PLANiTUITests.swift */; };
-		FAF533F81DA7024F00BBE2C7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533F71DA7024F00BBE2C7 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,11 @@
 /* Begin PBXFileReference section */
 		FA5A15611DB14E1200D70483 /* VotingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingViewController.swift; sourceTree = "<group>"; };
 		FA93E5791DAC53F400631767 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingTripTableViewCell.swift; sourceTree = "<group>"; };
+		FAA68BC51DECFB0D000FB313 /* TripDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDataModel.swift; sourceTree = "<group>"; };
+		FAA68BC81DECFE6B000FB313 /* TripLibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripLibraryAPI.swift; sourceTree = "<group>"; };
+		FAA68BCA1DECFECF000FB313 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
+		FAA68BCC1DEE54A5000FB313 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
 		FAD8903C1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreliminaryResultsViewController.swift; sourceTree = "<group>"; };
 		FAD8903E1DB5C13200753FC9 /* AccomodationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccomodationsViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +87,6 @@
 		FAF533DD1DA604EC00BBE2C7 /* PLANiTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PLANiTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF533E11DA604EC00BBE2C7 /* PLANiTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLANiTUITests.swift; sourceTree = "<group>"; };
 		FAF533E31DA604EC00BBE2C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAF533F71DA7024F00BBE2C7 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FAA68BC71DECFE2C000FB313 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FAA68BC81DECFE6B000FB313 /* TripLibraryAPI.swift */,
+				FAA68BCA1DECFECF000FB313 /* PersistencyManager.swift */,
+				FAA68BCC1DEE54A5000FB313 /* HTTPClient.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		FAC95ED01DAD6B45006CD790 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +134,7 @@
 		FAF533B51DA604EC00BBE2C7 = {
 			isa = PBXGroup;
 			children = (
+				FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */,
 				FAF533C01DA604EC00BBE2C7 /* PLANiT */,
 				FAF533D51DA604EC00BBE2C7 /* PLANiTTests */,
 				FAF533E01DA604EC00BBE2C7 /* PLANiTUITests */,
@@ -136,6 +155,7 @@
 		FAF533C01DA604EC00BBE2C7 /* PLANiT */ = {
 			isa = PBXGroup;
 			children = (
+				FAA68BC71DECFE2C000FB313 /* API */,
 				FAF533F41DA60C4700BBE2C7 /* Network */,
 				FAC95ED01DAD6B45006CD790 /* Transitions */,
 				FAF533F61DA60C5B00BBE2C7 /* Supporting Files */,
@@ -181,6 +201,7 @@
 				FA93E5791DAC53F400631767 /* SignUpViewController.swift */,
 				FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */,
 				FAE518171DB1920D00177731 /* SettingsViewController.swift */,
+				FAD8904A1DB5C2AF00753FC9 /* NewTripNameViewController.swift */,
 				FA5A15611DB14E1200D70483 /* VotingViewController.swift */,
 				FAD8903C1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift */,
 				FAEF024E1DB5828800D4EF78 /* groupRankingViewController.swift */,
@@ -190,7 +211,6 @@
 				FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */,
 				FAD890461DB5C25000753FC9 /* TravelerDetailsViewController.swift */,
 				FAD890481DB5C27800753FC9 /* CalendarViewController.swift */,
-				FAD8904A1DB5C2AF00753FC9 /* NewTripNameViewController.swift */,
 				FAD8904C1DB5C2E100753FC9 /* BookingViewController.swift */,
 			);
 			name = Controllers;
@@ -223,8 +243,8 @@
 		FAF533F51DA60C4E00BBE2C7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FAF533F71DA7024F00BBE2C7 /* DataModel.swift */,
 				FAD8904E1DB70AE700753FC9 /* DataContainerSingleton.swift */,
+				FAA68BC51DECFB0D000FB313 /* TripDataModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -372,7 +392,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD890491DB5C27800753FC9 /* CalendarViewController.swift in Sources */,
+				FAA68BC41DECF368000FB313 /* ExistingTripTableViewCell.swift in Sources */,
 				FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */,
+				FAA68BC91DECFE6B000FB313 /* TripLibraryAPI.swift in Sources */,
 				FAD890471DB5C25000753FC9 /* TravelerDetailsViewController.swift in Sources */,
 				FAD8904B1DB5C2AF00753FC9 /* NewTripNameViewController.swift in Sources */,
 				FAF533C41DA604EC00BBE2C7 /* LoginViewController.swift in Sources */,
@@ -380,6 +402,7 @@
 				FAD8903F1DB5C13200753FC9 /* AccomodationsViewController.swift in Sources */,
 				FAD890451DB5C21400753FC9 /* ActivitiesViewController.swift in Sources */,
 				FAE518181DB1920D00177731 /* SettingsViewController.swift in Sources */,
+				FAA68BC61DECFB0D000FB313 /* TripDataModel.swift in Sources */,
 				FAD890411DB5C18800753FC9 /* BudgetViewController.swift in Sources */,
 				FAF533C21DA604EC00BBE2C7 /* AppDelegate.swift in Sources */,
 				FAD8904D1DB5C2E100753FC9 /* BookingViewController.swift in Sources */,
@@ -388,7 +411,8 @@
 				FA93E57A1DAC53F400631767 /* SignUpViewController.swift in Sources */,
 				FAD890431DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift in Sources */,
 				FAD8903D1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift in Sources */,
-				FAF533F81DA7024F00BBE2C7 /* DataModel.swift in Sources */,
+				FAA68BCD1DEE54A5000FB313 /* HTTPClient.swift in Sources */,
+				FAA68BCB1DECFECF000FB313 /* PersistencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
