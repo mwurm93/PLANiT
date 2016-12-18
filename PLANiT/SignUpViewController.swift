@@ -22,6 +22,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.lastName.delegate = self
         self.emailAddress.delegate = self
         self.password.delegate = self
+        apollo.fetch(query: GetTripQuery(id: "VHJpcDox")) { (result, error) in
+            guard let data = result?.data else { return }
+            self.emailAddress.text = data.getTrip?.name;
+        }
     }
 
     override func didReceiveMemoryWarning() {
