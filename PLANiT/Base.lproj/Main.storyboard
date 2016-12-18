@@ -1433,7 +1433,7 @@
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qf-mF-s6C">
-                                <rect key="frame" x="90" y="320" width="195" height="29"/>
+                                <rect key="frame" x="90" y="323" width="195" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Adjust my travel logistics"/>
@@ -1442,7 +1442,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hUQ-1W-Psq">
-                                <rect key="frame" x="14" y="218" width="343" height="108"/>
+                                <rect key="frame" x="14" y="218" width="343" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75181934930000005" colorSpace="calibratedWhite"/>
                                 <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[itemized receipt view of itinerary]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X3O-xA-n7p">
@@ -1465,7 +1465,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passport Number" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6hw-ht-fQ6">
-                                <rect key="frame" x="15" y="530" width="343" height="30"/>
+                                <rect key="frame" x="15" y="537" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75181934930000005" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.33860392379999998" green="0.34195643790000002" blue="0.34195643790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1473,7 +1473,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Redress Number" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="we2-I5-dOv">
-                                <rect key="frame" x="15" y="498" width="343" height="30"/>
+                                <rect key="frame" x="15" y="506" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75181934930000005" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.33860392379999998" green="0.34195643790000002" blue="0.34195643790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1481,7 +1481,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Known Traveler Number" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3ch-2R-HiA">
-                                <rect key="frame" x="15" y="466" width="343" height="30"/>
+                                <rect key="frame" x="15" y="475" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75181934930000005" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.33860392379999998" green="0.34195643790000002" blue="0.34195643790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1489,7 +1489,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthdate" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fW5-pv-a9m">
-                                <rect key="frame" x="15" y="402" width="171" height="30"/>
+                                <rect key="frame" x="15" y="413" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75181934930000005" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.33860392379999998" green="0.34195643790000002" blue="0.34195643790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1497,7 +1497,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="J9M-DQ-oNn">
-                                <rect key="frame" x="187" y="402" width="171" height="30"/>
+                                <rect key="frame" x="187" y="413" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75181934930000005" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.33860392379999998" green="0.34195643790000002" blue="0.34195643790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1509,13 +1509,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5g-Tz-6zS">
-                                <rect key="frame" x="14" y="341" width="178" height="33"/>
+                                <rect key="frame" x="16" y="355" width="182" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Confirm traveler details"/>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XC2-T1-pLz">
-                                <rect key="frame" x="15" y="434" width="171" height="30"/>
+                                <rect key="frame" x="15" y="444" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75181934930000005" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.33860392379999998" green="0.34195643790000002" blue="0.34195643790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1523,7 +1523,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LSV-l5-xlH">
-                                <rect key="frame" x="187" y="434" width="171" height="30"/>
+                                <rect key="frame" x="187" y="444" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75181934930000005" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.33860392379999998" green="0.34195643790000002" blue="0.34195643790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1550,7 +1550,7 @@
                                 </label>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Legal first name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZKF-r5-GQw">
-                                <rect key="frame" x="15" y="370" width="171" height="30"/>
+                                <rect key="frame" x="15" y="382" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75181934930000005" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.33860392379999998" green="0.34195643790000002" blue="0.34195643790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1558,7 +1558,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Legal last name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QSd-fW-llU">
-                                <rect key="frame" x="187" y="370" width="171" height="30"/>
+                                <rect key="frame" x="187" y="382" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.75181934930000005" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.33860392379999998" green="0.34195643790000002" blue="0.34195643790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1594,14 +1594,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Book this trip, only if everyone else does!"/>
                                 <connections>
-                                    <segue destination="tCq-uR-8sF" kind="show" id="Dvk-V6-xOZ"/>
+                                    <segue destination="c7O-w7-no5" kind="show" id="cWA-9L-HdA"/>
                                 </connections>
                             </button>
                             <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4C3-Cq-2uH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="RT8-wT-zQQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="light"/>
@@ -1614,6 +1614,8 @@
                         <outlet property="adjustTravelLogisticsButton" destination="9qf-mF-s6C" id="DWl-6I-OUf"/>
                         <outlet property="editTextBox" destination="NFD-3n-NYw" id="HvM-9f-pnS"/>
                         <outlet property="popupBlurView" destination="4C3-Cq-2uH" id="khK-NZ-AYY"/>
+                        <outlet property="topItineraryTable" destination="hUQ-1W-Psq" id="xfm-FN-t9S"/>
+                        <outlet property="userStatusIndicators" destination="P3F-Zw-EXB" id="fYn-NG-Uyr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vlo-fA-dkV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1725,11 +1727,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="adjustLogisticsView" destination="dXb-5M-bD5" id="X5H-aq-rpP"/>
-                        <outlet property="editTextBox" destination="NFD-3n-NYw" id="5Sj-Ba-b6D"/>
-                        <outlet property="topItineraryTable" destination="jDe-3P-Aff" id="lB3-yb-D6M"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mjv-bn-vjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1745,16 +1742,15 @@
         <image name="x" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xhx-WZ-dP7"/>
-        <segue reference="AU6-Qi-7vx"/>
-        <segue reference="LTn-4O-rGz"/>
+        <segue reference="cWA-9L-HdA"/>
+        <segue reference="Agm-pH-dZW"/>
+        <segue reference="Wje-vO-Lb7"/>
         <segue reference="zQA-c3-mCq"/>
-        <segue reference="n5E-ZI-v5B"/>
-        <segue reference="LW7-MZ-a4n"/>
-        <segue reference="Aol-8v-Jj3"/>
-        <segue reference="Dvk-V6-xOZ"/>
         <segue reference="bcn-5K-HPT"/>
         <segue reference="qq3-lZ-rov"/>
+        <segue reference="LW7-MZ-a4n"/>
+        <segue reference="mMi-m0-91D"/>
+        <segue reference="Aol-8v-Jj3"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

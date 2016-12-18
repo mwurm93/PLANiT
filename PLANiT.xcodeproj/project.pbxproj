@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FA5A15621DB14E1200D70483 /* VotingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A15611DB14E1200D70483 /* VotingViewController.swift */; };
 		FA93E57A1DAC53F400631767 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93E5791DAC53F400631767 /* SignUpViewController.swift */; };
+		FA9599FC1E063E4600D1B7D6 /* rankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9599FB1E063E4500D1B7D6 /* rankingViewController.swift */; };
 		FAA68BC41DECF368000FB313 /* ExistingTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */; };
 		FAA68BC61DECFB0D000FB313 /* TripDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BC51DECFB0D000FB313 /* TripDataModel.swift */; };
 		FAA68BC91DECFE6B000FB313 /* TripLibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BC81DECFE6B000FB313 /* TripLibraryAPI.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		FA5A15611DB14E1200D70483 /* VotingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingViewController.swift; sourceTree = "<group>"; };
 		FA93E5791DAC53F400631767 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		FA9599FB1E063E4500D1B7D6 /* rankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rankingViewController.swift; sourceTree = "<group>"; };
 		FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingTripTableViewCell.swift; sourceTree = "<group>"; };
 		FAA68BC51DECFB0D000FB313 /* TripDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDataModel.swift; sourceTree = "<group>"; };
 		FAA68BC81DECFE6B000FB313 /* TripLibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripLibraryAPI.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				FAD890461DB5C25000753FC9 /* TravelerDetailsViewController.swift */,
 				FAD890481DB5C27800753FC9 /* CalendarViewController.swift */,
 				FAD8904C1DB5C2E100753FC9 /* BookingViewController.swift */,
+				FA9599FB1E063E4500D1B7D6 /* rankingViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */,
 				FAA68BC91DECFE6B000FB313 /* TripLibraryAPI.swift in Sources */,
 				FAD890471DB5C25000753FC9 /* TravelerDetailsViewController.swift in Sources */,
+				FA9599FC1E063E4600D1B7D6 /* rankingViewController.swift in Sources */,
 				FAD8904B1DB5C2AF00753FC9 /* NewTripNameViewController.swift in Sources */,
 				FAF533C41DA604EC00BBE2C7 /* LoginViewController.swift in Sources */,
 				FAEF024F1DB5828800D4EF78 /* groupRankingViewController.swift in Sources */,
