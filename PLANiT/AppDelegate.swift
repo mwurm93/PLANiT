@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Apollo
+
+let apollo = ApolloClient(url: URL(string: "https://us-west-2.api.scaphold.io/graphql/plan-it")!)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

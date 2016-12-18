@@ -22,7 +22,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.lastName.delegate = self
         self.emailAddress.delegate = self
         self.password.delegate = self
-
     }
 
     override func didReceiveMemoryWarning() {

@@ -35,65 +35,13 @@
 		FAF533CC1DA604EC00BBE2C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF533CA1DA604EC00BBE2C7 /* LaunchScreen.storyboard */; };
 		FAF533D71DA604EC00BBE2C7 /* PLANiTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533D61DA604EC00BBE2C7 /* PLANiTTests.swift */; };
 		FAF533E21DA604EC00BBE2C7 /* PLANiTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533E11DA604EC00BBE2C7 /* PLANiTUITests.swift */; };
+		FAFE83771E07362E00062A12 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FAFE83761E07362E00062A12 /* schema.json */; };
+		FAFE837A1E0736B900062A12 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE83791E0736B900062A12 /* API.swift */; };
+		FAFE837C1E0737D100062A12 /* CreateNewUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAFE837B1E0737D100062A12 /* CreateNewUser.graphql */; };
+		FAFE83811E07399200062A12 /* GetTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAFE83801E07399200062A12 /* GetTrip.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C01D13771E0730FA00208D04 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C01D136D1E0730F900208D04 /* Apollo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9FC750441D2A532C00458D91;
-			remoteInfo = "Apollo iOS";
-		};
-		C01D13791E0730FA00208D04 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C01D136D1E0730F900208D04 /* Apollo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9FC7504E1D2A532D00458D91;
-			remoteInfo = "ApolloTests iOS";
-		};
-		C01D137B1E0730FA00208D04 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C01D136D1E0730F900208D04 /* Apollo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3C4DBCD11DD21C9D005B61D0;
-			remoteInfo = "Apollo watchOS";
-		};
-		C01D137D1E0730FA00208D04 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C01D136D1E0730F900208D04 /* Apollo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3C4DBCDE1DD21CEF005B61D0;
-			remoteInfo = "Apollo tvOS";
-		};
-		C01D137F1E0730FA00208D04 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C01D136D1E0730F900208D04 /* Apollo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3C4DBCE61DD21CF0005B61D0;
-			remoteInfo = "ApolloTests tvOS";
-		};
-		C01D13811E0730FA00208D04 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C01D136D1E0730F900208D04 /* Apollo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3C4DBCFA1DD21D53005B61D0;
-			remoteInfo = "Apollo macOS";
-		};
-		C01D13831E0730FA00208D04 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C01D136D1E0730F900208D04 /* Apollo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3C4DBD021DD21D53005B61D0;
-			remoteInfo = "ApolloTests macOS";
-		};
-		C0DA099E1E0732930016594E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C01D136D1E0730F900208D04 /* Apollo.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 9FC750431D2A532C00458D91;
-			remoteInfo = "Apollo iOS";
-		};
 		FAF533D31DA604EC00BBE2C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FAF533B61DA604EC00BBE2C7 /* Project object */;
@@ -108,10 +56,65 @@
 			remoteGlobalIDString = FAF533BD1DA604EC00BBE2C7;
 			remoteInfo = PLANiT;
 		};
+		FAFE83661E0734AA00062A12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAFE835C1E0734AA00062A12 /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FC750441D2A532C00458D91;
+			remoteInfo = "Apollo iOS";
+		};
+		FAFE83681E0734AA00062A12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAFE835C1E0734AA00062A12 /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FC7504E1D2A532D00458D91;
+			remoteInfo = "ApolloTests iOS";
+		};
+		FAFE836A1E0734AA00062A12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAFE835C1E0734AA00062A12 /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3C4DBCD11DD21C9D005B61D0;
+			remoteInfo = "Apollo watchOS";
+		};
+		FAFE836C1E0734AA00062A12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAFE835C1E0734AA00062A12 /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3C4DBCDE1DD21CEF005B61D0;
+			remoteInfo = "Apollo tvOS";
+		};
+		FAFE836E1E0734AA00062A12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAFE835C1E0734AA00062A12 /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3C4DBCE61DD21CF0005B61D0;
+			remoteInfo = "ApolloTests tvOS";
+		};
+		FAFE83701E0734AA00062A12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAFE835C1E0734AA00062A12 /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3C4DBCFA1DD21D53005B61D0;
+			remoteInfo = "Apollo macOS";
+		};
+		FAFE83721E0734AA00062A12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAFE835C1E0734AA00062A12 /* Apollo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3C4DBD021DD21D53005B61D0;
+			remoteInfo = "ApolloTests macOS";
+		};
+		FAFE83741E0734CA00062A12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAFE835C1E0734AA00062A12 /* Apollo.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9FC750431D2A532C00458D91;
+			remoteInfo = "Apollo iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C01D136D1E0730F900208D04 /* Apollo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Apollo.xcodeproj; path = "../../Desktop/apollo-ios-master/Apollo.xcodeproj"; sourceTree = "<group>"; };
 		FA5A15611DB14E1200D70483 /* VotingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingViewController.swift; sourceTree = "<group>"; };
 		FA93E5791DAC53F400631767 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FA9599FB1E063E4500D1B7D6 /* rankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rankingViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +149,11 @@
 		FAF533DD1DA604EC00BBE2C7 /* PLANiTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PLANiTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF533E11DA604EC00BBE2C7 /* PLANiTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLANiTUITests.swift; sourceTree = "<group>"; };
 		FAF533E31DA604EC00BBE2C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAFE835C1E0734AA00062A12 /* Apollo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Apollo.xcodeproj; path = "apollo-ios-master/Apollo.xcodeproj"; sourceTree = "<group>"; };
+		FAFE83761E07362E00062A12 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		FAFE83791E0736B900062A12 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		FAFE837B1E0737D100062A12 /* CreateNewUser.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CreateNewUser.graphql; sourceTree = "<group>"; };
+		FAFE83801E07399200062A12 /* GetTrip.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetTrip.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,28 +184,15 @@
 		C01D136C1E0730F100208D04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C01D136D1E0730F900208D04 /* Apollo.xcodeproj */,
+				FAFE835C1E0734AA00062A12 /* Apollo.xcodeproj */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C01D136E1E0730F900208D04 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C01D13781E0730FA00208D04 /* Apollo.framework */,
-				C01D137A1E0730FA00208D04 /* ApolloTests iOS.xctest */,
-				C01D137C1E0730FA00208D04 /* Apollo.framework */,
-				C01D137E1E0730FA00208D04 /* Apollo.framework */,
-				C01D13801E0730FA00208D04 /* ApolloTests tvOS.xctest */,
-				C01D13821E0730FA00208D04 /* Apollo.framework */,
-				C01D13841E0730FA00208D04 /* ApolloTests macOS.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		FAA68BC71DECFE2C000FB313 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				FAFE83791E0736B900062A12 /* API.swift */,
 				FAA68BC81DECFE6B000FB313 /* TripLibraryAPI.swift */,
 				FAA68BCA1DECFECF000FB313 /* PersistencyManager.swift */,
 				FAA68BCC1DEE54A5000FB313 /* HTTPClient.swift */,
@@ -237,6 +232,8 @@
 		FAF533C01DA604EC00BBE2C7 /* PLANiT */ = {
 			isa = PBXGroup;
 			children = (
+				FAFE837D1E0737E200062A12 /* GraphQL */,
+				FAFE83781E07363B00062A12 /* Schema */,
 				FAA68BC71DECFE2C000FB313 /* API */,
 				FAF533F41DA60C4700BBE2C7 /* Network */,
 				FAC95ED01DAD6B45006CD790 /* Transitions */,
@@ -340,6 +337,53 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FAFE835D1E0734AA00062A12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAFE83671E0734AA00062A12 /* Apollo.framework */,
+				FAFE83691E0734AA00062A12 /* ApolloTests iOS.xctest */,
+				FAFE836B1E0734AA00062A12 /* Apollo.framework */,
+				FAFE836D1E0734AA00062A12 /* Apollo.framework */,
+				FAFE836F1E0734AA00062A12 /* ApolloTests tvOS.xctest */,
+				FAFE83711E0734AA00062A12 /* Apollo.framework */,
+				FAFE83731E0734AA00062A12 /* ApolloTests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAFE83781E07363B00062A12 /* Schema */ = {
+			isa = PBXGroup;
+			children = (
+				FAFE83761E07362E00062A12 /* schema.json */,
+			);
+			name = Schema;
+			sourceTree = "<group>";
+		};
+		FAFE837D1E0737E200062A12 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				FAFE837F1E07384A00062A12 /* Query */,
+				FAFE837E1E07383600062A12 /* Mutation */,
+			);
+			name = GraphQL;
+			sourceTree = "<group>";
+		};
+		FAFE837E1E07383600062A12 /* Mutation */ = {
+			isa = PBXGroup;
+			children = (
+				FAFE837B1E0737D100062A12 /* CreateNewUser.graphql */,
+			);
+			name = Mutation;
+			sourceTree = "<group>";
+		};
+		FAFE837F1E07384A00062A12 /* Query */ = {
+			isa = PBXGroup;
+			children = (
+				FAFE83801E07399200062A12 /* GetTrip.graphql */,
+			);
+			name = Query;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,7 +399,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				C0DA099F1E0732930016594E /* PBXTargetDependency */,
+				FAFE83751E0734CA00062A12 /* PBXTargetDependency */,
 			);
 			name = PLANiT;
 			productName = PLANiT;
@@ -437,8 +481,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C01D136E1E0730F900208D04 /* Products */;
-					ProjectRef = C01D136D1E0730F900208D04 /* Apollo.xcodeproj */;
+					ProductGroup = FAFE835D1E0734AA00062A12 /* Products */;
+					ProjectRef = FAFE835C1E0734AA00062A12 /* Apollo.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -451,53 +495,53 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C01D13781E0730FA00208D04 /* Apollo.framework */ = {
+		FAFE83671E0734AA00062A12 /* Apollo.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Apollo.framework;
-			remoteRef = C01D13771E0730FA00208D04 /* PBXContainerItemProxy */;
+			remoteRef = FAFE83661E0734AA00062A12 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C01D137A1E0730FA00208D04 /* ApolloTests iOS.xctest */ = {
+		FAFE83691E0734AA00062A12 /* ApolloTests iOS.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "ApolloTests iOS.xctest";
-			remoteRef = C01D13791E0730FA00208D04 /* PBXContainerItemProxy */;
+			remoteRef = FAFE83681E0734AA00062A12 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C01D137C1E0730FA00208D04 /* Apollo.framework */ = {
+		FAFE836B1E0734AA00062A12 /* Apollo.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Apollo.framework;
-			remoteRef = C01D137B1E0730FA00208D04 /* PBXContainerItemProxy */;
+			remoteRef = FAFE836A1E0734AA00062A12 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C01D137E1E0730FA00208D04 /* Apollo.framework */ = {
+		FAFE836D1E0734AA00062A12 /* Apollo.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Apollo.framework;
-			remoteRef = C01D137D1E0730FA00208D04 /* PBXContainerItemProxy */;
+			remoteRef = FAFE836C1E0734AA00062A12 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C01D13801E0730FA00208D04 /* ApolloTests tvOS.xctest */ = {
+		FAFE836F1E0734AA00062A12 /* ApolloTests tvOS.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "ApolloTests tvOS.xctest";
-			remoteRef = C01D137F1E0730FA00208D04 /* PBXContainerItemProxy */;
+			remoteRef = FAFE836E1E0734AA00062A12 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C01D13821E0730FA00208D04 /* Apollo.framework */ = {
+		FAFE83711E0734AA00062A12 /* Apollo.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Apollo.framework;
-			remoteRef = C01D13811E0730FA00208D04 /* PBXContainerItemProxy */;
+			remoteRef = FAFE83701E0734AA00062A12 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C01D13841E0730FA00208D04 /* ApolloTests macOS.xctest */ = {
+		FAFE83731E0734AA00062A12 /* ApolloTests macOS.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "ApolloTests macOS.xctest";
-			remoteRef = C01D13831E0730FA00208D04 /* PBXContainerItemProxy */;
+			remoteRef = FAFE83721E0734AA00062A12 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -507,7 +551,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAFE83771E07362E00062A12 /* schema.json in Resources */,
+				FAFE83811E07399200062A12 /* GetTrip.graphql in Resources */,
 				FAF533CC1DA604EC00BBE2C7 /* LaunchScreen.storyboard in Resources */,
+				FAFE837C1E0737D100062A12 /* CreateNewUser.graphql in Resources */,
 				FAF533C91DA604EC00BBE2C7 /* Assets.xcassets in Resources */,
 				FAF533C71DA604EC00BBE2C7 /* Main.storyboard in Resources */,
 			);
@@ -541,7 +588,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\nexport PATH=\"/Users/sahilzubair/.npm-packages/bin:$PATH\"\nAPOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift\n";
+			shellScript = "\nAPOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -572,6 +619,7 @@
 				FAD890431DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift in Sources */,
 				FAD8903D1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift in Sources */,
 				FAA68BCD1DEE54A5000FB313 /* HTTPClient.swift in Sources */,
+				FAFE837A1E0736B900062A12 /* API.swift in Sources */,
 				FAA68BCB1DECFECF000FB313 /* PersistencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,11 +643,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C0DA099F1E0732930016594E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Apollo iOS";
-			targetProxy = C0DA099E1E0732930016594E /* PBXContainerItemProxy */;
-		};
 		FAF533D41DA604EC00BBE2C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FAF533BD1DA604EC00BBE2C7 /* PLANiT */;
@@ -609,6 +652,11 @@
 			isa = PBXTargetDependency;
 			target = FAF533BD1DA604EC00BBE2C7 /* PLANiT */;
 			targetProxy = FAF533DE1DA604EC00BBE2C7 /* PBXContainerItemProxy */;
+		};
+		FAFE83751E0734CA00062A12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Apollo iOS";
+			targetProxy = FAFE83741E0734CA00062A12 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
