@@ -35,7 +35,6 @@
 		FAF533CC1DA604EC00BBE2C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF533CA1DA604EC00BBE2C7 /* LaunchScreen.storyboard */; };
 		FAF533D71DA604EC00BBE2C7 /* PLANiTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533D61DA604EC00BBE2C7 /* PLANiTTests.swift */; };
 		FAF533E21DA604EC00BBE2C7 /* PLANiTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533E11DA604EC00BBE2C7 /* PLANiTUITests.swift */; };
-		FAFE83771E07362E00062A12 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FAFE83761E07362E00062A12 /* schema.json */; };
 		FAFE837A1E0736B900062A12 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE83791E0736B900062A12 /* API.swift */; };
 		FAFE837C1E0737D100062A12 /* CreateNewUser.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAFE837B1E0737D100062A12 /* CreateNewUser.graphql */; };
 		FAFE83811E07399200062A12 /* GetTrip.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAFE83801E07399200062A12 /* GetTrip.graphql */; };
@@ -142,7 +141,6 @@
 		FAF533DD1DA604EC00BBE2C7 /* PLANiTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PLANiTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF533E11DA604EC00BBE2C7 /* PLANiTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLANiTUITests.swift; sourceTree = "<group>"; };
 		FAF533E31DA604EC00BBE2C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAFE83761E07362E00062A12 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		FAFE83791E0736B900062A12 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		FAFE837B1E0737D100062A12 /* CreateNewUser.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CreateNewUser.graphql; sourceTree = "<group>"; };
 		FAFE83801E07399200062A12 /* GetTrip.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GetTrip.graphql; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				FAFE837D1E0737E200062A12 /* GraphQL */,
-				FAFE83781E07363B00062A12 /* Schema */,
 				FAA68BC71DECFE2C000FB313 /* API */,
 				FAF533F41DA60C4700BBE2C7 /* Network */,
 				FAC95ED01DAD6B45006CD790 /* Transitions */,
@@ -328,14 +325,6 @@
 				FAF533CD1DA604EC00BBE2C7 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FAFE83781E07363B00062A12 /* Schema */ = {
-			isa = PBXGroup;
-			children = (
-				FAFE83761E07362E00062A12 /* schema.json */,
-			);
-			name = Schema;
 			sourceTree = "<group>";
 		};
 		FAFE837D1E0737E200062A12 /* GraphQL */ = {
@@ -543,7 +532,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAFE83771E07362E00062A12 /* schema.json in Resources */,
 				FAFE83811E07399200062A12 /* GetTrip.graphql in Resources */,
 				FAF533CC1DA604EC00BBE2C7 /* LaunchScreen.storyboard in Resources */,
 				FAFE837C1E0737D100062A12 /* CreateNewUser.graphql in Resources */,

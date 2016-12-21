@@ -137,6 +137,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="CreateNewUserButtonPressed:" destination="bhU-Qo-H8O" eventType="touchUpInside" id="uke-Te-fk4"/>
                                     <segue destination="c7O-w7-no5" kind="presentation" identifier="" modalTransitionStyle="crossDissolve" id="zep-QQ-sYZ"/>
                                 </connections>
                             </button>
@@ -372,7 +373,7 @@
                                         <rect key="frame" x="0.0" y="28" width="319" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bSd-CL-cDO" id="n3M-Kf-esR">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="89.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bermudaSunset" translatesAutoresizingMaskIntoConstraints="NO" id="TLb-bP-0ek">
@@ -1598,10 +1599,10 @@
                                 </connections>
                             </button>
                             <visualEffectView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4C3-Cq-2uH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="RT8-wT-zQQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="light"/>
@@ -1742,15 +1743,15 @@
         <image name="x" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cWA-9L-HdA"/>
-        <segue reference="Agm-pH-dZW"/>
-        <segue reference="Wje-vO-Lb7"/>
-        <segue reference="zQA-c3-mCq"/>
+        <segue reference="zep-QQ-sYZ"/>
         <segue reference="bcn-5K-HPT"/>
         <segue reference="qq3-lZ-rov"/>
         <segue reference="LW7-MZ-a4n"/>
         <segue reference="mMi-m0-91D"/>
         <segue reference="Aol-8v-Jj3"/>
+        <segue reference="Agm-pH-dZW"/>
+        <segue reference="Wje-vO-Lb7"/>
+        <segue reference="zQA-c3-mCq"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
