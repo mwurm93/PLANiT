@@ -13,15 +13,55 @@ class BirthdayGenderViewController: UIViewController {
     // MARK: Outlets
     @IBOutlet weak var gender: UISegmentedControl!
     @IBOutlet weak var tripNameLabel: UILabel!
+    @IBOutlet weak var birthdayPickerView: UIDatePicker!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Change the color of the text in date picker to white
+
+        for subview in self.birthdayPickerView.subviews {
+            
+            if subview.frame.height <= 5 {
+                
+                subview.backgroundColor = UIColor.white
+                subview.tintColor = UIColor.white
+                subview.layer.borderColor = UIColor.white.cgColor
+                subview.layer.borderWidth = 0.5
+            }
+            if let pickerView = self.birthdayPickerView.subviews.first {
+                
+                for subview in pickerView.subviews {
+                    
+                    if subview.frame.height <= 5 {
+                        
+                        subview.backgroundColor = UIColor.white
+                        subview.tintColor = UIColor.white
+                        subview.layer.borderColor = UIColor.white.cgColor
+                        subview.layer.borderWidth = 0.5
+                    }
+                }
+            }
+                birthdayPickerView.setValue(UIColor.white, forKey: "textColor")
+            }
+        
         //Load the values from our shared data container singleton
+        if DataContainerSingleton.sharedDataContainer.birthdate == nil {
+        }
+        else {
+        var savedDateString = DataContainerSingleton.sharedDataContainer.birthdate
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+            let dateObj = dateFormatter.date(from: savedDateString!)
+            birthdayPickerView.date = dateObj!
+        }
+        
+        
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?.last?["trip_name"]
         //Install the value into the label.
-        self.tripNameLabel.text =  "\(tripNameValue!)"    }
+        self.tripNameLabel.text =  "\(tripNameValue!)"
+    }
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -47,4 +87,13 @@ class BirthdayGenderViewController: UIViewController {
                 DataContainerSingleton.sharedDataContainer.gender = "Female"
             }
         }
+    
+    @IBAction func BirthdayValueChanged(_ sender: Any) {
+        birthdayPickerView.datePickerMode = UIDatePickerMode.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        var selectedDate = dateFormatter.string(from: birthdayPickerView.date)
+        DataContainerSingleton.sharedDataContainer.birthdate = selectedDate
+    }
+   
 }
