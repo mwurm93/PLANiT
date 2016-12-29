@@ -12,8 +12,8 @@ class ActivitiesViewController: UIViewController {
 
     //MARK: Outlets
     @IBOutlet weak var activitiesTable: UITableView!
-    
     @IBOutlet weak var userToggles: UITableView!
+    @IBOutlet weak var tripNameLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,22 +21,14 @@ class ActivitiesViewController: UIViewController {
         activitiesTable.layer.cornerRadius = 5
         userToggles.layer.cornerRadius = 5
         
+        //Load the values from our shared data container singleton
+        let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?.last?["trip_name"]
+        //Install the value into the label.
+        self.tripNameLabel.text =  "\(tripNameValue!)"
+            
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

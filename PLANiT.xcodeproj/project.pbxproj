@@ -7,29 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA5A15621DB14E1200D70483 /* VotingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A15611DB14E1200D70483 /* VotingViewController.swift */; };
-		FA93E57A1DAC53F400631767 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93E5791DAC53F400631767 /* SignUpViewController.swift */; };
-		FA9599FC1E063E4600D1B7D6 /* rankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9599FB1E063E4500D1B7D6 /* rankingViewController.swift */; };
+		FA5A15621DB14E1200D70483 /* RecommedationSwipingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A15611DB14E1200D70483 /* RecommedationSwipingViewController.swift */; };
+		FA93E57A1DAC53F400631767 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93E5791DAC53F400631767 /* EmailViewController.swift */; };
+		FA9599FC1E063E4600D1B7D6 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9599FB1E063E4500D1B7D6 /* RankingViewController.swift */; };
+		FAA280321E141F8F0058F8B7 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA280311E141F8F0058F8B7 /* ContactsViewController.swift */; };
+		FAA280341E1426180058F8B7 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA280331E1426180058F8B7 /* InstructionsViewController.swift */; };
+		FAA280361E1445F90058F8B7 /* HomeAirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA280351E1445F90058F8B7 /* HomeAirportViewController.swift */; };
+		FAA280381E1455AF0058F8B7 /* SuggestDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA280371E1455AF0058F8B7 /* SuggestDestinationViewController.swift */; };
 		FAA68BC41DECF368000FB313 /* ExistingTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */; };
-		FAA68BC61DECFB0D000FB313 /* TripDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BC51DECFB0D000FB313 /* TripDataModel.swift */; };
-		FAA68BC91DECFE6B000FB313 /* TripLibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BC81DECFE6B000FB313 /* TripLibraryAPI.swift */; };
-		FAA68BCB1DECFECF000FB313 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BCA1DECFECF000FB313 /* PersistencyManager.swift */; };
-		FAA68BCD1DEE54A5000FB313 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BCC1DEE54A5000FB313 /* HTTPClient.swift */; };
 		FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */; };
-		FAD8903D1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8903C1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift */; };
-		FAD8903F1DB5C13200753FC9 /* AccomodationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8903E1DB5C13200753FC9 /* AccomodationsViewController.swift */; };
 		FAD890411DB5C18800753FC9 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890401DB5C18800753FC9 /* BudgetViewController.swift */; };
-		FAD890431DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890421DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift */; };
+		FAD890431DB5C1AD00753FC9 /* InternationalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890421DB5C1AD00753FC9 /* InternationalViewController.swift */; };
 		FAD890451DB5C21400753FC9 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */; };
-		FAD890471DB5C25000753FC9 /* TravelerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890461DB5C25000753FC9 /* TravelerDetailsViewController.swift */; };
+		FAD890471DB5C25000753FC9 /* BirthdayGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890461DB5C25000753FC9 /* BirthdayGenderViewController.swift */; };
 		FAD890491DB5C27800753FC9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890481DB5C27800753FC9 /* CalendarViewController.swift */; };
 		FAD8904B1DB5C2AF00753FC9 /* NewTripNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8904A1DB5C2AF00753FC9 /* NewTripNameViewController.swift */; };
-		FAD8904D1DB5C2E100753FC9 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8904C1DB5C2E100753FC9 /* BookingViewController.swift */; };
 		FAD8904F1DB70AE700753FC9 /* DataContainerSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8904E1DB70AE700753FC9 /* DataContainerSingleton.swift */; };
 		FAE518181DB1920D00177731 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE518171DB1920D00177731 /* SettingsViewController.swift */; };
-		FAEF024F1DB5828800D4EF78 /* groupRankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF024E1DB5828800D4EF78 /* groupRankingViewController.swift */; };
+		FAEF024F1DB5828800D4EF78 /* ReviewAndBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF024E1DB5828800D4EF78 /* ReviewAndBookViewController.swift */; };
 		FAF533C21DA604EC00BBE2C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533C11DA604EC00BBE2C7 /* AppDelegate.swift */; };
-		FAF533C41DA604EC00BBE2C7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533C31DA604EC00BBE2C7 /* LoginViewController.swift */; };
+		FAF533C41DA604EC00BBE2C7 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533C31DA604EC00BBE2C7 /* PasswordViewController.swift */; };
 		FAF533C71DA604EC00BBE2C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF533C51DA604EC00BBE2C7 /* Main.storyboard */; };
 		FAF533C91DA604EC00BBE2C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF533C81DA604EC00BBE2C7 /* Assets.xcassets */; };
 		FAF533CC1DA604EC00BBE2C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF533CA1DA604EC00BBE2C7 /* LaunchScreen.storyboard */; };
@@ -107,30 +104,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA5A15611DB14E1200D70483 /* VotingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotingViewController.swift; sourceTree = "<group>"; };
-		FA93E5791DAC53F400631767 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		FA9599FB1E063E4500D1B7D6 /* rankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rankingViewController.swift; sourceTree = "<group>"; };
+		FA5A15611DB14E1200D70483 /* RecommedationSwipingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommedationSwipingViewController.swift; sourceTree = "<group>"; };
+		FA93E5791DAC53F400631767 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		FA9599FB1E063E4500D1B7D6 /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		FAA280311E141F8F0058F8B7 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsViewController.swift; path = Assets.xcassets/ContactsViewController.swift; sourceTree = "<group>"; };
+		FAA280331E1426180058F8B7 /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
+		FAA280351E1445F90058F8B7 /* HomeAirportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAirportViewController.swift; sourceTree = "<group>"; };
+		FAA280371E1455AF0058F8B7 /* SuggestDestinationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestDestinationViewController.swift; sourceTree = "<group>"; };
 		FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingTripTableViewCell.swift; sourceTree = "<group>"; };
-		FAA68BC51DECFB0D000FB313 /* TripDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripDataModel.swift; sourceTree = "<group>"; };
-		FAA68BC81DECFE6B000FB313 /* TripLibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripLibraryAPI.swift; sourceTree = "<group>"; };
-		FAA68BCA1DECFECF000FB313 /* PersistencyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
-		FAA68BCC1DEE54A5000FB313 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
-		FAD8903C1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreliminaryResultsViewController.swift; sourceTree = "<group>"; };
-		FAD8903E1DB5C13200753FC9 /* AccomodationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccomodationsViewController.swift; sourceTree = "<group>"; };
 		FAD890401DB5C18800753FC9 /* BudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
-		FAD890421DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalPreferencesViewController.swift; sourceTree = "<group>"; };
+		FAD890421DB5C1AD00753FC9 /* InternationalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternationalViewController.swift; sourceTree = "<group>"; };
 		FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
-		FAD890461DB5C25000753FC9 /* TravelerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelerDetailsViewController.swift; sourceTree = "<group>"; };
+		FAD890461DB5C25000753FC9 /* BirthdayGenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayGenderViewController.swift; sourceTree = "<group>"; };
 		FAD890481DB5C27800753FC9 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		FAD8904A1DB5C2AF00753FC9 /* NewTripNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTripNameViewController.swift; sourceTree = "<group>"; };
-		FAD8904C1DB5C2E100753FC9 /* BookingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		FAD8904E1DB70AE700753FC9 /* DataContainerSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataContainerSingleton.swift; sourceTree = "<group>"; };
 		FAE518171DB1920D00177731 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		FAEF024E1DB5828800D4EF78 /* groupRankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupRankingViewController.swift; sourceTree = "<group>"; };
+		FAEF024E1DB5828800D4EF78 /* ReviewAndBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewAndBookViewController.swift; sourceTree = "<group>"; };
 		FAF533BE1DA604EC00BBE2C7 /* PLANiT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLANiT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF533C11DA604EC00BBE2C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FAF533C31DA604EC00BBE2C7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FAF533C31DA604EC00BBE2C7 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		FAF533C61DA604EC00BBE2C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAF533C81DA604EC00BBE2C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAF533CB1DA604EC00BBE2C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -184,9 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				FAFE83791E0736B900062A12 /* API.swift */,
-				FAA68BC81DECFE6B000FB313 /* TripLibraryAPI.swift */,
-				FAA68BCA1DECFECF000FB313 /* PersistencyManager.swift */,
-				FAA68BCC1DEE54A5000FB313 /* HTTPClient.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -228,8 +219,8 @@
 				FAF533F41DA60C4700BBE2C7 /* Network */,
 				FAC95ED01DAD6B45006CD790 /* Transitions */,
 				FAF533F61DA60C5B00BBE2C7 /* Supporting Files */,
-				FAF533EF1DA60B7200BBE2C7 /* App */,
 				FAF533F01DA60BCD00BBE2C7 /* Controllers */,
+				FAF533EF1DA60B7200BBE2C7 /* App */,
 				FAF533F11DA60BD800BBE2C7 /* Views */,
 				FAF533F51DA60C4E00BBE2C7 /* Model */,
 				FAF533F31DA60C1200BBE2C7 /* Resources */,
@@ -266,22 +257,23 @@
 		FAF533F01DA60BCD00BBE2C7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FAF533C31DA604EC00BBE2C7 /* LoginViewController.swift */,
-				FA93E5791DAC53F400631767 /* SignUpViewController.swift */,
-				FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */,
+				FA93E5791DAC53F400631767 /* EmailViewController.swift */,
+				FAF533C31DA604EC00BBE2C7 /* PasswordViewController.swift */,
 				FAE518171DB1920D00177731 /* SettingsViewController.swift */,
+				FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */,
+				FAA280331E1426180058F8B7 /* InstructionsViewController.swift */,
+				FAA280311E141F8F0058F8B7 /* ContactsViewController.swift */,
 				FAD8904A1DB5C2AF00753FC9 /* NewTripNameViewController.swift */,
-				FA5A15611DB14E1200D70483 /* VotingViewController.swift */,
-				FAD8903C1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift */,
-				FAEF024E1DB5828800D4EF78 /* groupRankingViewController.swift */,
-				FAD8903E1DB5C13200753FC9 /* AccomodationsViewController.swift */,
-				FAD890401DB5C18800753FC9 /* BudgetViewController.swift */,
-				FAD890421DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift */,
-				FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */,
-				FAD890461DB5C25000753FC9 /* TravelerDetailsViewController.swift */,
 				FAD890481DB5C27800753FC9 /* CalendarViewController.swift */,
-				FAD8904C1DB5C2E100753FC9 /* BookingViewController.swift */,
-				FA9599FB1E063E4500D1B7D6 /* rankingViewController.swift */,
+				FAD890461DB5C25000753FC9 /* BirthdayGenderViewController.swift */,
+				FAA280351E1445F90058F8B7 /* HomeAirportViewController.swift */,
+				FAD890421DB5C1AD00753FC9 /* InternationalViewController.swift */,
+				FAA280371E1455AF0058F8B7 /* SuggestDestinationViewController.swift */,
+				FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */,
+				FAD890401DB5C18800753FC9 /* BudgetViewController.swift */,
+				FA5A15611DB14E1200D70483 /* RecommedationSwipingViewController.swift */,
+				FAEF024E1DB5828800D4EF78 /* ReviewAndBookViewController.swift */,
+				FA9599FB1E063E4500D1B7D6 /* RankingViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -314,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				FAD8904E1DB70AE700753FC9 /* DataContainerSingleton.swift */,
-				FAA68BC51DECFB0D000FB313 /* TripDataModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -580,27 +571,24 @@
 				FAD890491DB5C27800753FC9 /* CalendarViewController.swift in Sources */,
 				FAA68BC41DECF368000FB313 /* ExistingTripTableViewCell.swift in Sources */,
 				FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */,
-				FAA68BC91DECFE6B000FB313 /* TripLibraryAPI.swift in Sources */,
-				FAD890471DB5C25000753FC9 /* TravelerDetailsViewController.swift in Sources */,
-				FA9599FC1E063E4600D1B7D6 /* rankingViewController.swift in Sources */,
+				FAD890471DB5C25000753FC9 /* BirthdayGenderViewController.swift in Sources */,
+				FA9599FC1E063E4600D1B7D6 /* RankingViewController.swift in Sources */,
+				FAA280321E141F8F0058F8B7 /* ContactsViewController.swift in Sources */,
 				FAD8904B1DB5C2AF00753FC9 /* NewTripNameViewController.swift in Sources */,
-				FAF533C41DA604EC00BBE2C7 /* LoginViewController.swift in Sources */,
-				FAEF024F1DB5828800D4EF78 /* groupRankingViewController.swift in Sources */,
-				FAD8903F1DB5C13200753FC9 /* AccomodationsViewController.swift in Sources */,
+				FAF533C41DA604EC00BBE2C7 /* PasswordViewController.swift in Sources */,
+				FAEF024F1DB5828800D4EF78 /* ReviewAndBookViewController.swift in Sources */,
+				FAA280381E1455AF0058F8B7 /* SuggestDestinationViewController.swift in Sources */,
 				FAD890451DB5C21400753FC9 /* ActivitiesViewController.swift in Sources */,
 				FAE518181DB1920D00177731 /* SettingsViewController.swift in Sources */,
-				FAA68BC61DECFB0D000FB313 /* TripDataModel.swift in Sources */,
 				FAD890411DB5C18800753FC9 /* BudgetViewController.swift in Sources */,
 				FAF533C21DA604EC00BBE2C7 /* AppDelegate.swift in Sources */,
-				FAD8904D1DB5C2E100753FC9 /* BookingViewController.swift in Sources */,
-				FA5A15621DB14E1200D70483 /* VotingViewController.swift in Sources */,
+				FA5A15621DB14E1200D70483 /* RecommedationSwipingViewController.swift in Sources */,
+				FAA280341E1426180058F8B7 /* InstructionsViewController.swift in Sources */,
 				FAD8904F1DB70AE700753FC9 /* DataContainerSingleton.swift in Sources */,
-				FA93E57A1DAC53F400631767 /* SignUpViewController.swift in Sources */,
-				FAD890431DB5C1AD00753FC9 /* OptionalPreferencesViewController.swift in Sources */,
-				FAD8903D1DB5C0F500753FC9 /* PreliminaryResultsViewController.swift in Sources */,
-				FAA68BCD1DEE54A5000FB313 /* HTTPClient.swift in Sources */,
+				FA93E57A1DAC53F400631767 /* EmailViewController.swift in Sources */,
+				FAD890431DB5C1AD00753FC9 /* InternationalViewController.swift in Sources */,
 				FAFE837A1E0736B900062A12 /* API.swift in Sources */,
-				FAA68BCB1DECFECF000FB313 /* PersistencyManager.swift in Sources */,
+				FAA280361E1445F90058F8B7 /* HomeAirportViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

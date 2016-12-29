@@ -21,7 +21,9 @@ struct DefaultKeys {
         static let knownTravelerNumber = "knownTravelerNumber"
         static let redressNumber = "redressNumber"
         static let birthdate = "birthdate"
+        static let usertrippreferences = "usertrippreferences"
     }
+
 
 
 class DataContainerSingleton {
@@ -39,6 +41,7 @@ class DataContainerSingleton {
     var knownTravelerNumber: String?
     var redressNumber: String?
     var birthdate: String?
+    var usertrippreferences: [NSDictionary]?
     
     var goToBackgroundObserver: AnyObject?
     
@@ -58,8 +61,8 @@ class DataContainerSingleton {
         knownTravelerNumber = defaults.object(forKey: DefaultKeys.knownTravelerNumber) as! String?
         redressNumber = defaults.object(forKey: DefaultKeys.redressNumber) as! String?
         birthdate = defaults.object(forKey: DefaultKeys.birthdate) as! String?
-
-
+        usertrippreferences = defaults.object(forKey: DefaultKeys.usertrippreferences) as! [NSDictionary]?
+        
         //-----------------------------------------------------------------------------
         
         //Add an obsever for the UIApplicationDidEnterBackgroundNotification.
@@ -84,8 +87,10 @@ class DataContainerSingleton {
             defaults.set( self.knownTravelerNumber, forKey: DefaultKeys.knownTravelerNumber)
             defaults.set( self.redressNumber, forKey: DefaultKeys.redressNumber)
             defaults.set( self.birthdate, forKey: DefaultKeys.birthdate)
+            defaults.set( self.usertrippreferences, forKey: DefaultKeys.usertrippreferences)
+
+//            defaults.set( self.usertrippreferences, forKey: DefaultKeys.usertrippreferences)
             //-----------------------------------------------------------------------------
-            
             //Tell NSUserDefaults to save to disk now.
             defaults.synchronize()
         }

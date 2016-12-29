@@ -56,7 +56,13 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         let birthdateValue = DataContainerSingleton.sharedDataContainer.birthdate ?? ""
         
         //Install the value into the text field.
+        
+        if firstNameValue == "" {
+            self.nameHeaderForSettings.text =  "Profile"
+        }
+        else {
         self.nameHeaderForSettings.text =  "\(firstNameValue)'s Profile"
+        }
         self.firstNameSettingsField.text =  "\(firstNameValue)"
 
         self.lastNameSettingsField.text =  "\(lastNameValue)"
