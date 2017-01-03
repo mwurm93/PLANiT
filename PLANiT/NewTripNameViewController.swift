@@ -20,7 +20,8 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate {
         self.newTripNameTextField.delegate = self
         
         //Load the values from our shared data container singleton
-        let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?.last?["trip_name"]
+        let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
+
         
         //Install the value into the label.
         
@@ -30,7 +31,6 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate {
         self.newTripNameTextField.text =  "\(tripNameValue!)"
         }
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(_ animated: Bool)

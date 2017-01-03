@@ -22,6 +22,7 @@ struct DefaultKeys {
         static let redressNumber = "redressNumber"
         static let birthdate = "birthdate"
         static let usertrippreferences = "usertrippreferences"
+        static let currenttrip = "currenttrip"
     }
 
 
@@ -42,6 +43,7 @@ class DataContainerSingleton {
     var redressNumber: String?
     var birthdate: String?
     var usertrippreferences: [NSDictionary]?
+    var currenttrip: Int?
     
     var goToBackgroundObserver: AnyObject?
     
@@ -62,6 +64,7 @@ class DataContainerSingleton {
         redressNumber = defaults.object(forKey: DefaultKeys.redressNumber) as! String?
         birthdate = defaults.object(forKey: DefaultKeys.birthdate) as! String?
         usertrippreferences = defaults.object(forKey: DefaultKeys.usertrippreferences) as! [NSDictionary]?
+        currenttrip = defaults.object(forKey: DefaultKeys.currenttrip) as! Int?
         
         //-----------------------------------------------------------------------------
         
@@ -88,6 +91,8 @@ class DataContainerSingleton {
             defaults.set( self.redressNumber, forKey: DefaultKeys.redressNumber)
             defaults.set( self.birthdate, forKey: DefaultKeys.birthdate)
             defaults.set( self.usertrippreferences, forKey: DefaultKeys.usertrippreferences)
+            defaults.set( self.currenttrip, forKey: DefaultKeys.currenttrip)
+
 
 //            defaults.set( self.usertrippreferences, forKey: DefaultKeys.usertrippreferences)
             //-----------------------------------------------------------------------------
@@ -96,5 +101,6 @@ class DataContainerSingleton {
         }
     }
 
+    
 
 }

@@ -111,7 +111,7 @@
 		FAA280331E1426180058F8B7 /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 		FAA280351E1445F90058F8B7 /* HomeAirportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAirportViewController.swift; sourceTree = "<group>"; };
 		FAA280371E1455AF0058F8B7 /* SuggestDestinationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestDestinationViewController.swift; sourceTree = "<group>"; };
-		FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingTripTableViewCell.swift; sourceTree = "<group>"; };
+		FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExistingTripTableViewCell.swift; path = ../ExistingTripTableViewCell.swift; sourceTree = "<group>"; };
 		FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
 		FAD890401DB5C18800753FC9 /* BudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
 		FAD890421DB5C1AD00753FC9 /* InternationalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternationalViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +174,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA3856911E1B534800CAB8E5 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */,
+			);
+			name = "Table View Cells";
+			sourceTree = "<group>";
+		};
 		FAA68BC71DECFE2C000FB313 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +200,6 @@
 		FAF533B51DA604EC00BBE2C7 = {
 			isa = PBXGroup;
 			children = (
-				FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */,
 				FAF533C01DA604EC00BBE2C7 /* PLANiT */,
 				FAF533D51DA604EC00BBE2C7 /* PLANiTTests */,
 				FAF533E01DA604EC00BBE2C7 /* PLANiTUITests */,
@@ -220,6 +227,7 @@
 				FAC95ED01DAD6B45006CD790 /* Transitions */,
 				FAF533F61DA60C5B00BBE2C7 /* Supporting Files */,
 				FAF533F01DA60BCD00BBE2C7 /* Controllers */,
+				FA3856911E1B534800CAB8E5 /* Table View Cells */,
 				FAF533EF1DA60B7200BBE2C7 /* App */,
 				FAF533F11DA60BD800BBE2C7 /* Views */,
 				FAF533F51DA60C4E00BBE2C7 /* Model */,

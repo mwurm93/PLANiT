@@ -11,9 +11,13 @@ import UIKit
 class SuggestDestinationViewController: UIViewController {
     //MARK: Outlets
     @IBOutlet weak var tripNameLabel: UILabel!
+    @IBOutlet weak var wantToSuggestDestination: UISegmentedControl!
+    @IBOutlet weak var suggestDestinationField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        suggestDestinationField.isHidden = true
         
         //Load the values from our shared data container singleton
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?.last?["trip_name"]
@@ -26,4 +30,12 @@ class SuggestDestinationViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func wantToSuggestDestinationValueYes(_ sender: Any) {
+        if wantToSuggestDestination.selectedSegmentIndex == 0 {
+            suggestDestinationField.isHidden = false
+        }
+        else if wantToSuggestDestination.selectedSegmentIndex == 1 {suggestDestinationField.isHidden = true
+        }
+    }
 }
+
