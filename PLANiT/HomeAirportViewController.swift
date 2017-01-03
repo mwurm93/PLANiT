@@ -20,7 +20,7 @@ class HomeAiportViewController: UIViewController, UITextFieldDelegate {
         self.homeAirport.delegate = self
         
         //Load the values from our shared data container singleton
-        let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?.last?["trip_name"]
+        let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
         //Install the value into the label.
         self.tripNameLabel.text =  "\(tripNameValue!)"    }
     

@@ -20,6 +20,7 @@ class EmailViewController: UIViewController, UITextFieldDelegate {
         //    guard let data = result?.data else { return }
         //    self.emailAddress.text = data.getTrip?.name;
         // }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,4 +39,6 @@ class EmailViewController: UIViewController, UITextFieldDelegate {
         DataContainerSingleton.sharedDataContainer.emailAddress = emailAddress.text
         return true
     }
+    
+    
 }

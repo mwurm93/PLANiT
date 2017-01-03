@@ -420,6 +420,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="addTrip:" destination="c7O-w7-no5" eventType="touchUpInside" id="xZs-YT-Cqu"/>
                                     <segue destination="PN2-44-dsi" kind="show" id="ogI-Q2-8Ew"/>
                                 </connections>
                             </button>
@@ -454,6 +455,7 @@
                     <connections>
                         <outlet property="existingTripsTable" destination="Gra-2t-s2J" id="seK-KW-ZCb"/>
                         <outlet property="noTripsLabel" destination="Ljf-gb-XpH" id="M2J-fg-Bpr"/>
+                        <segue destination="yFV-jG-Zmb" kind="show" identifier="existingTripsToAddContacts" id="ojN-vy-gpI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3s-V1-O6L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1114,13 +1116,16 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="AR1-aZ-2il">
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="AR1-aZ-2il">
                                             <rect key="frame" x="66" y="519" width="242" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="Yes"/>
                                                 <segment title="No"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="multipleDestinationsValueChanged:" destination="w3M-hs-AT7" eventType="valueChanged" id="MK9-0F-XL8"/>
+                                            </connections>
                                         </segmentedControl>
                                     </subviews>
                                 </view>
@@ -1166,6 +1171,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="multipleDestinations" destination="AR1-aZ-2il" id="bhy-pw-uj9"/>
                         <outlet property="tripNameLabel" destination="GIe-ii-6UW" id="d7z-4l-JOW"/>
                     </connections>
                 </viewController>
@@ -1220,7 +1226,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="newTripVCtoCalendarVC:" destination="E8d-J0-NPc" eventType="touchUpInside" id="yg7-sa-WBQ"/>
                                     <segue destination="w3M-hs-AT7" kind="show" animates="NO" id="qq3-lZ-rov"/>
                                 </connections>
                             </button>
@@ -1231,6 +1236,9 @@
                                 <color key="textColor" red="0.33860392379999998" green="0.34195643790000002" blue="0.34195643790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="TripNameEditingChanged:" destination="E8d-J0-NPc" eventType="editingChanged" id="KP4-6F-hOy"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Give your trip a name!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3K-Zr-Sh9">
                                 <rect key="frame" x="0.0" y="103" width="375" height="24"/>
@@ -1934,19 +1942,19 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xbM-y9-cLT"/>
-        <segue reference="HXv-7S-jEo"/>
-        <segue reference="ogI-Q2-8Ew"/>
-        <segue reference="lt4-dc-et0"/>
-        <segue reference="wbr-1B-I0n"/>
-        <segue reference="f2M-dx-fNY"/>
-        <segue reference="bEe-OF-L1P"/>
-        <segue reference="qN1-yV-Uhi"/>
-        <segue reference="XlR-xn-h0h"/>
+        <segue reference="yo9-AN-HQ1"/>
+        <segue reference="PCw-hB-sIP"/>
         <segue reference="qmk-4K-hHS"/>
+        <segue reference="XlR-xn-h0h"/>
         <segue reference="qq3-lZ-rov"/>
-        <segue reference="9ZB-Ko-LdT"/>
-        <segue reference="h5e-fZ-WOV"/>
+        <segue reference="lt4-dc-et0"/>
+        <segue reference="dep-F9-fnR"/>
+        <segue reference="sW3-8Q-PYY"/>
+        <segue reference="bEe-OF-L1P"/>
+        <segue reference="Ajb-3w-yz2"/>
         <segue reference="zQA-c3-mCq"/>
+        <segue reference="h5e-fZ-WOV"/>
+        <segue reference="jUF-36-ylm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

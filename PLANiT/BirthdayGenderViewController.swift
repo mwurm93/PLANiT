@@ -20,22 +20,16 @@ class BirthdayGenderViewController: UIViewController {
         super.viewDidLoad()
 
         //Change the color of the text in date picker to white
-
         for subview in self.birthdayPickerView.subviews {
-            
             if subview.frame.height <= 5 {
-                
                 subview.backgroundColor = UIColor.white
                 subview.tintColor = UIColor.white
                 subview.layer.borderColor = UIColor.white.cgColor
                 subview.layer.borderWidth = 0.5
             }
             if let pickerView = self.birthdayPickerView.subviews.first {
-                
                 for subview in pickerView.subviews {
-                    
                     if subview.frame.height <= 5 {
-                        
                         subview.backgroundColor = UIColor.white
                         subview.tintColor = UIColor.white
                         subview.layer.borderColor = UIColor.white.cgColor
@@ -58,7 +52,7 @@ class BirthdayGenderViewController: UIViewController {
         }
         
         
-        let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?.last?["trip_name"]
+        let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
         //Install the value into the label.
         self.tripNameLabel.text =  "\(tripNameValue!)"
     }
@@ -71,7 +65,6 @@ class BirthdayGenderViewController: UIViewController {
         }
         else if DataContainerSingleton.sharedDataContainer.gender == "Female" {
             gender.selectedSegmentIndex = 1
-
         }
     }
 

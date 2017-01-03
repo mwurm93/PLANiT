@@ -62,7 +62,7 @@ class ReviewAndBookViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool)
     {
         //Load the values from our shared data container singleton
-        let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?.last?["trip_name"]
+        let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
         let firstNameValue = DataContainerSingleton.sharedDataContainer.firstName ?? ""
         let lastNameValue = DataContainerSingleton.sharedDataContainer.lastName ?? ""
         let emailAddressValue = DataContainerSingleton.sharedDataContainer.emailAddress ?? ""

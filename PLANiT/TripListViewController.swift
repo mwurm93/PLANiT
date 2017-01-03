@@ -39,8 +39,9 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITabBarD
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         DataContainerSingleton.sharedDataContainer.currenttrip = indexPath.row
+        self.performSegue(withIdentifier: "existingTripsToAddContacts", sender: self)
     }
     
     
@@ -50,10 +51,11 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITabBarD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
         if DataContainerSingleton.sharedDataContainer.usertrippreferences == nil {
             existingTripsTable.isHidden = true
             noTripsLabel.isHidden = false
-            DataContainerSingleton.sharedDataContainer.currenttrip = 0
+        //    DataContainerSingleton.sharedDataContainer.currenttrip = 0
             }
         else {
             existingTripsTable.isHidden = false
@@ -66,5 +68,18 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITabBarD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-        
+    
+    // MARK: Actions
+    
+    @IBAction func addTrip(_ sender: Any) {
+    
+    let existing_trips = DataContainerSingleton.sharedDataContainer.usertrippreferences
+    if existing_trips == nil {
+    DataContainerSingleton.sharedDataContainer.currenttrip = 0
+    }
+    else {
+    DataContainerSingleton.sharedDataContainer.currenttrip = DataContainerSingleton.sharedDataContainer.currenttrip! + 1
+    }
+    }
+    
 }
