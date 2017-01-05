@@ -728,6 +728,7 @@
                                     <segment title="No"/>
                                 </segments>
                                 <connections>
+                                    <action selector="suggestDestinationControlValueChanged:" destination="Cpd-I2-Ulf" eventType="valueChanged" id="gYq-Y5-hOs"/>
                                     <action selector="wantToSuggestDestinationValueYes:" destination="Cpd-I2-Ulf" eventType="valueChanged" id="RhD-pc-1sV"/>
                                 </connections>
                             </segmentedControl>
@@ -749,6 +750,10 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="suggestedDestinationValueChanged:" destination="Cpd-I2-Ulf" eventType="valueChanged" id="MTB-wb-pMi"/>
+                                    <action selector="suggestedDestinationValueChanged:" destination="Cpd-I2-Ulf" eventType="editingChanged" id="Oio-VO-26e"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1910,6 +1915,9 @@
                                     <segment title="Yes"/>
                                     <segment title="No"/>
                                 </segments>
+                                <connections>
+                                    <action selector="travelingInternationalValueChanged:" destination="ATa-9t-GkH" eventType="valueChanged" id="Aau-ja-KKx"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you interested in traveling internationally?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWZ-yj-qZd">
                                 <rect key="frame" x="50" y="103" width="275" height="48"/>
@@ -1929,12 +1937,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="travelingInternationalControl" destination="xof-qk-JRN" id="neM-Yr-34O"/>
                         <outlet property="tripNameLabel" destination="6I4-y9-3SP" id="qEc-Ff-xry"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BOD-pO-jjr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4029.5999999999999" y="892.80359820089961"/>
+            <point key="canvasLocation" x="4054" y="893"/>
         </scene>
     </scenes>
     <resources>
@@ -1951,20 +1960,20 @@
         <image name="settings" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xbM-y9-cLT"/>
-        <segue reference="yo9-AN-HQ1"/>
+        <segue reference="cWA-9L-HdA"/>
+        <segue reference="9ZB-Ko-LdT"/>
+        <segue reference="YhE-0L-EX8"/>
+        <segue reference="KaV-WA-8e3"/>
+        <segue reference="qN1-yV-Uhi"/>
+        <segue reference="ZU0-GW-CKQ"/>
+        <segue reference="f2M-dx-fNY"/>
+        <segue reference="wbr-1B-I0n"/>
         <segue reference="PCw-hB-sIP"/>
         <segue reference="qmk-4K-hHS"/>
-        <segue reference="XlR-xn-h0h"/>
+        <segue reference="LQb-2v-DXD"/>
         <segue reference="qq3-lZ-rov"/>
-        <segue reference="lt4-dc-et0"/>
-        <segue reference="dep-F9-fnR"/>
-        <segue reference="sW3-8Q-PYY"/>
-        <segue reference="bEe-OF-L1P"/>
-        <segue reference="Ajb-3w-yz2"/>
-        <segue reference="zQA-c3-mCq"/>
-        <segue reference="h5e-fZ-WOV"/>
-        <segue reference="9ZB-Ko-LdT"/>
+        <segue reference="RDj-Dh-aJ1"/>
+        <segue reference="yo9-AN-HQ1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
