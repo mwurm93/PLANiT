@@ -24,7 +24,9 @@ class CalendarViewController: UIViewController {
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
         
         //Install the value into the label.
+        if tripNameValue != nil {
         self.tripNameLabel.text =  "\(tripNameValue!)"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

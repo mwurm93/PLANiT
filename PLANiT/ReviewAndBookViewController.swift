@@ -74,7 +74,9 @@ class ReviewAndBookViewController: UIViewController, UITextFieldDelegate {
         let birthdateValue = DataContainerSingleton.sharedDataContainer.birthdate ?? ""
         
         //Install the value into the text field.
+        if tripNameValue != nil {
         self.tripNameLabel.text =  "Book \(tripNameValue!)!"
+        }
         self.firstName.text =  "\(firstNameValue)"
         self.lastName.text =  "\(lastNameValue)"
         self.emailAddress.text =  "\(emailAddressValue)"

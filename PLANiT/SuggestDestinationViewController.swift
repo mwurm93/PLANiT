@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SuggestDestinationViewController: UIViewController {
+class SuggestDestinationViewController: UIViewController, UITextFieldDelegate {
     //MARK: Outlets
     @IBOutlet weak var tripNameLabel: UILabel!
     @IBOutlet weak var wantToSuggestDestination: UISegmentedControl!
@@ -25,7 +25,9 @@ class SuggestDestinationViewController: UIViewController {
         //Load the values from our shared data container singleton
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
         //Install the value into the label.
-        self.tripNameLabel.text =  "\(tripNameValue!)"
+        if tripNameValue != nil {
+            self.tripNameLabel.text =  "\(tripNameValue!)"
+        }
         
     }
     
@@ -38,12 +40,25 @@ class SuggestDestinationViewController: UIViewController {
         if suggestDestinationControlValue == "Yes" {
             wantToSuggestDestination.selectedSegmentIndex = 0
             suggestDestinationField.isHidden = false
-            self.suggestDestinationField.text =  "\(suggestedDestinationValue!)"
+            if suggestedDestinationValue != nil {
+                self.suggestDestinationField.text =  "\(suggestedDestinationValue!)"
+            }
         }
         else if suggestDestinationControlValue == "No" {
             wantToSuggestDestination.selectedSegmentIndex = 1
             suggestDestinationField.isHidden = true
         }
+    }
+    
+    func textFieldShouldReturn(_ textField:  UITextField) -> Bool {
+        // Hide the keyboard.
+        suggestDestinationField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        return true
     }
     
     // MARK: Actions

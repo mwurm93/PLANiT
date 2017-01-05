@@ -14,6 +14,8 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var budget: UITextField!
     @IBOutlet weak var tripNameLabel: UILabel!
     
+    var budgetValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "budget") as? String
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +24,17 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         //Load the values from our shared data container singleton
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
         //Install the value into the label.
-        self.tripNameLabel.text =  "\(tripNameValue!)"
+        if tripNameValue != nil {
+            self.tripNameLabel.text =  "\(tripNameValue!)"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // Install the value into the label and unhide
+        if budgetValue != nil {
+        self.budget.text =  "\(budgetValue!)"
+        }
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -43,5 +50,23 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         
     return true
     }
+    
+// If budget field is changed, updated and save trip array
+    @IBAction func budgetEditingChanged(_ sender: Any) {
+        budgetValue = budget.text
+        
+        var existing_trips = DataContainerSingleton.sharedDataContainer.usertrippreferences
+        let currentTripIndex = DataContainerSingleton.sharedDataContainer.currenttrip!
+        let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
+        let multipleDestionationsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "multiple_destinations") as? String
+        let travelingInternationalValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "traveling_international") as? String
+        let suggestDestinationControlValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "suggest_destination_control") as? String
+        let suggestedDestinationValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "suggested_destination") as? String
+        
+        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue]
+        existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
+        DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
+    }
+
 
 }

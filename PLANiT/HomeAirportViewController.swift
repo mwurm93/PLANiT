@@ -22,7 +22,10 @@ class HomeAiportViewController: UIViewController, UITextFieldDelegate {
         //Load the values from our shared data container singleton
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
         //Install the value into the label.
-        self.tripNameLabel.text =  "\(tripNameValue!)"    }
+        if tripNameValue != nil {
+            self.tripNameLabel.text =  "\(tripNameValue!)"
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool)
     {
