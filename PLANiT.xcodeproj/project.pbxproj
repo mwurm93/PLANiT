@@ -16,6 +16,9 @@
 		FAA280381E1455AF0058F8B7 /* SuggestDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA280371E1455AF0058F8B7 /* SuggestDestinationViewController.swift */; };
 		FAA68BC41DECF368000FB313 /* ExistingTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */; };
 		FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */; };
+		FAD5F4861E1EDB2A0031C3DC /* ActivitiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5F4851E1EDB2A0031C3DC /* ActivitiesCollectionViewCell.swift */; };
+		FAD5F4881E1EEC710031C3DC /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5F4871E1EEC710031C3DC /* ActivityItem.swift */; };
+		FAD5F48C1E1F01B80031C3DC /* items.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAD5F48B1E1F01B80031C3DC /* items.plist */; };
 		FAD890411DB5C18800753FC9 /* BudgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890401DB5C18800753FC9 /* BudgetViewController.swift */; };
 		FAD890431DB5C1AD00753FC9 /* InternationalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890421DB5C1AD00753FC9 /* InternationalViewController.swift */; };
 		FAD890451DB5C21400753FC9 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */; };
@@ -113,6 +116,9 @@
 		FAA280371E1455AF0058F8B7 /* SuggestDestinationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestDestinationViewController.swift; sourceTree = "<group>"; };
 		FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExistingTripTableViewCell.swift; path = ../ExistingTripTableViewCell.swift; sourceTree = "<group>"; };
 		FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
+		FAD5F4851E1EDB2A0031C3DC /* ActivitiesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAD5F4871E1EEC710031C3DC /* ActivityItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
+		FAD5F48B1E1F01B80031C3DC /* items.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = items.plist; sourceTree = "<group>"; };
 		FAD890401DB5C18800753FC9 /* BudgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetViewController.swift; sourceTree = "<group>"; };
 		FAD890421DB5C1AD00753FC9 /* InternationalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternationalViewController.swift; sourceTree = "<group>"; };
 		FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +203,15 @@
 			name = Transitions;
 			sourceTree = "<group>";
 		};
+		FAD5F47D1E1EDA240031C3DC /* Collection View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FAD5F4851E1EDB2A0031C3DC /* ActivitiesCollectionViewCell.swift */,
+				FAD5F4871E1EEC710031C3DC /* ActivityItem.swift */,
+			);
+			name = "Collection View Cells";
+			sourceTree = "<group>";
+		};
 		FAF533B51DA604EC00BBE2C7 = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +243,7 @@
 				FAF533F61DA60C5B00BBE2C7 /* Supporting Files */,
 				FAF533F01DA60BCD00BBE2C7 /* Controllers */,
 				FA3856911E1B534800CAB8E5 /* Table View Cells */,
+				FAD5F47D1E1EDA240031C3DC /* Collection View Cells */,
 				FAF533EF1DA60B7200BBE2C7 /* App */,
 				FAF533F11DA60BD800BBE2C7 /* Views */,
 				FAF533F51DA60C4E00BBE2C7 /* Model */,
@@ -299,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF533C81DA604EC00BBE2C7 /* Assets.xcassets */,
+				FAD5F48B1E1F01B80031C3DC /* items.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -536,6 +553,7 @@
 				FAFE837C1E0737D100062A12 /* CreateNewUser.graphql in Resources */,
 				FAF533C91DA604EC00BBE2C7 /* Assets.xcassets in Resources */,
 				FAF533C71DA604EC00BBE2C7 /* Main.storyboard in Resources */,
+				FAD5F48C1E1F01B80031C3DC /* items.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +597,7 @@
 				FAD890491DB5C27800753FC9 /* CalendarViewController.swift in Sources */,
 				FAA68BC41DECF368000FB313 /* ExistingTripTableViewCell.swift in Sources */,
 				FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */,
+				FAD5F4881E1EEC710031C3DC /* ActivityItem.swift in Sources */,
 				FAD890471DB5C25000753FC9 /* BirthdayGenderViewController.swift in Sources */,
 				FA9599FC1E063E4600D1B7D6 /* RankingViewController.swift in Sources */,
 				FAA280321E141F8F0058F8B7 /* ContactsViewController.swift in Sources */,
@@ -597,6 +616,7 @@
 				FAD890431DB5C1AD00753FC9 /* InternationalViewController.swift in Sources */,
 				FAFE837A1E0736B900062A12 /* API.swift in Sources */,
 				FAA280361E1445F90058F8B7 /* HomeAirportViewController.swift in Sources */,
+				FAD5F4861E1EDB2A0031C3DC /* ActivitiesCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

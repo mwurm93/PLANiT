@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TripListViewController: UIViewController, UITableViewDataSource, UITabBarDelegate {
+class TripListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
