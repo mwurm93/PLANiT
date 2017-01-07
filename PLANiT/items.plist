@@ -4,8 +4,22 @@
 <array>
 	<dict>
 		<key>itemImage</key>
-		<string>Snorkel</string>
-		<key>itemLabel</key>
+		<string>Relax in the sun</string>
+	</dict>
+	<dict>
+		<key>itemImage</key>
+		<string>Shop</string>
+	</dict>
+	<dict>
+		<key>itemImage</key>
+		<string>Ski</string>
+	</dict>
+	<dict>
+		<key>itemImage</key>
+		<string>Drink</string>
+	</dict>
+	<dict>
+		<key>itemImage</key>
 		<string>Snorkel</string>
 	</dict>
 </array>

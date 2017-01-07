@@ -826,7 +826,7 @@
                                                     <rect key="frame" x="0.0" y="54" width="88" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Yn-q7-ZzW">
@@ -835,7 +835,7 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="activityImage" destination="5Yn-q7-ZzW" id="dsP-eF-SA4"/>
                                             <outlet property="activityLabel" destination="XZL-r5-Xra" id="H0N-Fp-Sqb"/>
@@ -1981,19 +1981,19 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="HXv-7S-jEo"/>
-        <segue reference="cWA-9L-HdA"/>
-        <segue reference="9ZB-Ko-LdT"/>
+        <segue reference="hd6-JZ-5Sa"/>
+        <segue reference="ogI-Q2-8Ew"/>
+        <segue reference="ojN-vy-gpI"/>
+        <segue reference="XlR-xn-h0h"/>
+        <segue reference="qq3-lZ-rov"/>
+        <segue reference="RDj-Dh-aJ1"/>
         <segue reference="YhE-0L-EX8"/>
-        <segue reference="zQA-c3-mCq"/>
+        <segue reference="KaV-WA-8e3"/>
         <segue reference="Ajb-3w-yz2"/>
         <segue reference="bEe-OF-L1P"/>
         <segue reference="f2M-dx-fNY"/>
         <segue reference="wbr-1B-I0n"/>
-        <segue reference="ogI-Q2-8Ew"/>
-        <segue reference="ojN-vy-gpI"/>
-        <segue reference="LQb-2v-DXD"/>
-        <segue reference="qq3-lZ-rov"/>
-        <segue reference="RDj-Dh-aJ1"/>
+        <segue reference="9ZB-Ko-LdT"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
