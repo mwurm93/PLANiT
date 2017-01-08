@@ -6,6 +6,7 @@ target 'PLANiT' do
   # Pods for PLANiT
     pod "Koloda"
     pod 'pop', '~> 1.0'
+    pod "Apollo"
 
   target 'PLANiTTests' do
     inherit! :search_paths

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D49B32528D108AA632DA741 /* Pods_PLANiTTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6225C131F059937BCE08AEF8 /* Pods_PLANiTTests.framework */; };
+		8D134FA50DD803F896EAD23C /* Pods_PLANiT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E50284AD7DB850082E94AC /* Pods_PLANiT.framework */; };
+		9C028397A605A07ED9DC3377 /* Pods_PLANiTUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A90B09B1AD10495DD37218F6 /* Pods_PLANiTUITests.framework */; };
+		FA2D13C21E21A13F008CE66A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2D13C01E21A13F008CE66A /* Main.storyboard */; };
+		FA2D13C51E21A2A9008CE66A /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D13C41E21A2A9008CE66A /* CustomKolodaView.swift */; };
+		FA2D13C91E21A646008CE66A /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2D13C71E21A646008CE66A /* OverlayView.xib */; };
+		FA2D13CA1E21A646008CE66A /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2D13C81E21A646008CE66A /* CustomOverlayView.xib */; };
+		FA2D13CF1E21A664008CE66A /* BackgroundAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D13CB1E21A664008CE66A /* BackgroundAnimationViewController.swift */; };
+		FA2D13D01E21A664008CE66A /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D13CC1E21A664008CE66A /* BackgroundKolodaAnimator.swift */; };
+		FA2D13D11E21A664008CE66A /* ExampleOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D13CD1E21A664008CE66A /* ExampleOverlayView.swift */; };
+		FA2D13D21E21A664008CE66A /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D13CE1E21A664008CE66A /* CustomOverlayView.swift */; };
 		FA5A15621DB14E1200D70483 /* RecommedationSwipingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A15611DB14E1200D70483 /* RecommedationSwipingViewController.swift */; };
 		FA93E57A1DAC53F400631767 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93E5791DAC53F400631767 /* EmailViewController.swift */; };
 		FA9599FC1E063E4600D1B7D6 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9599FB1E063E4500D1B7D6 /* RankingViewController.swift */; };
@@ -30,7 +41,6 @@
 		FAEF024F1DB5828800D4EF78 /* ReviewAndBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF024E1DB5828800D4EF78 /* ReviewAndBookViewController.swift */; };
 		FAF533C21DA604EC00BBE2C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533C11DA604EC00BBE2C7 /* AppDelegate.swift */; };
 		FAF533C41DA604EC00BBE2C7 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533C31DA604EC00BBE2C7 /* PasswordViewController.swift */; };
-		FAF533C71DA604EC00BBE2C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF533C51DA604EC00BBE2C7 /* Main.storyboard */; };
 		FAF533C91DA604EC00BBE2C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF533C81DA604EC00BBE2C7 /* Assets.xcassets */; };
 		FAF533CC1DA604EC00BBE2C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF533CA1DA604EC00BBE2C7 /* LaunchScreen.storyboard */; };
 		FAF533D71DA604EC00BBE2C7 /* PLANiTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF533D61DA604EC00BBE2C7 /* PLANiTTests.swift */; };
@@ -107,6 +117,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25F8F67D386AF63599D59F73 /* Pods-PLANiTTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLANiTTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PLANiTTests/Pods-PLANiTTests.debug.xcconfig"; sourceTree = "<group>"; };
+		573B1193B68B00D63CB99598 /* Pods-PLANiTUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLANiTUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLANiTUITests/Pods-PLANiTUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6225C131F059937BCE08AEF8 /* Pods_PLANiTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PLANiTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76F59E6D5C92054DE0D7F972 /* Pods-PLANiT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLANiT.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLANiT/Pods-PLANiT.release.xcconfig"; sourceTree = "<group>"; };
+		96E50284AD7DB850082E94AC /* Pods_PLANiT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PLANiT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		998E426B901C02082F148A5A /* Pods-PLANiTTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLANiTTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLANiTTests/Pods-PLANiTTests.release.xcconfig"; sourceTree = "<group>"; };
+		A90B09B1AD10495DD37218F6 /* Pods_PLANiTUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PLANiTUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C69A412305697ED2E34BB28E /* Pods-PLANiT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLANiT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PLANiT/Pods-PLANiT.debug.xcconfig"; sourceTree = "<group>"; };
+		E68314B9631BF6A815294655 /* Pods-PLANiTUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLANiTUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PLANiTUITests/Pods-PLANiTUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA2D13C11E21A13F008CE66A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA2D13C41E21A2A9008CE66A /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomKolodaView.swift; path = "../../../Downloads/Koloda-master/Example/Koloda/CustomKolodaView.swift"; sourceTree = "<group>"; };
+		FA2D13C61E21A646008CE66A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OverlayView.xib; sourceTree = "<group>"; };
+		FA2D13C81E21A646008CE66A /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomOverlayView.xib; path = "../../../Downloads/Koloda-master/Example/Koloda/CustomOverlayView.xib"; sourceTree = "<group>"; };
+		FA2D13CB1E21A664008CE66A /* BackgroundAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundAnimationViewController.swift; path = "../../../Downloads/Koloda-master/Example/Koloda/BackgroundAnimationViewController.swift"; sourceTree = "<group>"; };
+		FA2D13CC1E21A664008CE66A /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundKolodaAnimator.swift; path = "../../../Downloads/Koloda-master/Example/Koloda/BackgroundKolodaAnimator.swift"; sourceTree = "<group>"; };
+		FA2D13CD1E21A664008CE66A /* ExampleOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleOverlayView.swift; path = "../../../Downloads/Koloda-master/Example/Koloda/ExampleOverlayView.swift"; sourceTree = "<group>"; };
+		FA2D13CE1E21A664008CE66A /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomOverlayView.swift; path = "../../../Downloads/Koloda-master/Example/Koloda/CustomOverlayView.swift"; sourceTree = "<group>"; };
 		FA5A15611DB14E1200D70483 /* RecommedationSwipingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommedationSwipingViewController.swift; sourceTree = "<group>"; };
 		FA93E5791DAC53F400631767 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		FA9599FB1E063E4500D1B7D6 /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +158,6 @@
 		FAF533BE1DA604EC00BBE2C7 /* PLANiT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLANiT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF533C11DA604EC00BBE2C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF533C31DA604EC00BBE2C7 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
-		FAF533C61DA604EC00BBE2C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAF533C81DA604EC00BBE2C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAF533CB1DA604EC00BBE2C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAF533CD1DA604EC00BBE2C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -152,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D134FA50DD803F896EAD23C /* Pods_PLANiT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D49B32528D108AA632DA741 /* Pods_PLANiTTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,18 +194,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C028397A605A07ED9DC3377 /* Pods_PLANiTUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E6788A5CE37642AE71885C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C69A412305697ED2E34BB28E /* Pods-PLANiT.debug.xcconfig */,
+				76F59E6D5C92054DE0D7F972 /* Pods-PLANiT.release.xcconfig */,
+				25F8F67D386AF63599D59F73 /* Pods-PLANiTTests.debug.xcconfig */,
+				998E426B901C02082F148A5A /* Pods-PLANiTTests.release.xcconfig */,
+				E68314B9631BF6A815294655 /* Pods-PLANiTUITests.debug.xcconfig */,
+				573B1193B68B00D63CB99598 /* Pods-PLANiTUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C01D136C1E0730F100208D04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				FAFE838A1E0743E700062A12 /* Apollo.xcodeproj */,
+				96E50284AD7DB850082E94AC /* Pods_PLANiT.framework */,
+				6225C131F059937BCE08AEF8 /* Pods_PLANiTTests.framework */,
+				A90B09B1AD10495DD37218F6 /* Pods_PLANiTUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA2D13C31E21A29E008CE66A /* Koloda */ = {
+			isa = PBXGroup;
+			children = (
+				FA2D13C41E21A2A9008CE66A /* CustomKolodaView.swift */,
+				FA2D13CB1E21A664008CE66A /* BackgroundAnimationViewController.swift */,
+				FA2D13CC1E21A664008CE66A /* BackgroundKolodaAnimator.swift */,
+				FA2D13CD1E21A664008CE66A /* ExampleOverlayView.swift */,
+				FA2D13CE1E21A664008CE66A /* CustomOverlayView.swift */,
+				FA2D13C71E21A646008CE66A /* OverlayView.xib */,
+				FA2D13C81E21A646008CE66A /* CustomOverlayView.xib */,
+			);
+			name = Koloda;
 			sourceTree = "<group>";
 		};
 		FA3856911E1B534800CAB8E5 /* Table View Cells */ = {
@@ -220,6 +279,7 @@
 				FAF533E01DA604EC00BBE2C7 /* PLANiTUITests */,
 				FAF533BF1DA604EC00BBE2C7 /* Products */,
 				C01D136C1E0730F100208D04 /* Frameworks */,
+				1E6788A5CE37642AE71885C7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,6 +296,7 @@
 		FAF533C01DA604EC00BBE2C7 /* PLANiT */ = {
 			isa = PBXGroup;
 			children = (
+				FA2D13C31E21A29E008CE66A /* Koloda */,
 				FAFE837D1E0737E200062A12 /* GraphQL */,
 				FAA68BC71DECFE2C000FB313 /* API */,
 				FAF533F41DA60C4700BBE2C7 /* Network */,
@@ -305,8 +366,8 @@
 		FAF533F11DA60BD800BBE2C7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FAF533C51DA604EC00BBE2C7 /* Main.storyboard */,
 				FAF533CA1DA604EC00BBE2C7 /* LaunchScreen.storyboard */,
+				FA2D13C01E21A13F008CE66A /* Main.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -389,10 +450,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAF533E61DA604EC00BBE2C7 /* Build configuration list for PBXNativeTarget "PLANiT" */;
 			buildPhases = (
+				5E95E22FD99DBC5F8AFD5C13 /* [CP] Check Pods Manifest.lock */,
 				C0DA098E1E0731E00016594E /* ShellScript */,
 				FAF533BA1DA604EC00BBE2C7 /* Sources */,
 				FAF533BB1DA604EC00BBE2C7 /* Frameworks */,
 				FAF533BC1DA604EC00BBE2C7 /* Resources */,
+				7E529084EC919FB9CED7F6E2 /* [CP] Embed Pods Frameworks */,
+				571AEADE1665A348E8629852 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -407,9 +471,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAF533E91DA604EC00BBE2C7 /* Build configuration list for PBXNativeTarget "PLANiTTests" */;
 			buildPhases = (
+				E4A94AB1E3AEA83B76096FCB /* [CP] Check Pods Manifest.lock */,
 				FAF533CE1DA604EC00BBE2C7 /* Sources */,
 				FAF533CF1DA604EC00BBE2C7 /* Frameworks */,
 				FAF533D01DA604EC00BBE2C7 /* Resources */,
+				4B3199E15AF71D0616C5E040 /* [CP] Embed Pods Frameworks */,
+				2C4F75AD3C428B0AAD49F85A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -425,9 +492,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAF533EC1DA604EC00BBE2C7 /* Build configuration list for PBXNativeTarget "PLANiTUITests" */;
 			buildPhases = (
+				0C932A9550D4283E7D6FFE0C /* [CP] Check Pods Manifest.lock */,
 				FAF533D91DA604EC00BBE2C7 /* Sources */,
 				FAF533DA1DA604EC00BBE2C7 /* Frameworks */,
 				FAF533DB1DA604EC00BBE2C7 /* Resources */,
+				B597154CFEC952EBBA63432D /* [CP] Embed Pods Frameworks */,
+				6ACBD46DE382DC9414D97116 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -548,11 +618,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2D13C91E21A646008CE66A /* OverlayView.xib in Resources */,
 				FAFE83811E07399200062A12 /* GetTrip.graphql in Resources */,
 				FAF533CC1DA604EC00BBE2C7 /* LaunchScreen.storyboard in Resources */,
 				FAFE837C1E0737D100062A12 /* CreateNewUser.graphql in Resources */,
+				FA2D13C21E21A13F008CE66A /* Main.storyboard in Resources */,
 				FAF533C91DA604EC00BBE2C7 /* Assets.xcassets in Resources */,
-				FAF533C71DA604EC00BBE2C7 /* Main.storyboard in Resources */,
+				FA2D13CA1E21A646008CE66A /* CustomOverlayView.xib in Resources */,
 				FAD5F48C1E1F01B80031C3DC /* items.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,6 +646,126 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0C932A9550D4283E7D6FFE0C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2C4F75AD3C428B0AAD49F85A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PLANiTTests/Pods-PLANiTTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B3199E15AF71D0616C5E040 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PLANiTTests/Pods-PLANiTTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		571AEADE1665A348E8629852 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PLANiT/Pods-PLANiT-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E95E22FD99DBC5F8AFD5C13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6ACBD46DE382DC9414D97116 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PLANiTUITests/Pods-PLANiTUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E529084EC919FB9CED7F6E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PLANiT/Pods-PLANiT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B597154CFEC952EBBA63432D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PLANiTUITests/Pods-PLANiTUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C0DA098E1E0731E00016594E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -587,6 +779,21 @@
 			shellPath = /bin/sh;
 			shellScript = "export PATH=\"/Users/sahilzubair/.npm-packages/bin:$PATH\"\nAPOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift\n";
 		};
+		E4A94AB1E3AEA83B76096FCB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -596,15 +803,20 @@
 			files = (
 				FAD890491DB5C27800753FC9 /* CalendarViewController.swift in Sources */,
 				FAA68BC41DECF368000FB313 /* ExistingTripTableViewCell.swift in Sources */,
+				FA2D13D21E21A664008CE66A /* CustomOverlayView.swift in Sources */,
 				FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */,
 				FAD5F4881E1EEC710031C3DC /* ActivityItem.swift in Sources */,
+				FA2D13CF1E21A664008CE66A /* BackgroundAnimationViewController.swift in Sources */,
 				FAD890471DB5C25000753FC9 /* BirthdayGenderViewController.swift in Sources */,
 				FA9599FC1E063E4600D1B7D6 /* RankingViewController.swift in Sources */,
 				FAA280321E141F8F0058F8B7 /* ContactsViewController.swift in Sources */,
+				FA2D13D01E21A664008CE66A /* BackgroundKolodaAnimator.swift in Sources */,
 				FAD8904B1DB5C2AF00753FC9 /* NewTripNameViewController.swift in Sources */,
 				FAF533C41DA604EC00BBE2C7 /* PasswordViewController.swift in Sources */,
+				FA2D13C51E21A2A9008CE66A /* CustomKolodaView.swift in Sources */,
 				FAEF024F1DB5828800D4EF78 /* ReviewAndBookViewController.swift in Sources */,
 				FAA280381E1455AF0058F8B7 /* SuggestDestinationViewController.swift in Sources */,
+				FA2D13D11E21A664008CE66A /* ExampleOverlayView.swift in Sources */,
 				FAD890451DB5C21400753FC9 /* ActivitiesViewController.swift in Sources */,
 				FAE518181DB1920D00177731 /* SettingsViewController.swift in Sources */,
 				FAD890411DB5C18800753FC9 /* BudgetViewController.swift in Sources */,
@@ -652,12 +864,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FAF533C51DA604EC00BBE2C7 /* Main.storyboard */ = {
+		FA2D13C01E21A13F008CE66A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FAF533C61DA604EC00BBE2C7 /* Base */,
+				FA2D13C11E21A13F008CE66A /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FA2D13C71E21A646008CE66A /* OverlayView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA2D13C61E21A646008CE66A /* Base */,
+			);
+			name = OverlayView.xib;
+			path = "../../../Downloads/Koloda-master/Example/Koloda";
 			sourceTree = "<group>";
 		};
 		FAF533CA1DA604EC00BBE2C7 /* LaunchScreen.storyboard */ = {
@@ -768,6 +989,7 @@
 		};
 		FAF533E71DA604EC00BBE2C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C69A412305697ED2E34BB28E /* Pods-PLANiT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PLANiT/Info.plist;
@@ -780,6 +1002,7 @@
 		};
 		FAF533E81DA604EC00BBE2C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76F59E6D5C92054DE0D7F972 /* Pods-PLANiT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PLANiT/Info.plist;
@@ -792,6 +1015,7 @@
 		};
 		FAF533EA1DA604EC00BBE2C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25F8F67D386AF63599D59F73 /* Pods-PLANiTTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -806,6 +1030,7 @@
 		};
 		FAF533EB1DA604EC00BBE2C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 998E426B901C02082F148A5A /* Pods-PLANiTTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -820,6 +1045,7 @@
 		};
 		FAF533ED1DA604EC00BBE2C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E68314B9631BF6A815294655 /* Pods-PLANiTUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = PLANiTUITests/Info.plist;
@@ -833,6 +1059,7 @@
 		};
 		FAF533EE1DA604EC00BBE2C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 573B1193B68B00D63CB99598 /* Pods-PLANiTUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = PLANiTUITests/Info.plist;
