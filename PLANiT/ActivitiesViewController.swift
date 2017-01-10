@@ -14,6 +14,7 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var userToggles: UITableView!
     @IBOutlet weak var tripNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activitiesSearchBar: UISearchBar!
     
     var activityItems: [ActivityItem] = []
 
@@ -30,6 +31,19 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         collectionView.layer.cornerRadius = 5
         collectionView.layer.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 0).cgColor
         userToggles.layer.cornerRadius = 5
+        
+        // Set appearance of search bar
+        activitiesSearchBar.layer.cornerRadius = 5
+        let textFieldInsideSearchBar = activitiesSearchBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = UIColor.white
+        let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
+        textFieldInsideSearchBarLabel?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
+        let clearButton = textFieldInsideSearchBar?.value(forKey: "clearButton") as! UIButton
+        clearButton.setImage(clearButton.imageView?.image?.withRenderingMode(.alwaysTemplate), for: .normal)
+        clearButton.tintColor = UIColor.white
+        let glassIconView = textFieldInsideSearchBar?.leftView as? UIImageView
+        glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
+        glassIconView?.tintColor = UIColor.white
         
         //Load the values from our shared data container singleton
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
@@ -54,7 +68,7 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
                 collectionView.selectItem(at: visibleCellIndex, animated: true, scrollPosition: .top)
             }
             else {
-                visibleCell.layer.borderColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1).cgColor
+                visibleCell.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
                 collectionView.deselectItem(at: visibleCellIndex, animated: true)
 
             }
@@ -91,8 +105,8 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "activitiesViewPrototypeCell", for: indexPath) as! ActivitiesCollectionViewCell
         
         cell.setActivityItem(activityItems[indexPath.row])
-        cell.layer.borderWidth = 4.0
-        cell.layer.borderColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1).cgColor
+        cell.layer.borderWidth = 3.5
+        cell.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
         cell.layer.cornerRadius = 10
         
         return cell
@@ -104,7 +118,7 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         
         // Change border color to grey
         let deSelectedCell = collectionView.cellForItem(at: indexPath)
-        deSelectedCell!.layer.borderColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1).cgColor
+        deSelectedCell!.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
         
         // Create array of selected activities
         var selectedActivities = [String?]()
@@ -211,7 +225,7 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
             alert.addAction(alertAction)
             self.present(alert, animated: true, completion: nil)
             
-            SelectedCell!.layer.borderColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1).cgColor
+            SelectedCell!.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
             collectionView.deselectItem(at: indexPath, animated: true)
         }
     }
@@ -219,7 +233,7 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
     // MARK: - UICollectionViewFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let picDimension = self.view.frame.size.width / 4.0
+        let picDimension = self.view.frame.size.width / 4.2
         return CGSize(width: picDimension, height: picDimension)
     }
     

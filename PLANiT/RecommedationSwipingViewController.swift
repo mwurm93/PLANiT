@@ -18,6 +18,7 @@ class RecommendationSwipingViewController: UIViewController {
     @IBOutlet weak var heartIcon: UIButton!
     @IBOutlet weak var rejectIcon: UIButton!
     @IBOutlet weak var kolodaView: KolodaView!
+    @IBOutlet weak var ranOutOfSwipesLabel: UILabel!
     
     
     fileprivate var dataSource: [UIImage] = {
@@ -40,6 +41,7 @@ class RecommendationSwipingViewController: UIViewController {
         
         heartIcon.setImage(#imageLiteral(resourceName: "fullHeart"), for: .highlighted)
         rejectIcon.setImage(#imageLiteral(resourceName: "fullX"), for: .highlighted)
+        ranOutOfSwipesLabel.isHidden = true
         
         //Load the values from our shared data container singleton
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
@@ -68,15 +70,18 @@ class RecommendationSwipingViewController: UIViewController {
 extension RecommendationSwipingViewController: KolodaViewDelegate {
     
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-        let position = kolodaView.currentCardIndex
-        for i in 1...4 {
-            dataSource.append(UIImage(named: "Card_like_\(i)")!)
-        }
-        kolodaView.insertCardAtIndexRange(position..<position + 4, animated: true)
+        ranOutOfSwipesLabel.isHidden = false
+        heartIcon.isHidden = true
+        rejectIcon.isHidden = true
+        
+//        let position = kolodaView.currentCardIndex
+//        for i in 1...4 {
+//            dataSource.append(UIImage(named: "Card_like_\(i)")!)
+//        }
+//        kolodaView.insertCardAtIndexRange(position..<position + 4, animated: true)
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        UIApplication.shared.openURL(URL(string: "https://google.com/")!)
     }
     func koloda(_ koloda: KolodaView, draggedCardWithPercentage finishPercentage: CGFloat, in direction: SwipeResultDirection) {
         let when = DispatchTime.now() + 1

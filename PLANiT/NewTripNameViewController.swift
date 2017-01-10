@@ -13,11 +13,22 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate {
 // MARK: Outlets
     
     @IBOutlet weak var newTripNameTextField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.newTripNameTextField.delegate = self
+        
+        
+        
+        // Set appearance of textfield
+        newTripNameTextField.layer.borderWidth = 1
+        newTripNameTextField.layer.borderColor = UIColor(red:1,green:1,blue:1,alpha:0.25).cgColor
+        newTripNameTextField.layer.masksToBounds = true
+        newTripNameTextField.layer.cornerRadius = 5
+        let newTripNameLabelPlaceholder = newTripNameTextField!.value(forKey: "placeholderLabel") as? UILabel
+        newTripNameLabelPlaceholder?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
         
         //Load the values from our shared data container singleton
         let currentTripIndex = DataContainerSingleton.sharedDataContainer.currenttrip!
@@ -38,9 +49,13 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate {
         
         //Install the value into the label.
         if tripNameValue == nil {
+            nextButton.isEnabled = false
+            nextButton.isHidden =  true
         }
         else {
         self.newTripNameTextField.text =  "\(tripNameValue!)"
+            nextButton.isEnabled = true
+            nextButton.isHidden =  false
         }
         
     }
@@ -93,6 +108,16 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate {
             DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
         }
 
+        // Activate next button when text is entered in the text field
+        
+        if newTripNameTextField.text != nil {
+            nextButton.isEnabled = true
+            nextButton.isHidden =  false
+        }
+        if newTripNameTextField.text == "" {
+            nextButton.isEnabled = false
+            nextButton.isHidden =  true
+        }
     }
     
 }

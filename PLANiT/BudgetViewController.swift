@@ -21,6 +21,16 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.budget.delegate = self
         
+        // Set appearance of textfield
+        budget.layer.cornerRadius = 5
+        budget.layer.borderWidth = 1
+        budget.layer.borderColor = UIColor(red:1,green:1,blue:1,alpha:0.25).cgColor
+        budget.layer.masksToBounds = true
+        
+        let budgetLabelPlaceholder = budget!.value(forKey: "placeholderLabel") as? UILabel
+        budgetLabelPlaceholder?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
+
+        
         //Load the values from our shared data container singleton
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
         //Install the value into the label.

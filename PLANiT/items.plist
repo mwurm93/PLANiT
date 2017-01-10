@@ -4,7 +4,23 @@
 <array>
 	<dict>
 		<key>itemImage</key>
-		<string>Relax in the sun</string>
+		<string>Surf</string>
+	</dict>
+	<dict>
+		<key>itemImage</key>
+		<string>Museum</string>
+	</dict>
+	<dict>
+		<key>itemImage</key>
+		<string>Fine dining</string>
+	</dict>
+	<dict>
+		<key>itemImage</key>
+		<string>Theater</string>
+	</dict>
+	<dict>
+		<key>itemImage</key>
+		<string>Sun</string>
 	</dict>
 	<dict>
 		<key>itemImage</key>
@@ -20,7 +36,7 @@
 	</dict>
 	<dict>
 		<key>itemImage</key>
-		<string>Snorkel</string>
+		<string>Scuba</string>
 	</dict>
 </array>
 </plist>

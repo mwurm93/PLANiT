@@ -21,6 +21,13 @@ class SuggestDestinationViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         suggestDestinationField.isHidden = true
+        suggestDestinationField.layer.borderWidth = 1
+        suggestDestinationField.layer.cornerRadius = 5
+        suggestDestinationField.layer.borderColor = UIColor(red:1,green:1,blue:1,alpha:0.25).cgColor
+        suggestDestinationField.layer.masksToBounds = true
+        let suggestDestinationLabelPlaceholder = suggestDestinationField!.value(forKey: "placeholderLabel") as? UILabel
+        suggestDestinationLabelPlaceholder?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
+
         
         //Load the values from our shared data container singleton
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String

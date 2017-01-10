@@ -18,6 +18,8 @@
 		FA2D13D01E21A664008CE66A /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D13CC1E21A664008CE66A /* BackgroundKolodaAnimator.swift */; };
 		FA2D13D11E21A664008CE66A /* ExampleOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D13CD1E21A664008CE66A /* ExampleOverlayView.swift */; };
 		FA2D13D21E21A664008CE66A /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D13CE1E21A664008CE66A /* CustomOverlayView.swift */; };
+		FA2D13D41E22C6C9008CE66A /* rankedRecommendationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D13D31E22C6C8008CE66A /* rankedRecommendationsTableViewCell.swift */; };
+		FA2D13D61E233C17008CE66A /* itemizedItineraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D13D51E233C17008CE66A /* itemizedItineraryTableViewCell.swift */; };
 		FA5A15621DB14E1200D70483 /* RecommedationSwipingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A15611DB14E1200D70483 /* RecommedationSwipingViewController.swift */; };
 		FA93E57A1DAC53F400631767 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93E5791DAC53F400631767 /* EmailViewController.swift */; };
 		FA9599FC1E063E4600D1B7D6 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9599FB1E063E4500D1B7D6 /* RankingViewController.swift */; };
@@ -134,6 +136,8 @@
 		FA2D13CC1E21A664008CE66A /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundKolodaAnimator.swift; path = "../../../Downloads/Koloda-master/Example/Koloda/BackgroundKolodaAnimator.swift"; sourceTree = "<group>"; };
 		FA2D13CD1E21A664008CE66A /* ExampleOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleOverlayView.swift; path = "../../../Downloads/Koloda-master/Example/Koloda/ExampleOverlayView.swift"; sourceTree = "<group>"; };
 		FA2D13CE1E21A664008CE66A /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomOverlayView.swift; path = "../../../Downloads/Koloda-master/Example/Koloda/CustomOverlayView.swift"; sourceTree = "<group>"; };
+		FA2D13D31E22C6C8008CE66A /* rankedRecommendationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rankedRecommendationsTableViewCell.swift; sourceTree = "<group>"; };
+		FA2D13D51E233C17008CE66A /* itemizedItineraryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemizedItineraryTableViewCell.swift; sourceTree = "<group>"; };
 		FA5A15611DB14E1200D70483 /* RecommedationSwipingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommedationSwipingViewController.swift; sourceTree = "<group>"; };
 		FA93E5791DAC53F400631767 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		FA9599FB1E063E4500D1B7D6 /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */,
+				FA2D13D31E22C6C8008CE66A /* rankedRecommendationsTableViewCell.swift */,
+				FA2D13D51E233C17008CE66A /* itemizedItineraryTableViewCell.swift */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -811,6 +817,7 @@
 				FA9599FC1E063E4600D1B7D6 /* RankingViewController.swift in Sources */,
 				FAA280321E141F8F0058F8B7 /* ContactsViewController.swift in Sources */,
 				FA2D13D01E21A664008CE66A /* BackgroundKolodaAnimator.swift in Sources */,
+				FA2D13D61E233C17008CE66A /* itemizedItineraryTableViewCell.swift in Sources */,
 				FAD8904B1DB5C2AF00753FC9 /* NewTripNameViewController.swift in Sources */,
 				FAF533C41DA604EC00BBE2C7 /* PasswordViewController.swift in Sources */,
 				FA2D13C51E21A2A9008CE66A /* CustomKolodaView.swift in Sources */,
@@ -828,6 +835,7 @@
 				FAD890431DB5C1AD00753FC9 /* InternationalViewController.swift in Sources */,
 				FAFE837A1E0736B900062A12 /* API.swift in Sources */,
 				FAA280361E1445F90058F8B7 /* HomeAirportViewController.swift in Sources */,
+				FA2D13D41E22C6C9008CE66A /* rankedRecommendationsTableViewCell.swift in Sources */,
 				FAD5F4861E1EDB2A0031C3DC /* ActivitiesCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
