@@ -16,6 +16,7 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var multipleDestinations: UISegmentedControl!
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var multipleDestinationsQuestionLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
     
     //Load the values from our shared data container singleton: Multiple Destination Picker
     var multipleDestinationsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "multiple_destinations") as? String
@@ -26,6 +27,10 @@ class CalendarViewController: UIViewController {
 
        override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Hide next button
+        nextButton.isHidden = true
+        nextButton.isUserInteractionEnabled = false
         
         // Disable multiple destinations control by default
         multipleDestinations.isHidden = true
@@ -48,6 +53,8 @@ class CalendarViewController: UIViewController {
         let selectedDatesValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_dates") as? [Date]
         if selectedDatesValue != nil {
             self.calendarView.selectDates(selectedDatesValue!,triggerSelectionDelegate: false)
+            nextButton.isHidden = false
+            nextButton.isUserInteractionEnabled = true
         }
 
         //Load the values from our shared data container singleton: Trip Name
@@ -187,6 +194,11 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "selected_dates": selectedDates] as [String : Any]
         existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
         DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
+        
+        if selectedDates.count > 0 {
+            nextButton.isHidden = false
+            nextButton.isUserInteractionEnabled = true
+        }
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
@@ -204,6 +216,11 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "selected_dates": selectedDates] as [String : Any]
         existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
         DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
+        
+        if selectedDates.count == 0 {
+            nextButton.isHidden = true
+            nextButton.isUserInteractionEnabled = false
+        }
     }
     
     // MARK: Calendar header functions
@@ -214,7 +231,6 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     // This setups the display of your header
     func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
         let headerCell = (header as! monthHeaderView)
-        
         
         // Create Year String
         let yearDateFormatter = DateFormatter()

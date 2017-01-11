@@ -937,8 +937,11 @@
                     </view>
                     <connections>
                         <outlet property="activitiesSearchBar" destination="Khs-nd-VMA" id="T48-tb-CVn"/>
+                        <outlet property="buttonBeneathLabel" destination="tMG-sO-0kX" id="hf2-ey-Ojh"/>
                         <outlet property="collectionView" destination="ogM-jJ-i1x" id="bwS-Bf-vnM"/>
+                        <outlet property="rightArrowButton" destination="bRA-Vs-M7s" id="MFf-gx-u3q"/>
                         <outlet property="tripNameLabel" destination="9qj-Fb-6dT" id="YDp-1d-ekh"/>
+                        <outlet property="tripRecommendationsLabel" destination="bdD-FI-8B3" id="IhA-zz-72B"/>
                         <outlet property="userToggles" destination="H2o-V2-N5A" id="Qz6-fn-Kzp"/>
                     </connections>
                 </viewController>
@@ -1244,6 +1247,7 @@
                         <outlet property="calendarView" destination="MUW-Fa-qCy" id="sda-3d-fk1"/>
                         <outlet property="multipleDestinations" destination="AR1-aZ-2il" id="bhy-pw-uj9"/>
                         <outlet property="multipleDestinationsQuestionLabel" destination="Nyc-jA-Mqk" id="O54-dy-JW5"/>
+                        <outlet property="nextButton" destination="AOC-T8-a6Z" id="RjQ-zq-rSJ"/>
                         <outlet property="tripNameLabel" destination="GIe-ii-6UW" id="d7z-4l-JOW"/>
                     </connections>
                 </viewController>
@@ -2152,12 +2156,12 @@
         <segue reference="qdC-CD-JAz"/>
         <segue reference="xbM-y9-cLT"/>
         <segue reference="YhE-0L-EX8"/>
-        <segue reference="zQA-c3-mCq"/>
+        <segue reference="KaV-WA-8e3"/>
         <segue reference="Ajb-3w-yz2"/>
-        <segue reference="9ZB-Ko-LdT"/>
-        <segue reference="ZU0-GW-CKQ"/>
-        <segue reference="sW3-8Q-PYY"/>
+        <segue reference="bEe-OF-L1P"/>
+        <segue reference="f2M-dx-fNY"/>
         <segue reference="wbr-1B-I0n"/>
+        <segue reference="9ZB-Ko-LdT"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -380,11 +380,11 @@
 				FAA280351E1445F90058F8B7 /* HomeAirportViewController.swift */,
 				FAD890421DB5C1AD00753FC9 /* InternationalViewController.swift */,
 				FAA280371E1455AF0058F8B7 /* SuggestDestinationViewController.swift */,
-				FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */,
 				FAD890401DB5C18800753FC9 /* BudgetViewController.swift */,
+				FAD890441DB5C21400753FC9 /* ActivitiesViewController.swift */,
 				FA5A15611DB14E1200D70483 /* RecommedationSwipingViewController.swift */,
-				FAEF024E1DB5828800D4EF78 /* ReviewAndBookViewController.swift */,
 				FA9599FB1E063E4500D1B7D6 /* RankingViewController.swift */,
+				FAEF024E1DB5828800D4EF78 /* ReviewAndBookViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";

@@ -47,11 +47,7 @@ class RankingViewController: UIViewController, UITableViewDataSource, UITableVie
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let selectedActivity_0 = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activity_0") as? String
-        let selectedActivity_1 = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activity_1") as? String
-        let selectedActivity_2 = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activity_2") as? String
-        let selectedActivity_3 = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activity_3") as? String
-
+        let selectedActivities = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activities") as? [String]
         
         let addedRow = indexPath.row
         let destinationsLabelsArray = ["Miami", "San Diego", "Marina del Rey (LA)", "Panama City Beach", "Ft. Lauderdale"]
@@ -64,7 +60,7 @@ class RankingViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.destinationLabel.text = destinationsLabelsArray[addedRow]
         cell.tripPrice.text = pricesArray[addedRow]
         cell.percentSwipedRight.text = "\(percentagesSwipedRightArray[addedRow])% swiped right"
-        cell.preferredActivitiesPossibleAtDestination.text = "\(selectedActivity_0!), \(selectedActivity_1!), \(selectedActivity_2!), \(selectedActivity_3!)"
+        cell.preferredActivitiesPossibleAtDestination.text = "\(selectedActivities!)"
 
         cell.layer.cornerRadius = 10
         

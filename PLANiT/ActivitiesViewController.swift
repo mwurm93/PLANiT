@@ -15,6 +15,9 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var tripNameLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activitiesSearchBar: UISearchBar!
+    @IBOutlet weak var tripRecommendationsLabel: UILabel!
+    @IBOutlet weak var rightArrowButton: UIButton!
+    @IBOutlet weak var buttonBeneathLabel: UIButton!
     
     var activityItems: [ActivityItem] = []
 
@@ -22,6 +25,13 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         super.viewDidLoad()
         
         collectionView.allowsMultipleSelection = true
+        
+        // Hide next button
+        tripRecommendationsLabel.isHidden = true
+        rightArrowButton.isHidden = true
+        rightArrowButton.isUserInteractionEnabled = false
+        buttonBeneathLabel.isHidden = true
+        buttonBeneathLabel.isUserInteractionEnabled = false
         
         // Call collection initializer
         initActivityItems()
@@ -55,25 +65,35 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
 
     override func viewDidAppear(_ animated: Bool) {
         // Update cell border color to blue if saved as a selected activity
-        let selectedActivity_0 = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activity_0") as? String
-        let selectedActivity_1 = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activity_1") as? String
-        let selectedActivity_2 = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activity_2") as? String
-        let selectedActivity_3 = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activity_3") as? String
+        let selectedActivities = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activities") as? [String]
         
         let visibleCellIndices = self.collectionView.indexPathsForVisibleItems
         for visibleCellIndex in visibleCellIndices {
             let visibleCell = collectionView.cellForItem(at: visibleCellIndex) as! ActivitiesCollectionViewCell
-            if visibleCell.activityLabel.text == selectedActivity_0 || visibleCell.activityLabel.text == selectedActivity_1  || visibleCell.activityLabel.text == selectedActivity_2  || visibleCell.activityLabel.text == selectedActivity_3 {
+            if selectedActivities != nil {
+            if (selectedActivities?.contains(visibleCell.activityLabel.text!))! {
                 visibleCell.layer.borderColor = UIColor.blue.cgColor
                 collectionView.selectItem(at: visibleCellIndex, animated: true, scrollPosition: .top)
             }
             else {
                 visibleCell.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
                 collectionView.deselectItem(at: visibleCellIndex, animated: true)
-
+            }
+            }
+            else {
+                visibleCell.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
+                collectionView.deselectItem(at: visibleCellIndex, animated: true)
             }
         }
         
+        if selectedActivities != nil {
+            // Show next button
+            tripRecommendationsLabel.isHidden = false
+            rightArrowButton.isHidden = false
+            rightArrowButton.isUserInteractionEnabled = true
+            buttonBeneathLabel.isHidden = false
+            buttonBeneathLabel.isUserInteractionEnabled = true
+        }
     }
     
     fileprivate func initActivityItems() {
@@ -140,33 +160,18 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         let budgetValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "budget") as? String
         let selectedDates = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_dates") as? [Date]
 
+        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activities": selectedActivities, "selected_dates": selectedDates] as [String : Any]
+        existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
+        DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
         
         if selectedActivities.count == 0 {
-            let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activity_0": nil, "selected_activity_1": nil, "selected_activity_2": nil, "selected_activity_3": nil]
-            existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
-            DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
+            // Show next button
+            tripRecommendationsLabel.isHidden = true
+            rightArrowButton.isHidden = true
+            rightArrowButton.isUserInteractionEnabled = false
+            buttonBeneathLabel.isHidden = true
+            buttonBeneathLabel.isUserInteractionEnabled = false
         }
-        else if selectedActivities.count == 1 {
-            let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activity_0": selectedActivities[0], "selected_activity_1": nil, "selected_activity_2": nil, "selected_activity_3": nil]
-            existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
-            DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
-        }
-        else if selectedActivities.count == 2 {
-            let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activity_0": selectedActivities[0], "selected_activity_1": selectedActivities[1], "selected_activity_2": nil, "selected_activity_3": nil]
-            existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
-            DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
-        }
-        else if selectedActivities.count == 3 {
-            let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activity_0": selectedActivities[0], "selected_activity_1": selectedActivities[1], "selected_activity_2": selectedActivities[2], "selected_activity_3": nil]
-            existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
-            DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
-        }
-        else if selectedActivities.count == 4 {
-            let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activity_0": selectedActivities[0], "selected_activity_1": selectedActivities[1], "selected_activity_2": selectedActivities[2], "selected_activity_3": selectedActivities[3]]
-            existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
-            DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
-        }
-        
     }
     
     // Item SELECTED: update border color and save data when
@@ -183,6 +188,7 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
             let currentCell = collectionView.cellForItem(at: indexItem)! as! ActivitiesCollectionViewCell
             let selectedActivity = currentCell.activityLabel.text
             selectedActivities.append(selectedActivity)
+            
         }
         
         // Save array of selected activities to trip data model
@@ -194,43 +200,23 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         let suggestDestinationControlValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "suggest_destination_control") as? String
         let suggestedDestinationValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "suggested_destination") as? String
         let budgetValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "budget") as? String
+        let selectedDates = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_dates") as? [Date]
+
+        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activities": selectedActivities, "selected_dates": selectedDates] as [String : Any]
+        existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
+        DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
         
-        if selectedActivities.count == 0 {
-            let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activity_0": nil, "selected_activity_1": nil, "selected_activity_2": nil, "selected_activity_3": nil]
-            existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
-            DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
-        }
-        else if selectedActivities.count == 1 {
-            let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activity_0": selectedActivities[0], "selected_activity_1": nil, "selected_activity_2": nil, "selected_activity_3": nil]
-            existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
-            DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
-        }
-        else if selectedActivities.count == 2 {
-            let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activity_0": selectedActivities[0], "selected_activity_1": selectedActivities[1], "selected_activity_2": nil, "selected_activity_3": nil]
-            existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
-            DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
-        }
-        else if selectedActivities.count == 3 {
-            let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activity_0": selectedActivities[0], "selected_activity_1": selectedActivities[1], "selected_activity_2": selectedActivities[2], "selected_activity_3": nil]
-            existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
-            DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
-        }
-        else if selectedActivities.count == 4 {
-            let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activity_0": selectedActivities[0], "selected_activity_1": selectedActivities[1], "selected_activity_2": selectedActivities[2], "selected_activity_3": selectedActivities[3]]
-            existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
-            DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
-        }
-        else if selectedActivities.count >= 5 {
-            // Create alert with index
-            let alert = UIAlertController(title: "Please only choose 4 preferred activities", message: "Thank you", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "Dismiss", style: .destructive, handler: nil)
-            alert.addAction(alertAction)
-            self.present(alert, animated: true, completion: nil)
-            
-            SelectedCell!.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
-            collectionView.deselectItem(at: indexPath, animated: true)
+        if selectedActivities.count > 0 {
+            // Show next button
+            tripRecommendationsLabel.isHidden = false
+            rightArrowButton.isHidden = false
+            rightArrowButton.isUserInteractionEnabled = true
+            buttonBeneathLabel.isHidden = false
+            buttonBeneathLabel.isUserInteractionEnabled = true
         }
     }
+    
+    
     
     // MARK: - UICollectionViewFlowLayout
     
