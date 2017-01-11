@@ -34,7 +34,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please create your password (min. 4 char.)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6y-Y7-2Ts">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please create your password (min. 6 char.)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6y-Y7-2Ts">
                                 <rect key="frame" x="50" y="403" width="191" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -1174,24 +1174,6 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you want to go to multiple destinations on this trip?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyc-jA-Mqk">
-                                            <rect key="frame" x="17" y="453" width="332" height="51"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="AR1-aZ-2il">
-                                            <rect key="frame" x="66" y="519" width="242" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <segments>
-                                                <segment title="Yes"/>
-                                                <segment title="No"/>
-                                            </segments>
-                                            <connections>
-                                                <action selector="multipleDestinationsValueChanged:" destination="w3M-hs-AT7" eventType="valueChanged" id="MK9-0F-XL8"/>
-                                            </connections>
-                                        </segmentedControl>
                                     </subviews>
                                 </view>
                                 <blurEffect style="light"/>
@@ -1225,6 +1207,11 @@
                                     <segue destination="E8d-J0-NPc" kind="show" animates="NO" id="LQb-2v-DXD"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MUW-Fa-qCy" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
+                                <rect key="frame" x="13" y="164" width="349" height="374"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Trip" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIe-ii-6UW">
                                 <rect key="frame" x="0.0" y="20" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1232,11 +1219,31 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you want to go to multiple destinations on this trip?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyc-jA-Mqk">
+                                <rect key="frame" x="21" y="536" width="332" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="AR1-aZ-2il">
+                                <rect key="frame" x="66" y="589" width="242" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Yes"/>
+                                    <segment title="No"/>
+                                </segments>
+                                <connections>
+                                    <action selector="multipleDestinationsValueChanged:" destination="w3M-hs-AT7" eventType="valueChanged" id="MK9-0F-XL8"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="calendarView" destination="MUW-Fa-qCy" id="sda-3d-fk1"/>
                         <outlet property="multipleDestinations" destination="AR1-aZ-2il" id="bhy-pw-uj9"/>
+                        <outlet property="multipleDestinationsQuestionLabel" destination="Nyc-jA-Mqk" id="O54-dy-JW5"/>
                         <outlet property="tripNameLabel" destination="GIe-ii-6UW" id="d7z-4l-JOW"/>
                     </connections>
                 </viewController>
@@ -2137,20 +2144,20 @@
         <image name="settings" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PCw-hB-sIP"/>
-        <segue reference="qmk-4K-hHS"/>
-        <segue reference="XlR-xn-h0h"/>
-        <segue reference="h5e-fZ-WOV"/>
-        <segue reference="9ZB-Ko-LdT"/>
-        <segue reference="cWA-9L-HdA"/>
-        <segue reference="zQA-c3-mCq"/>
-        <segue reference="dep-F9-fnR"/>
-        <segue reference="lt4-dc-et0"/>
+        <segue reference="LQb-2v-DXD"/>
         <segue reference="Z3B-0Z-xHu"/>
-        <segue reference="sW3-8Q-PYY"/>
-        <segue reference="ZU0-GW-CKQ"/>
-        <segue reference="qN1-yV-Uhi"/>
+        <segue reference="RDj-Dh-aJ1"/>
+        <segue reference="qmk-4K-hHS"/>
+        <segue reference="PCw-hB-sIP"/>
         <segue reference="qdC-CD-JAz"/>
+        <segue reference="xbM-y9-cLT"/>
+        <segue reference="YhE-0L-EX8"/>
+        <segue reference="zQA-c3-mCq"/>
+        <segue reference="Ajb-3w-yz2"/>
+        <segue reference="9ZB-Ko-LdT"/>
+        <segue reference="ZU0-GW-CKQ"/>
+        <segue reference="sW3-8Q-PYY"/>
+        <segue reference="wbr-1B-I0n"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

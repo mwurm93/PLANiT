@@ -28,6 +28,10 @@
 		FAA280361E1445F90058F8B7 /* HomeAirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA280351E1445F90058F8B7 /* HomeAirportViewController.swift */; };
 		FAA280381E1455AF0058F8B7 /* SuggestDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA280371E1455AF0058F8B7 /* SuggestDestinationViewController.swift */; };
 		FAA68BC41DECF368000FB313 /* ExistingTripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */; };
+		FAB03C021E256D0300F77BD6 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB03C011E256D0300F77BD6 /* CellView.xib */; };
+		FAB03C041E256D8600F77BD6 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB03C031E256D8600F77BD6 /* CellView.swift */; };
+		FAB03C061E259FFD00F77BD6 /* monthHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB03C051E259FFD00F77BD6 /* monthHeaderView.xib */; };
+		FAB03C081E25A02700F77BD6 /* monthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB03C071E25A02700F77BD6 /* monthHeaderView.swift */; };
 		FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */; };
 		FAD5F4861E1EDB2A0031C3DC /* ActivitiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5F4851E1EDB2A0031C3DC /* ActivitiesCollectionViewCell.swift */; };
 		FAD5F4881E1EEC710031C3DC /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5F4871E1EEC710031C3DC /* ActivityItem.swift */; };
@@ -146,6 +150,10 @@
 		FAA280351E1445F90058F8B7 /* HomeAirportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAirportViewController.swift; sourceTree = "<group>"; };
 		FAA280371E1455AF0058F8B7 /* SuggestDestinationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestDestinationViewController.swift; sourceTree = "<group>"; };
 		FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExistingTripTableViewCell.swift; path = ../ExistingTripTableViewCell.swift; sourceTree = "<group>"; };
+		FAB03C011E256D0300F77BD6 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		FAB03C031E256D8600F77BD6 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		FAB03C051E259FFD00F77BD6 /* monthHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = monthHeaderView.xib; sourceTree = "<group>"; };
+		FAB03C071E25A02700F77BD6 /* monthHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = monthHeaderView.swift; sourceTree = "<group>"; };
 		FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
 		FAD5F4851E1EDB2A0031C3DC /* ActivitiesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAD5F4871E1EEC710031C3DC /* ActivityItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
@@ -261,6 +269,17 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		FAB03BF91E256CE000F77BD6 /* Calendar View */ = {
+			isa = PBXGroup;
+			children = (
+				FAB03C011E256D0300F77BD6 /* CellView.xib */,
+				FAB03C031E256D8600F77BD6 /* CellView.swift */,
+				FAB03C051E259FFD00F77BD6 /* monthHeaderView.xib */,
+				FAB03C071E25A02700F77BD6 /* monthHeaderView.swift */,
+			);
+			name = "Calendar View";
+			sourceTree = "<group>";
+		};
 		FAC95ED01DAD6B45006CD790 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +330,7 @@
 				FAF533F01DA60BCD00BBE2C7 /* Controllers */,
 				FA3856911E1B534800CAB8E5 /* Table View Cells */,
 				FAD5F47D1E1EDA240031C3DC /* Collection View Cells */,
+				FAB03BF91E256CE000F77BD6 /* Calendar View */,
 				FAF533EF1DA60B7200BBE2C7 /* App */,
 				FAF533F11DA60BD800BBE2C7 /* Views */,
 				FAF533F51DA60C4E00BBE2C7 /* Model */,
@@ -628,9 +648,11 @@
 				FAFE83811E07399200062A12 /* GetTrip.graphql in Resources */,
 				FAF533CC1DA604EC00BBE2C7 /* LaunchScreen.storyboard in Resources */,
 				FAFE837C1E0737D100062A12 /* CreateNewUser.graphql in Resources */,
+				FAB03C021E256D0300F77BD6 /* CellView.xib in Resources */,
 				FA2D13C21E21A13F008CE66A /* Main.storyboard in Resources */,
 				FAF533C91DA604EC00BBE2C7 /* Assets.xcassets in Resources */,
 				FA2D13CA1E21A646008CE66A /* CustomOverlayView.xib in Resources */,
+				FAB03C061E259FFD00F77BD6 /* monthHeaderView.xib in Resources */,
 				FAD5F48C1E1F01B80031C3DC /* items.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -814,6 +836,7 @@
 				FAD5F4881E1EEC710031C3DC /* ActivityItem.swift in Sources */,
 				FA2D13CF1E21A664008CE66A /* BackgroundAnimationViewController.swift in Sources */,
 				FAD890471DB5C25000753FC9 /* BirthdayGenderViewController.swift in Sources */,
+				FAB03C041E256D8600F77BD6 /* CellView.swift in Sources */,
 				FA9599FC1E063E4600D1B7D6 /* RankingViewController.swift in Sources */,
 				FAA280321E141F8F0058F8B7 /* ContactsViewController.swift in Sources */,
 				FA2D13D01E21A664008CE66A /* BackgroundKolodaAnimator.swift in Sources */,
@@ -833,6 +856,7 @@
 				FAD8904F1DB70AE700753FC9 /* DataContainerSingleton.swift in Sources */,
 				FA93E57A1DAC53F400631767 /* EmailViewController.swift in Sources */,
 				FAD890431DB5C1AD00753FC9 /* InternationalViewController.swift in Sources */,
+				FAB03C081E25A02700F77BD6 /* monthHeaderView.swift in Sources */,
 				FAFE837A1E0736B900062A12 /* API.swift in Sources */,
 				FAA280361E1445F90058F8B7 /* HomeAirportViewController.swift in Sources */,
 				FA2D13D41E22C6C9008CE66A /* rankedRecommendationsTableViewCell.swift in Sources */,

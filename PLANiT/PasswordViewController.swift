@@ -65,7 +65,7 @@ class PasswordViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func passwordFieldEditingChanged(_ sender: Any) {
-        if Password.text != nil {
+        if (Password.text?.characters.count)! >= 6 {
             DataContainerSingleton.sharedDataContainer.password = Password.text
             if existingUser == true {
                 createAccountButton.isHidden = true
@@ -80,13 +80,12 @@ class PasswordViewController: UIViewController, UITextFieldDelegate {
                 loginButton.isEnabled = false
             }
         }
-        if Password.text == "" {
+        if (Password.text?.characters.count)! < 6 {
             createAccountButton.isHidden = true
             createAccountButton.isEnabled = false
             loginButton.isHidden = true
             loginButton.isEnabled = false
         }
-    
     }
     // MARK: Actions
     @IBAction func createAccountButtonPressed(_ sender: Any) {
