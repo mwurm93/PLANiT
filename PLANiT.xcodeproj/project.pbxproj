@@ -32,6 +32,9 @@
 		FAB03C041E256D8600F77BD6 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB03C031E256D8600F77BD6 /* CellView.swift */; };
 		FAB03C061E259FFD00F77BD6 /* monthHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAB03C051E259FFD00F77BD6 /* monthHeaderView.xib */; };
 		FAB03C081E25A02700F77BD6 /* monthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB03C071E25A02700F77BD6 /* monthHeaderView.swift */; };
+		FAB03C0A1E26CC4500F77BD6 /* contactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB03C091E26CC4500F77BD6 /* contactsTableViewCell.swift */; };
+		FAB03C0D1E281D4700F77BD6 /* HorizontalScrollBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB03C0C1E281D4700F77BD6 /* HorizontalScrollBar.swift */; };
+		FAB03C0F1E287FFB00F77BD6 /* contactsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB03C0E1E287FFB00F77BD6 /* contactsCollectionViewCell.swift */; };
 		FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */; };
 		FAD5F4861E1EDB2A0031C3DC /* ActivitiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5F4851E1EDB2A0031C3DC /* ActivitiesCollectionViewCell.swift */; };
 		FAD5F4881E1EEC710031C3DC /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD5F4871E1EEC710031C3DC /* ActivityItem.swift */; };
@@ -154,6 +157,9 @@
 		FAB03C031E256D8600F77BD6 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		FAB03C051E259FFD00F77BD6 /* monthHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = monthHeaderView.xib; sourceTree = "<group>"; };
 		FAB03C071E25A02700F77BD6 /* monthHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = monthHeaderView.swift; sourceTree = "<group>"; };
+		FAB03C091E26CC4500F77BD6 /* contactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = contactsTableViewCell.swift; sourceTree = "<group>"; };
+		FAB03C0C1E281D4700F77BD6 /* HorizontalScrollBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalScrollBar.swift; sourceTree = "<group>"; };
+		FAB03C0E1E287FFB00F77BD6 /* contactsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = contactsCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripListViewController.swift; sourceTree = "<group>"; };
 		FAD5F4851E1EDB2A0031C3DC /* ActivitiesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAD5F4871E1EEC710031C3DC /* ActivityItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
@@ -257,6 +263,7 @@
 				FAA68BC31DECF368000FB313 /* ExistingTripTableViewCell.swift */,
 				FA2D13D31E22C6C8008CE66A /* rankedRecommendationsTableViewCell.swift */,
 				FA2D13D51E233C17008CE66A /* itemizedItineraryTableViewCell.swift */,
+				FAB03C091E26CC4500F77BD6 /* contactsTableViewCell.swift */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -280,6 +287,14 @@
 			name = "Calendar View";
 			sourceTree = "<group>";
 		};
+		FAB03C0B1E281D2A00F77BD6 /* Horizontal Scroll */ = {
+			isa = PBXGroup;
+			children = (
+				FAB03C0C1E281D4700F77BD6 /* HorizontalScrollBar.swift */,
+			);
+			name = "Horizontal Scroll";
+			sourceTree = "<group>";
+		};
 		FAC95ED01DAD6B45006CD790 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD5F4851E1EDB2A0031C3DC /* ActivitiesCollectionViewCell.swift */,
+				FAB03C0E1E287FFB00F77BD6 /* contactsCollectionViewCell.swift */,
 				FAD5F4871E1EEC710031C3DC /* ActivityItem.swift */,
 			);
 			name = "Collection View Cells";
@@ -321,6 +337,7 @@
 		FAF533C01DA604EC00BBE2C7 /* PLANiT */ = {
 			isa = PBXGroup;
 			children = (
+				FAB03C0B1E281D2A00F77BD6 /* Horizontal Scroll */,
 				FA2D13C31E21A29E008CE66A /* Koloda */,
 				FAFE837D1E0737E200062A12 /* GraphQL */,
 				FAA68BC71DECFE2C000FB313 /* API */,
@@ -835,6 +852,7 @@
 				FAC95ED41DAD70AC006CD790 /* TripListViewController.swift in Sources */,
 				FAD5F4881E1EEC710031C3DC /* ActivityItem.swift in Sources */,
 				FA2D13CF1E21A664008CE66A /* BackgroundAnimationViewController.swift in Sources */,
+				FAB03C0F1E287FFB00F77BD6 /* contactsCollectionViewCell.swift in Sources */,
 				FAD890471DB5C25000753FC9 /* BirthdayGenderViewController.swift in Sources */,
 				FAB03C041E256D8600F77BD6 /* CellView.swift in Sources */,
 				FA9599FC1E063E4600D1B7D6 /* RankingViewController.swift in Sources */,
@@ -847,10 +865,12 @@
 				FAEF024F1DB5828800D4EF78 /* ReviewAndBookViewController.swift in Sources */,
 				FAA280381E1455AF0058F8B7 /* SuggestDestinationViewController.swift in Sources */,
 				FA2D13D11E21A664008CE66A /* ExampleOverlayView.swift in Sources */,
+				FAB03C0D1E281D4700F77BD6 /* HorizontalScrollBar.swift in Sources */,
 				FAD890451DB5C21400753FC9 /* ActivitiesViewController.swift in Sources */,
 				FAE518181DB1920D00177731 /* SettingsViewController.swift in Sources */,
 				FAD890411DB5C18800753FC9 /* BudgetViewController.swift in Sources */,
 				FAF533C21DA604EC00BBE2C7 /* AppDelegate.swift in Sources */,
+				FAB03C0A1E26CC4500F77BD6 /* contactsTableViewCell.swift in Sources */,
 				FA5A15621DB14E1200D70483 /* RecommedationSwipingViewController.swift in Sources */,
 				FAA280341E1426180058F8B7 /* InstructionsViewController.swift in Sources */,
 				FAD8904F1DB70AE700753FC9 /* DataContainerSingleton.swift in Sources */,

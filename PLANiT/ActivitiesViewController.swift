@@ -7,24 +7,23 @@
 //
 
 import UIKit
+import Contacts
 
 class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     //MARK: Outlets
-    @IBOutlet weak var userToggles: UITableView!
     @IBOutlet weak var tripNameLabel: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activitiesSearchBar: UISearchBar!
     @IBOutlet weak var tripRecommendationsLabel: UILabel!
     @IBOutlet weak var rightArrowButton: UIButton!
     @IBOutlet weak var buttonBeneathLabel: UIButton!
+    @IBOutlet weak var contactsCollectionView: UICollectionView!
+    @IBOutlet weak var activitiesCollectionView: UICollectionView!
     
     var activityItems: [ActivityItem] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        collectionView.allowsMultipleSelection = true
         
         // Hide next button
         tripRecommendationsLabel.isHidden = true
@@ -35,12 +34,13 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         
         // Call collection initializer
         initActivityItems()
-        collectionView.reloadData()
+        activitiesCollectionView.reloadData()
+        activitiesCollectionView.allowsMultipleSelection = true
 
         //update aesthetics
-        collectionView.layer.cornerRadius = 5
-        collectionView.layer.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 0).cgColor
-        userToggles.layer.cornerRadius = 5
+        activitiesCollectionView.layer.cornerRadius = 5
+       // contactsCollectionView.layer.cornerRadius = 5
+        activitiesCollectionView.layer.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 0).cgColor
         
         // Set appearance of search bar
         activitiesSearchBar.layer.cornerRadius = 5
@@ -67,22 +67,22 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         // Update cell border color to blue if saved as a selected activity
         let selectedActivities = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activities") as? [String]
         
-        let visibleCellIndices = self.collectionView.indexPathsForVisibleItems
+        let visibleCellIndices = self.activitiesCollectionView.indexPathsForVisibleItems
         for visibleCellIndex in visibleCellIndices {
-            let visibleCell = collectionView.cellForItem(at: visibleCellIndex) as! ActivitiesCollectionViewCell
+            let visibleCell = activitiesCollectionView.cellForItem(at: visibleCellIndex) as! ActivitiesCollectionViewCell
             if selectedActivities != nil {
             if (selectedActivities?.contains(visibleCell.activityLabel.text!))! {
                 visibleCell.layer.borderColor = UIColor.blue.cgColor
-                collectionView.selectItem(at: visibleCellIndex, animated: true, scrollPosition: .top)
+                activitiesCollectionView.selectItem(at: visibleCellIndex, animated: true, scrollPosition: .top)
             }
             else {
                 visibleCell.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
-                collectionView.deselectItem(at: visibleCellIndex, animated: true)
+                activitiesCollectionView.deselectItem(at: visibleCellIndex, animated: true)
             }
             }
             else {
                 visibleCell.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
-                collectionView.deselectItem(at: visibleCellIndex, animated: true)
+                activitiesCollectionView.deselectItem(at: visibleCellIndex, animated: true)
             }
         }
         
@@ -96,6 +96,7 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
+    // MARK: Collection View item init
     fileprivate func initActivityItems() {
         
         var items = [ActivityItem]()
@@ -108,43 +109,63 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
             items.append(activityItem)
         }
         activityItems = items
-        
     }
     
     // MARK: - UICollectionViewDataSource
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return activityItems.count
-    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        collectionView.allowsMultipleSelection = true
-
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "activitiesViewPrototypeCell", for: indexPath) as! ActivitiesCollectionViewCell
-        
-        cell.setActivityItem(activityItems[indexPath.row])
-        cell.layer.borderWidth = 3.5
-        cell.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
-        cell.layer.cornerRadius = 10
-        
-        return cell
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        if collectionView == activitiesCollectionView {
+            return activityItems.count
+//        }
+        // if collectionView == contactsCollectionView
+//            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+//            return (contacts?.count)!
     }
-    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        if collectionView == activitiesCollectionView {
+            activitiesCollectionView.allowsMultipleSelection = true
+            let cell = activitiesCollectionView.dequeueReusableCell(withReuseIdentifier: "activitiesViewPrototypeCell", for: indexPath) as! ActivitiesCollectionViewCell
+            cell.setActivityItem(activityItems[indexPath.row])
+            cell.layer.borderWidth = 3.5
+            cell.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
+            cell.layer.cornerRadius = 10
+            return cell
+//        }
+        // if collectionView == contactsCollectionView {
+//            let cell = activitiesCollectionView.dequeueReusableCell(withReuseIdentifier: "contactsCollectionPrototypeCell", for: indexPath) as! contactsCollectionViewCell
+//            
+//            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+//            let contact = contacts?[indexPath.row]
+//            
+//            if (contact?.imageDataAvailable)! {
+//                cell.thumbnailImage.image = UIImage(data: (contact?.thumbnailImageData!)!)
+//                cell.initialsLabel.isHidden = true
+//            } else {
+//                cell.thumbnailImage.image = UIImage(named: "no_contact_image")!
+//                cell.initialsLabel.isHidden = false
+//                let firstInitial = contact?.givenName[0]
+//                let secondInitial = contact?.familyName[0]
+//                cell.initialsLabel.text = firstInitial! + secondInitial!
+//            }
+//            return cell
+    }
+
     // MARK: - UICollectionViewDelegate
     // Item DEselected: update border color and save data when
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        
+        if collectionView == activitiesCollectionView {
+
         // Change border color to grey
         let deSelectedCell = collectionView.cellForItem(at: indexPath)
         deSelectedCell!.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
         
         // Create array of selected activities
         var selectedActivities = [String?]()
-        let indexPaths = self.collectionView!.indexPathsForSelectedItems
+        let indexPaths = self.activitiesCollectionView!.indexPathsForSelectedItems
         for indexItem in indexPaths! {
-            let currentCell = collectionView.cellForItem(at: indexItem)! as! ActivitiesCollectionViewCell
+            let currentCell = activitiesCollectionView.cellForItem(at: indexItem)! as! ActivitiesCollectionViewCell
             let selectedActivity = currentCell.activityLabel.text
             selectedActivities.append(selectedActivity)
         }
@@ -159,8 +180,9 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         let suggestedDestinationValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "suggested_destination") as? String
         let budgetValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "budget") as? String
         let selectedDates = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_dates") as? [Date]
+        let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
 
-        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activities": selectedActivities, "selected_dates": selectedDates] as [String : Any]
+        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activities": selectedActivities, "selected_dates": selectedDates, "contacts_in_group": contacts] as [String : Any]
         existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
         DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
         
@@ -173,17 +195,19 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
             buttonBeneathLabel.isUserInteractionEnabled = false
         }
     }
+    }
     
     // Item SELECTED: update border color and save data when
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if collectionView == activitiesCollectionView {
+
         // Change border color to grey
-        let SelectedCell = collectionView.cellForItem(at: indexPath)
+        let SelectedCell = activitiesCollectionView.cellForItem(at: indexPath)
         SelectedCell!.layer.borderColor = UIColor.blue.cgColor
         
         // Create array of selected activities
         var selectedActivities = [String?]()
-        let indexPaths = self.collectionView!.indexPathsForSelectedItems
+        let indexPaths = self.activitiesCollectionView!.indexPathsForSelectedItems
         for indexItem in indexPaths! {
             let currentCell = collectionView.cellForItem(at: indexItem)! as! ActivitiesCollectionViewCell
             let selectedActivity = currentCell.activityLabel.text
@@ -201,8 +225,9 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         let suggestedDestinationValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "suggested_destination") as? String
         let budgetValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "budget") as? String
         let selectedDates = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_dates") as? [Date]
+        let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
 
-        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activities": selectedActivities, "selected_dates": selectedDates] as [String : Any]
+        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activities": selectedActivities, "selected_dates": selectedDates, "contacts_in_group": contacts] as [String : Any]
         existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
         DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
         
@@ -215,18 +240,25 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
             buttonBeneathLabel.isUserInteractionEnabled = true
         }
     }
-    
-    
-    
-    // MARK: - UICollectionViewFlowLayout
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let picDimension = self.view.frame.size.width / 4.2
-        return CGSize(width: picDimension, height: picDimension)
     }
     
+    // MARK: - UICollectionViewFlowLayout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        if collectionView == activitiesCollectionView {
+        let picDimension = self.view.frame.size.width / 4.2
+        return CGSize(width: picDimension, height: picDimension)
+//        }
+        // if collectionView == contactsCollectionView {
+//        let picDimension = 55
+//        return CGSize(width: picDimension, height: picDimension)
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let leftRightInset = self.view.frame.size.width / 14.0
+//        if collectionView == activitiesCollectionView {
+        let leftRightInset = self.view.frame.size.width / 18.0
         return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
+//        }
+        // if collectionView == contactsCollectionView {
+//        let leftRightInset = self.view.frame.size.width / 18.0
+//        return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
     }
 }

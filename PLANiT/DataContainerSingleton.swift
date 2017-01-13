@@ -25,8 +25,6 @@ struct DefaultKeys {
         static let currenttrip = "currenttrip"
     }
 
-
-
 class DataContainerSingleton {
     
     static let sharedDataContainer = DataContainerSingleton()
@@ -93,14 +91,9 @@ class DataContainerSingleton {
             defaults.set( self.usertrippreferences, forKey: DefaultKeys.usertrippreferences)
             defaults.set( self.currenttrip, forKey: DefaultKeys.currenttrip)
 
-
-//            defaults.set( self.usertrippreferences, forKey: DefaultKeys.usertrippreferences)
             //-----------------------------------------------------------------------------
             //Tell NSUserDefaults to save to disk now.
             defaults.synchronize()
         }
     }
-
-    
-
 }
