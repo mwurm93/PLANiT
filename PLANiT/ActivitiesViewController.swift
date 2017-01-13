@@ -39,7 +39,7 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
 
         //update aesthetics
         activitiesCollectionView.layer.cornerRadius = 5
-       // contactsCollectionView.layer.cornerRadius = 5
+        contactsCollectionView.layer.cornerRadius = 5
         activitiesCollectionView.layer.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 0).cgColor
         
         // Set appearance of search bar
@@ -116,15 +116,15 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if collectionView == activitiesCollectionView {
+        if collectionView == activitiesCollectionView {
             return activityItems.count
-//        }
+        }
         // if collectionView == contactsCollectionView
-//            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
-//            return (contacts?.count)!
+            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+            return (contacts?.count)!
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if collectionView == activitiesCollectionView {
+        if collectionView == activitiesCollectionView {
             activitiesCollectionView.allowsMultipleSelection = true
             let cell = activitiesCollectionView.dequeueReusableCell(withReuseIdentifier: "activitiesViewPrototypeCell", for: indexPath) as! ActivitiesCollectionViewCell
             cell.setActivityItem(activityItems[indexPath.row])
@@ -132,24 +132,24 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
             cell.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
             cell.layer.cornerRadius = 10
             return cell
-//        }
-        // if collectionView == contactsCollectionView {
-//            let cell = activitiesCollectionView.dequeueReusableCell(withReuseIdentifier: "contactsCollectionPrototypeCell", for: indexPath) as! contactsCollectionViewCell
-//            
-//            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
-//            let contact = contacts?[indexPath.row]
-//            
-//            if (contact?.imageDataAvailable)! {
-//                cell.thumbnailImage.image = UIImage(data: (contact?.thumbnailImageData!)!)
-//                cell.initialsLabel.isHidden = true
-//            } else {
-//                cell.thumbnailImage.image = UIImage(named: "no_contact_image")!
-//                cell.initialsLabel.isHidden = false
-//                let firstInitial = contact?.givenName[0]
-//                let secondInitial = contact?.familyName[0]
-//                cell.initialsLabel.text = firstInitial! + secondInitial!
-//            }
-//            return cell
+        }
+        // if collectionView == contactsCollectionView
+            let contactsCell = contactsCollectionView.dequeueReusableCell(withReuseIdentifier: "contactsCollectionPrototypeCell", for: indexPath) as! contactsCollectionViewCell
+
+            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+            let contact = contacts?[indexPath.row]
+            
+            if (contact?.imageDataAvailable)! {
+                contactsCell.thumbnailImage.image = UIImage(data: (contact?.thumbnailImageData!)!)
+                contactsCell.initialsLabel.isHidden = true
+            } else {
+                contactsCell.thumbnailImage.image = UIImage(named: "no_contact_image")!
+                contactsCell.initialsLabel.isHidden = false
+                let firstInitial = contact?.givenName[0]
+                let secondInitial = contact?.familyName[0]
+                contactsCell.initialsLabel.text = firstInitial! + secondInitial!
+            }
+            return contactsCell
     }
 
     // MARK: - UICollectionViewDelegate
@@ -212,7 +212,6 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
             let currentCell = collectionView.cellForItem(at: indexItem)! as! ActivitiesCollectionViewCell
             let selectedActivity = currentCell.activityLabel.text
             selectedActivities.append(selectedActivity)
-            
         }
         
         // Save array of selected activities to trip data model
@@ -244,21 +243,21 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
     
     // MARK: - UICollectionViewFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if collectionView == activitiesCollectionView {
-        let picDimension = self.view.frame.size.width / 4.2
-        return CGSize(width: picDimension, height: picDimension)
-//        }
-        // if collectionView == contactsCollectionView {
-//        let picDimension = 55
-//        return CGSize(width: picDimension, height: picDimension)
+        if collectionView == activitiesCollectionView {
+            let picDimension = self.view.frame.size.width / 4.2
+            return CGSize(width: picDimension, height: picDimension)
+        }
+        // if collectionView == contactsCollectionView
+            let picDimension = 55
+            return CGSize(width: picDimension, height: picDimension)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        if collectionView == activitiesCollectionView {
+        if collectionView == activitiesCollectionView {
+            let leftRightInset = self.view.frame.size.width / 18.0
+            return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
+        }
+        // if collectionView == contactsCollectionView
         let leftRightInset = self.view.frame.size.width / 18.0
         return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
-//        }
-        // if collectionView == contactsCollectionView {
-//        let leftRightInset = self.view.frame.size.width / 18.0
-//        return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
     }
 }
