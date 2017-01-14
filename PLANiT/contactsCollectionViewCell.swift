@@ -12,6 +12,7 @@ class contactsCollectionViewCell: UICollectionViewCell {
     
     // MARK: Outlets
     @IBOutlet weak var initialsLabel: UILabel!
+    @IBOutlet weak var thumbnailImageFilter: UIImageView!
     @IBOutlet weak var thumbnailImage: UIImageView!
     
 //    func setContactItem(_ item:ContactItem) {

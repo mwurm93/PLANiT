@@ -7,19 +7,20 @@
 //
 
 import UIKit
+import Contacts
 
-class ReviewAndBookViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource,UITableViewDelegate {
+class ReviewAndBookViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource,UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     var destinationLabelViaSegue: String?
     var tripPriceViaSegue: String?
     
     // MARK: Outlets
 
+    @IBOutlet weak var contactsCollectionView: UICollectionView!
     @IBOutlet var adjustLogisticsView: UIView!
     @IBOutlet weak var popupBlurView: UIVisualEffectView!
     @IBOutlet weak var editTextBox: UITextView!
     @IBOutlet weak var topItineraryTable: UITableView!
-    @IBOutlet weak var userStatusIndicators: UITableView!
     @IBOutlet weak var tripNameLabel: UILabel!
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -58,7 +59,6 @@ class ReviewAndBookViewController: UIViewController, UITextFieldDelegate, UITabl
         adjustLogisticsView.layer.cornerRadius = 5
         editTextBox.layer.cornerRadius = 5
         topItineraryTable.layer.cornerRadius = 5
-        userStatusIndicators.layer.cornerRadius = 5
         
         bookThisTripButton.layer.borderWidth = 1
         bookThisTripButton.layer.borderColor = UIColor.white.cgColor
@@ -251,6 +251,91 @@ class ReviewAndBookViewController: UIViewController, UITextFieldDelegate, UITabl
         return (cell)
     }
 
+    ///////////////////////////////////COLLECTION VIEW/////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    
+    // MARK: - UICollectionViewDataSource
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+        return (contacts?.count)!
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let contactsCell = contactsCollectionView.dequeueReusableCell(withReuseIdentifier: "contactsCollectionPrototypeCell", for: indexPath) as! contactsCollectionViewCell
+        
+        let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+        let contact = contacts?[indexPath.row]
+        
+        if (contact?.imageDataAvailable)! {
+            contactsCell.thumbnailImage.image = UIImage(data: (contact?.thumbnailImageData!)!)
+            contactsCell.initialsLabel.isHidden = true
+            contactsCell.thumbnailImageFilter.isHidden = false
+            contactsCell.thumbnailImageFilter.image = UIImage(named: "no_contact_image")!
+            contactsCell.thumbnailImageFilter.alpha = 0.35
+        } else {
+            contactsCell.thumbnailImage.image = UIImage(named: "no_contact_image")!
+            contactsCell.thumbnailImageFilter.isHidden = true
+            contactsCell.initialsLabel.isHidden = false
+            let firstInitial = contact?.givenName[0]
+            let secondInitial = contact?.familyName[0]
+            contactsCell.initialsLabel.text = firstInitial! + secondInitial!
+        }
+        
+        return contactsCell
+    }
+    
+    // MARK: - UICollectionViewDelegate
+    // Item DEselected: update border color and save data when
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+            let contact = contacts?[indexPath.row]
+            
+            let DeSelectedContact = contactsCollectionView.cellForItem(at: indexPath) as! contactsCollectionViewCell
+            
+            if (contact?.imageDataAvailable)! {
+                DeSelectedContact.thumbnailImageFilter.alpha = 0.35
+            } else {
+                DeSelectedContact.thumbnailImage.image = UIImage(named: "no_contact_image")!
+                DeSelectedContact.initialsLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+                
+            }
+        
+    }
+    
+    // Item SELECTED: update border color and save data when
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+            let contact = contacts?[indexPath.row]
+            let SelectedContact = contactsCollectionView.cellForItem(at: indexPath) as! contactsCollectionViewCell
+            
+            if (contact?.imageDataAvailable)! {
+                SelectedContact.thumbnailImageFilter.alpha = 0
+            } else {
+                SelectedContact.thumbnailImage.image = UIImage(named: "no_contact_image_selected")!
+                SelectedContact.initialsLabel.textColor = UIColor(red: 132/255, green: 137/255, blue: 147/255, alpha: 1)
+            }
+        
+    }
+    
+    // MARK: - UICollectionViewFlowLayout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let picDimension = 55
+        return CGSize(width: picDimension, height: picDimension)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+        
+        let spacing = 10
+        var leftRightInset = (self.contactsCollectionView.frame.size.width / 2.0) - CGFloat((contacts?.count)!) * 27.5 - CGFloat(spacing / 2 * ((contacts?.count)! - 1))
+        if (contacts?.count)! > 4 {
+            leftRightInset = 30
+        }
+        return UIEdgeInsetsMake(0, leftRightInset, 0, 0)
+    }
+    
+    
     
     // MARK: Actions
     @IBAction func adjustMyTravelLogistics(_ sender: AnyObject) {

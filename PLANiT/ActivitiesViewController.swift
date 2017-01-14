@@ -39,7 +39,6 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
 
         //update aesthetics
         activitiesCollectionView.layer.cornerRadius = 5
-        contactsCollectionView.layer.cornerRadius = 5
         activitiesCollectionView.layer.backgroundColor = UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 0).cgColor
         
         // Set appearance of search bar
@@ -96,7 +95,7 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
-    // MARK: Collection View item init
+    // MARK: Activities collection View item init
     fileprivate func initActivityItems() {
         
         var items = [ActivityItem]()
@@ -138,18 +137,23 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
 
             let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
             let contact = contacts?[indexPath.row]
-            
+        
             if (contact?.imageDataAvailable)! {
                 contactsCell.thumbnailImage.image = UIImage(data: (contact?.thumbnailImageData!)!)
                 contactsCell.initialsLabel.isHidden = true
+                contactsCell.thumbnailImageFilter.isHidden = false
+                contactsCell.thumbnailImageFilter.image = UIImage(named: "no_contact_image")!
+                contactsCell.thumbnailImageFilter.alpha = 0.35
             } else {
                 contactsCell.thumbnailImage.image = UIImage(named: "no_contact_image")!
+                contactsCell.thumbnailImageFilter.isHidden = true
                 contactsCell.initialsLabel.isHidden = false
                 let firstInitial = contact?.givenName[0]
                 let secondInitial = contact?.familyName[0]
                 contactsCell.initialsLabel.text = firstInitial! + secondInitial!
             }
-            return contactsCell
+        
+        return contactsCell
     }
 
     // MARK: - UICollectionViewDelegate
@@ -195,6 +199,20 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
             buttonBeneathLabel.isUserInteractionEnabled = false
         }
     }
+        if collectionView == contactsCollectionView {
+            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+            let contact = contacts?[indexPath.row]
+            
+            let DeSelectedContact = contactsCollectionView.cellForItem(at: indexPath) as! contactsCollectionViewCell
+            
+            if (contact?.imageDataAvailable)! {
+                DeSelectedContact.thumbnailImageFilter.alpha = 0.35
+            } else {
+                DeSelectedContact.thumbnailImage.image = UIImage(named: "no_contact_image")!
+                DeSelectedContact.initialsLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+
+            }
+        }
     }
     
     // Item SELECTED: update border color and save data when
@@ -239,6 +257,18 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
             buttonBeneathLabel.isUserInteractionEnabled = true
         }
     }
+        if collectionView == contactsCollectionView {
+            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+            let contact = contacts?[indexPath.row]
+            let SelectedContact = contactsCollectionView.cellForItem(at: indexPath) as! contactsCollectionViewCell
+
+                if (contact?.imageDataAvailable)! {
+                    SelectedContact.thumbnailImageFilter.alpha = 0
+                } else {
+                    SelectedContact.thumbnailImage.image = UIImage(named: "no_contact_image_selected")!
+                    SelectedContact.initialsLabel.textColor = UIColor(red: 132/255, green: 137/255, blue: 147/255, alpha: 1)
+                }
+        }
     }
     
     // MARK: - UICollectionViewFlowLayout
@@ -257,7 +287,14 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
             return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
         }
         // if collectionView == contactsCollectionView
-        let leftRightInset = self.view.frame.size.width / 18.0
-        return UIEdgeInsetsMake(0, leftRightInset, 0, leftRightInset)
+        let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+        
+        let spacing = 10
+        var leftRightInset = (self.contactsCollectionView.frame.size.width / 2.0) - CGFloat((contacts?.count)!) * 27.5 - CGFloat(spacing / 2 * ((contacts?.count)! - 1))
+        if (contacts?.count)! > 4 {
+            leftRightInset = 30
+        }
+        
+        return UIEdgeInsetsMake(0, leftRightInset, 0, 0)
     }
 }
