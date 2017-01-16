@@ -286,9 +286,29 @@ class ReviewAndBookViewController: UIViewController, UITextFieldDelegate, UITabl
         return contactsCell
     }
     
-    // MARK: - UICollectionViewDelegate
-    // Item DEselected: update border color and save data when
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        if collectionView == contactsCollectionView {
+            // Create activity lists and color array
+            let colors = [UIColor.purple, UIColor.gray, UIColor.red, UIColor.green, UIColor.orange, UIColor.yellow, UIColor.brown, UIColor.black]
+            
+            // Change color of thumbnail image
+            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+            let contact = contacts?[indexPath.row]
+            let SelectedContact = contactsCollectionView.cellForItem(at: indexPath) as! contactsCollectionViewCell
+            
+            if (contact?.imageDataAvailable)! {
+                SelectedContact.thumbnailImageFilter.alpha = 0
+            } else {
+                SelectedContact.thumbnailImage.image = UIImage(named: "no_contact_image_selected")!
+                //                SelectedContact.initialsLabel.textColor = UIColor(red: 132/255, green: 137/255, blue: 147/255, alpha: 1)
+                SelectedContact.initialsLabel.textColor = colors[indexPath.row]
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        if collectionView == contactsCollectionView {
             let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
             let contact = contacts?[indexPath.row]
             
@@ -301,22 +321,7 @@ class ReviewAndBookViewController: UIViewController, UITextFieldDelegate, UITabl
                 DeSelectedContact.initialsLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
                 
             }
-        
-    }
-    
-    // Item SELECTED: update border color and save data when
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
-            let contact = contacts?[indexPath.row]
-            let SelectedContact = contactsCollectionView.cellForItem(at: indexPath) as! contactsCollectionViewCell
-            
-            if (contact?.imageDataAvailable)! {
-                SelectedContact.thumbnailImageFilter.alpha = 0
-            } else {
-                SelectedContact.thumbnailImage.image = UIImage(named: "no_contact_image_selected")!
-                SelectedContact.initialsLabel.textColor = UIColor(red: 132/255, green: 137/255, blue: 147/255, alpha: 1)
-            }
-        
+        }
     }
     
     // MARK: - UICollectionViewFlowLayout

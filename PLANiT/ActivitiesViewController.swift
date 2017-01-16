@@ -155,9 +155,101 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         
         return contactsCell
     }
-
+    
     // MARK: - UICollectionViewDelegate
     // Item DEselected: update border color and save data when
+    
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        if collectionView == contactsCollectionView {
+            
+            // Create activity lists and color array
+            let sampleContactActivityList_1 = ["Scuba", "Surf"]
+            let sampleContactActivityList_2 = ["Sun", "Ski", "Theater"]
+            let sampleContactActivityList_3 = ["Ski", "Theater"]
+            let sampleContactActivityList_4 = ["Sun", "Museum", "Theater"]
+            let sampleContactActivityList_5 = ["Drink"]
+            let sampleContactActivityList_6 = ["Shop"]
+            let sampleContactActivityList_7 = ["Fine dining"]
+            let sampleContactActivityLists = [sampleContactActivityList_1, sampleContactActivityList_2, sampleContactActivityList_3, sampleContactActivityList_4, sampleContactActivityList_5, sampleContactActivityList_6, sampleContactActivityList_7]
+            let colors = [UIColor.purple, UIColor.gray, UIColor.red, UIColor.green, UIColor.orange, UIColor.yellow, UIColor.brown, UIColor.black]
+            
+            // Change color of thumbnail image
+            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+            let contact = contacts?[indexPath.row]
+            let SelectedContact = contactsCollectionView.cellForItem(at: indexPath) as! contactsCollectionViewCell
+            
+            if (contact?.imageDataAvailable)! {
+                SelectedContact.thumbnailImageFilter.alpha = 0
+            } else {
+                SelectedContact.thumbnailImage.image = UIImage(named: "no_contact_image_selected")!
+//                SelectedContact.initialsLabel.textColor = UIColor(red: 132/255, green: 137/255, blue: 147/255, alpha: 1)
+                SelectedContact.initialsLabel.textColor = colors[indexPath.row]
+            }
+            
+
+            // Select activities on highlight
+            let visibleCellIndices = self.activitiesCollectionView.indexPathsForVisibleItems
+            for visibleCellIndex in visibleCellIndices {
+                let visibleCell = activitiesCollectionView.cellForItem(at: visibleCellIndex) as! ActivitiesCollectionViewCell
+                if sampleContactActivityLists[indexPath.row] != nil {
+                    if (sampleContactActivityLists[indexPath.row].contains(visibleCell.activityLabel.text!)) {
+                        visibleCell.layer.borderColor = colors[indexPath.row].cgColor
+                        activitiesCollectionView.selectItem(at: visibleCellIndex, animated: true, scrollPosition: .top)
+                    }
+                    else {
+                        visibleCell.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
+                        activitiesCollectionView.deselectItem(at: visibleCellIndex, animated: true)
+                    }
+                }
+                else {
+                    visibleCell.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
+                    activitiesCollectionView.deselectItem(at: visibleCellIndex, animated: true)
+                }
+            }
+
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        if collectionView == contactsCollectionView {
+            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+            let contact = contacts?[indexPath.row]
+            
+            let DeSelectedContact = contactsCollectionView.cellForItem(at: indexPath) as! contactsCollectionViewCell
+            
+            if (contact?.imageDataAvailable)! {
+                DeSelectedContact.thumbnailImageFilter.alpha = 0.35
+            } else {
+                DeSelectedContact.thumbnailImage.image = UIImage(named: "no_contact_image")!
+                DeSelectedContact.initialsLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+                
+            }
+            
+            // Update cell border color to blue if saved as a selected activity
+            let selectedActivities = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activities") as? [String]
+            
+            let visibleCellIndices = self.activitiesCollectionView.indexPathsForVisibleItems
+            for visibleCellIndex in visibleCellIndices {
+                let visibleCell = activitiesCollectionView.cellForItem(at: visibleCellIndex) as! ActivitiesCollectionViewCell
+                if selectedActivities != nil {
+                    if (selectedActivities?.contains(visibleCell.activityLabel.text!))! {
+                        visibleCell.layer.borderColor = UIColor.blue.cgColor
+                        activitiesCollectionView.selectItem(at: visibleCellIndex, animated: true, scrollPosition: .top)
+                    }
+                    else {
+                        visibleCell.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
+                        activitiesCollectionView.deselectItem(at: visibleCellIndex, animated: true)
+                    }
+                }
+                else {
+                    visibleCell.layer.borderColor = UIColor(red: 25/255, green: 135/255, blue: 255/255, alpha: 0).cgColor
+                    activitiesCollectionView.deselectItem(at: visibleCellIndex, animated: true)
+                }
+            }
+            
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == activitiesCollectionView {
 
@@ -199,20 +291,7 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
             buttonBeneathLabel.isUserInteractionEnabled = false
         }
     }
-        if collectionView == contactsCollectionView {
-            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
-            let contact = contacts?[indexPath.row]
-            
-            let DeSelectedContact = contactsCollectionView.cellForItem(at: indexPath) as! contactsCollectionViewCell
-            
-            if (contact?.imageDataAvailable)! {
-                DeSelectedContact.thumbnailImageFilter.alpha = 0.35
-            } else {
-                DeSelectedContact.thumbnailImage.image = UIImage(named: "no_contact_image")!
-                DeSelectedContact.initialsLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-
-            }
-        }
+       
     }
     
     // Item SELECTED: update border color and save data when
@@ -257,18 +336,6 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
             buttonBeneathLabel.isUserInteractionEnabled = true
         }
     }
-        if collectionView == contactsCollectionView {
-            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
-            let contact = contacts?[indexPath.row]
-            let SelectedContact = contactsCollectionView.cellForItem(at: indexPath) as! contactsCollectionViewCell
-
-                if (contact?.imageDataAvailable)! {
-                    SelectedContact.thumbnailImageFilter.alpha = 0
-                } else {
-                    SelectedContact.thumbnailImage.image = UIImage(named: "no_contact_image_selected")!
-                    SelectedContact.initialsLabel.textColor = UIColor(red: 132/255, green: 137/255, blue: 147/255, alpha: 1)
-                }
-        }
     }
     
     // MARK: - UICollectionViewFlowLayout
