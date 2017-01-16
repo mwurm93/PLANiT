@@ -19,6 +19,8 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var multipleDestinationsQuestionLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     
+    var firstDate: Date?
+    
     //Load the values from our shared data container singleton: Multiple Destination Picker
     var multipleDestinationsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "multiple_destinations") as? String
     
@@ -130,35 +132,54 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         case .full:
             myCustomCell?.selectedView.isHidden = false
             myCustomCell?.dayLabel.textColor = UIColor.black
+            myCustomCell?.selectedView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
             myCustomCell?.selectedView.layer.cornerRadius =  ((myCustomCell?.frame.height)!/2)
             myCustomCell?.rightSideConnector.isHidden = true
             myCustomCell?.leftSideConnector.isHidden = true
+            myCustomCell?.leftSideConnector.layer.borderWidth = 0
+            myCustomCell?.selectedView.layer.borderWidth = 0
+            myCustomCell?.rightSideConnector.layer.borderWidth = 0
         case .left:
             myCustomCell?.selectedView.isHidden = false
             myCustomCell?.dayLabel.textColor = UIColor.black
+            myCustomCell?.selectedView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
             myCustomCell?.selectedView.layer.cornerRadius =  ((myCustomCell?.frame.height)!/2)
             myCustomCell?.rightSideConnector.isHidden = false
             myCustomCell?.leftSideConnector.isHidden = true
+            myCustomCell?.leftSideConnector.layer.borderWidth = 0
+            myCustomCell?.rightSideConnector.layer.borderWidth = 0
+            myCustomCell?.selectedView.layer.borderWidth = 0
         case .right:
             myCustomCell?.selectedView.isHidden = false
             myCustomCell?.dayLabel.textColor = UIColor.black
+            myCustomCell?.selectedView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
             myCustomCell?.selectedView.layer.cornerRadius =  ((myCustomCell?.frame.height)!/2)
             myCustomCell?.leftSideConnector.isHidden = false
             myCustomCell?.rightSideConnector.isHidden = true
+            myCustomCell?.leftSideConnector.layer.borderWidth = 0
+            myCustomCell?.rightSideConnector.layer.borderWidth = 0
+            myCustomCell?.selectedView.layer.borderWidth = 0
 
         case .middle:
             myCustomCell?.selectedView.isHidden = false
-            myCustomCell?.dayLabel.textColor = UIColor.black
+            myCustomCell?.selectedView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.33).cgColor
+            myCustomCell?.dayLabel.textColor = UIColor.white
             myCustomCell?.selectedView.layer.cornerRadius =  0
             myCustomCell?.rightSideConnector.isHidden = true
             myCustomCell?.leftSideConnector.isHidden = true
+            myCustomCell?.leftSideConnector.layer.borderWidth = 0
+            myCustomCell?.rightSideConnector.layer.borderWidth = 0
+            myCustomCell?.selectedView.layer.borderWidth = 0
             middleDays += 1
         default:
             myCustomCell?.selectedView.isHidden = true
+            myCustomCell?.selectedView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0).cgColor
             myCustomCell?.leftSideConnector.isHidden = true
             myCustomCell?.rightSideConnector.isHidden = true
+            myCustomCell?.leftSideConnector.layer.borderWidth = 0
+            myCustomCell?.rightSideConnector.layer.borderWidth = 0
+            myCustomCell?.selectedView.layer.borderWidth = 0
             myCustomCell?.dayLabel.textColor = UIColor.white
-        
         }
         if cellState.dateBelongsTo == .thisMonth {
             myCustomCell?.isUserInteractionEnabled = true
@@ -181,7 +202,17 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         
         handleSelection(cell: cell, cellState: cellState)
     }
+    
+    
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
+        if firstDate != nil && firstDate! < date {
+            calendarView.selectDates(from: firstDate!, to: date,  triggerSelectionDelegate: false, keepSelectionIfMultiSelectionAllowed: true)
+            firstDate = nil
+        }
+        else {
+            firstDate = date
+        }
+        
         handleSelection(cell: cell, cellState: cellState)
         
         // Create array of selected dates

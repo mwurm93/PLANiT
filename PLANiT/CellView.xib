@@ -16,18 +16,9 @@
             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOt-GI-j01">
-                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="gOt-GI-j01" secondAttribute="height" multiplier="1:1" id="5T0-mr-P2t"/>
-                        <constraint firstAttribute="height" constant="50" id="WBV-KI-wvo"/>
-                        <constraint firstAttribute="width" constant="50" id="tEH-Rq-QAm"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6d-mD-41R">
                     <rect key="frame" x="25" y="0.0" width="25" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="dEM-Da-WrG"/>
                         <constraint firstAttribute="width" secondItem="Z6d-mD-41R" secondAttribute="height" multiplier="1:2" id="xXD-Uh-mz7"/>
@@ -36,11 +27,20 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWW-NX-RU6">
                     <rect key="frame" x="0.0" y="0.0" width="25" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="3Ig-tH-hc4"/>
                         <constraint firstAttribute="height" constant="50" id="fp7-UZ-BJq"/>
                         <constraint firstAttribute="width" secondItem="WWW-NX-RU6" secondAttribute="height" multiplier="1:2" id="ghA-Cc-V8R"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOt-GI-j01">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="gOt-GI-j01" secondAttribute="height" multiplier="1:1" id="5T0-mr-P2t"/>
+                        <constraint firstAttribute="height" constant="50" id="WBV-KI-wvo"/>
+                        <constraint firstAttribute="width" constant="50" id="tEH-Rq-QAm"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateTextGoesHere" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vl-fX-MQi">

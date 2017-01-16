@@ -35,7 +35,6 @@ class PasswordViewController: UIViewController, UITextFieldDelegate {
         createAccountButton.isEnabled = false
         loginButton.isHidden = true
         loginButton.isEnabled = false
-
         
         if existingUser == true {
             createPasswordLabel.isHidden = true

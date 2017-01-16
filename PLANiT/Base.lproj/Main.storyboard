@@ -34,7 +34,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please create your password (min. 6 char.)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6y-Y7-2Ts">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please create your password (mininum 6 characters)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b6y-Y7-2Ts">
                                 <rect key="frame" x="50" y="403" width="191" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -622,7 +622,7 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8bN-Np-4Ok">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ max budget" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8bN-Np-4Ok">
                                             <rect key="frame" x="47" y="183" width="281" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="0.25" colorSpace="calibratedWhite"/>
@@ -1247,7 +1247,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MUW-Fa-qCy" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
-                                <rect key="frame" x="13" y="164" width="349" height="374"/>
+                                <rect key="frame" x="12" y="164" width="350" height="374"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -2193,18 +2193,18 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LQb-2v-DXD"/>
-        <segue reference="qq3-lZ-rov"/>
+        <segue reference="Z3B-0Z-xHu"/>
         <segue reference="RDj-Dh-aJ1"/>
+        <segue reference="dep-F9-fnR"/>
         <segue reference="GQj-Ue-vUF"/>
         <segue reference="HXv-7S-jEo"/>
-        <segue reference="Xhx-WZ-dP7"/>
-        <segue reference="jUF-36-ylm"/>
+        <segue reference="xbM-y9-cLT"/>
         <segue reference="YhE-0L-EX8"/>
         <segue reference="KaV-WA-8e3"/>
         <segue reference="Ajb-3w-yz2"/>
         <segue reference="bEe-OF-L1P"/>
         <segue reference="f2M-dx-fNY"/>
-        <segue reference="wbr-1B-I0n"/>
+        <segue reference="jUF-36-ylm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
