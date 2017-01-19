@@ -205,10 +205,8 @@ class ReviewAndBookViewController: UIViewController, UITextFieldDelegate, UITabl
             self.popupBlurView.effect = self.effect
             self.adjustLogisticsView.alpha = 1
             self.adjustLogisticsView.transform = CGAffineTransform.identity
-
         }
     }
-    
     
     func dismissAdjustLogisticsOut() {
         UIView.animate(withDuration: 0.3, animations: {
@@ -260,7 +258,10 @@ class ReviewAndBookViewController: UIViewController, UITextFieldDelegate, UITabl
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
-        return (contacts?.count)!
+        if contacts != nil {
+            return (contacts?.count)!
+        }
+        return 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let contactsCell = contactsCollectionView.dequeueReusableCell(withReuseIdentifier: "contactsCollectionPrototypeCell", for: indexPath) as! contactsCollectionViewCell
@@ -319,7 +320,6 @@ class ReviewAndBookViewController: UIViewController, UITextFieldDelegate, UITabl
             } else {
                 DeSelectedContact.thumbnailImage.image = UIImage(named: "no_contact_image")!
                 DeSelectedContact.initialsLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-                
             }
         }
     }
@@ -333,14 +333,15 @@ class ReviewAndBookViewController: UIViewController, UITextFieldDelegate, UITabl
         let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
         
         let spacing = 10
+        if contacts != nil {
         var leftRightInset = (self.contactsCollectionView.frame.size.width / 2.0) - CGFloat((contacts?.count)!) * 27.5 - CGFloat(spacing / 2 * ((contacts?.count)! - 1))
-        if (contacts?.count)! > 4 {
-            leftRightInset = 30
+            if (contacts?.count)! > 4 {
+                leftRightInset = 30
+            }
+            return UIEdgeInsetsMake(0, leftRightInset, 0, 0)
         }
-        return UIEdgeInsetsMake(0, leftRightInset, 0, 0)
+        return UIEdgeInsetsMake(0, 0, 0, 0)
     }
-    
-    
     
     // MARK: Actions
     @IBAction func adjustMyTravelLogistics(_ sender: AnyObject) {
@@ -360,6 +361,44 @@ class ReviewAndBookViewController: UIViewController, UITextFieldDelegate, UITabl
         
         // Enable main view buttons
         adjustTravelLogisticsButton.isEnabled = true
+    }
+    @IBAction func bookButtonPressed(_ sender: Any) {
+        // Save array of selected activities to trip data model
+        var existing_trips = DataContainerSingleton.sharedDataContainer.usertrippreferences
+        let currentTripIndex = DataContainerSingleton.sharedDataContainer.currenttrip!
+        let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
+        let multipleDestionationsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "multiple_destinations") as? String
+        let travelingInternationalValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "traveling_international") as? String
+        let suggestDestinationControlValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "suggest_destination_control") as? String
+        let suggestedDestinationValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "suggested_destination") as? String
+        let budgetValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "budget") as? String
+        let selectedDates = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_dates") as? [Date]
+        let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+        let selectedActivities = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activities") as? [String]
+        let bookedTripValue: Int = 1
+        
+        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activities": selectedActivities, "selected_dates": selectedDates, "contacts_in_group": contacts, "booking_status": bookedTripValue] as [String : Any]
+        existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
+        DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
+    }
+    @IBAction func bookLaterButtonPressed(_ sender: Any) {
+        // Save array of selected activities to trip data model
+        var existing_trips = DataContainerSingleton.sharedDataContainer.usertrippreferences
+        let currentTripIndex = DataContainerSingleton.sharedDataContainer.currenttrip!
+        let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
+        let multipleDestionationsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "multiple_destinations") as? String
+        let travelingInternationalValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "traveling_international") as? String
+        let suggestDestinationControlValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "suggest_destination_control") as? String
+        let suggestedDestinationValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "suggested_destination") as? String
+        let budgetValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "budget") as? String
+        let selectedDates = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_dates") as? [Date]
+        let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+        let selectedActivities = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_activities") as? [String]
+        let bookedTripValue: Int = 0
+        
+        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_activities": selectedActivities, "selected_dates": selectedDates, "contacts_in_group": contacts, "booking_status": bookedTripValue] as [String : Any]
+        existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
+        DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
     }
     
         override func didReceiveMemoryWarning() {

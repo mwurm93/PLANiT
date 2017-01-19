@@ -25,12 +25,7 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Hide next button
-        tripRecommendationsLabel.isHidden = true
-        rightArrowButton.isHidden = true
-        rightArrowButton.isUserInteractionEnabled = false
-        buttonBeneathLabel.isHidden = true
-        buttonBeneathLabel.isUserInteractionEnabled = false
+        tripRecommendationsLabel.text = "Skip to recommendations"
         
         // Call collection initializer
         initActivityItems()
@@ -85,13 +80,11 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
             }
         }
         
+        // Change label for continuing
         if selectedActivities != nil {
-            // Show next button
-            tripRecommendationsLabel.isHidden = false
-            rightArrowButton.isHidden = false
-            rightArrowButton.isUserInteractionEnabled = true
-            buttonBeneathLabel.isHidden = false
-            buttonBeneathLabel.isUserInteractionEnabled = true
+            if (selectedActivities?.count)! > 0 {
+            tripRecommendationsLabel.text = "Recommendations"
+            }
         }
     }
     
@@ -120,7 +113,10 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         }
         // if collectionView == contactsCollectionView
             let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+        if contacts != nil {
             return (contacts?.count)!
+        }
+        return 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == activitiesCollectionView {
@@ -182,7 +178,6 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
                 SelectedContact.thumbnailImageFilter.alpha = 0
             } else {
                 SelectedContact.thumbnailImage.image = UIImage(named: "no_contact_image_selected")!
-//                SelectedContact.initialsLabel.textColor = UIColor(red: 132/255, green: 137/255, blue: 147/255, alpha: 1)
                 SelectedContact.initialsLabel.textColor = colors[indexPath.row]
             }
             
@@ -282,13 +277,12 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
         DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
         
+        // Change label for continuing
+        if selectedActivities.count > 0 {
+            tripRecommendationsLabel.text = "Recommendations"
+        }
         if selectedActivities.count == 0 {
-            // Show next button
-            tripRecommendationsLabel.isHidden = true
-            rightArrowButton.isHidden = true
-            rightArrowButton.isUserInteractionEnabled = false
-            buttonBeneathLabel.isHidden = true
-            buttonBeneathLabel.isUserInteractionEnabled = false
+            tripRecommendationsLabel.text = "Skip to recommendations"
         }
     }
        
@@ -327,13 +321,12 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
         DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
         
+        // Change label for continuing
         if selectedActivities.count > 0 {
-            // Show next button
-            tripRecommendationsLabel.isHidden = false
-            rightArrowButton.isHidden = false
-            rightArrowButton.isUserInteractionEnabled = true
-            buttonBeneathLabel.isHidden = false
-            buttonBeneathLabel.isUserInteractionEnabled = true
+            tripRecommendationsLabel.text = "Recommendations"
+        }
+        if selectedActivities.count == 0 {
+            tripRecommendationsLabel.text = "Skip to recommendations"
         }
     }
     }
@@ -357,11 +350,13 @@ class ActivitiesViewController: UIViewController, UICollectionViewDataSource, UI
         let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
         
         let spacing = 10
+        if contacts != nil {
         var leftRightInset = (self.contactsCollectionView.frame.size.width / 2.0) - CGFloat((contacts?.count)!) * 27.5 - CGFloat(spacing / 2 * ((contacts?.count)! - 1))
-        if (contacts?.count)! > 4 {
+            if (contacts?.count)! > 4 {
             leftRightInset = 30
+            }
+            return UIEdgeInsetsMake(0, leftRightInset, 0, 0)
         }
-        
-        return UIEdgeInsetsMake(0, leftRightInset, 0, 0)
+        return UIEdgeInsetsMake(0, 0, 0, 0)
     }
 }

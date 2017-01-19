@@ -14,9 +14,12 @@ class HomeAiportViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var homeAirport: UITextField!
     @IBOutlet weak var tripNameLabel: UILabel!
     
-    
+    let timesOfDayArray = ["Early Morning","Late morning","Afternoon","Night","All"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
         self.homeAirport.delegate = self
         homeAirport.layer.borderWidth = 1
         homeAirport.layer.borderColor = UIColor(red:1,green:1,blue:1,alpha:0.25).cgColor

@@ -292,15 +292,17 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate, CNContac
         }
 
         // Activate next button when text is entered in the text field
-        var numberOfRows = 0
-        if objects != nil {
-            numberOfRows += objects!.count
-        }
-        if newTripNameTextField.text != nil && numberOfRows > 0 {
+//        var numberOfRows = 0
+//        if objects != nil {
+//            numberOfRows += objects!.count
+//        }
+//        && numberOfRows > 0
+        if newTripNameTextField.text != nil {
             nextButton.isEnabled = true
             nextButton.isHidden =  false
         }
-        if newTripNameTextField.text == "" || numberOfRows == 0 {
+        if newTripNameTextField.text == "" {
+//               || numberOfRows == 0
             nextButton.isEnabled = false
             nextButton.isHidden =  true
         }

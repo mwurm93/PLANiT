@@ -68,6 +68,8 @@ class BirthdayGenderViewController: UIViewController {
         else if DataContainerSingleton.sharedDataContainer.gender == "Female" {
             gender.selectedSegmentIndex = 1
         }
+        //GENDER IS HIDDEN
+        gender.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {

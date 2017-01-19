@@ -10,7 +10,7 @@ import UIKit
 import JTAppleCalendar
 import Contacts
 
-class CalendarViewController: UIViewController {
+class CalendarViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate {
 
     //MARK: Outlets
     @IBOutlet weak var tripNameLabel: UILabel!
@@ -18,8 +18,11 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var multipleDestinationsQuestionLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var timeOfDayTableView: UITableView!
+    @IBOutlet weak var popupBackgroundView: UIView!
     
     var firstDate: Date?
+    let timesOfDayArray = ["Early morning (12am-5am)","Morning (5am-11am)","Midday (11pm-5pm)","Night (5pm-12am)","Anytime"]
     
     //Load the values from our shared data container singleton: Multiple Destination Picker
     var multipleDestinationsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "multiple_destinations") as? String
@@ -27,13 +30,27 @@ class CalendarViewController: UIViewController {
     // Variable for asking question regarding multiple destinations
     var minimumConsecutiveDaysForMultipleDestinations = 5
     var middleDays = 0
-
+    
        override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissPopup(touch:)))
+        tap.numberOfTapsRequired = 1
+        tap.delegate = self
+        popupBackgroundView.addGestureRecognizer(tap)
+
+        
+        //Time of Day
+        timeOfDayTableView.delegate = self
+        timeOfDayTableView.dataSource = self
+        timeOfDayTableView.layer.cornerRadius = 5
+        timeOfDayTableView.layer.isHidden = true
+        timeOfDayTableView.allowsMultipleSelection = true
         
         //Hide next button
         nextButton.isHidden = true
         nextButton.isUserInteractionEnabled = false
+        popupBackgroundView.isHidden = true
         
         // Disable multiple destinations control by default
         multipleDestinations.isHidden = true
@@ -50,7 +67,8 @@ class CalendarViewController: UIViewController {
         calendarView.allowsMultipleSelection  = true
         calendarView.rangeSelectionWillBeUsed = true
         calendarView.cellInset = CGPoint(x: 0, y: 2)
-        calendarView.scrollingMode = .nonStopToSection(withResistance: 5)
+        calendarView.scrollingMode = .nonStopToSection(withResistance: 0.5)
+        calendarView.direction = .horizontal
         
         // Load Calendar dates and install
         let selectedDatesValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_dates") as? [Date]
@@ -83,6 +101,42 @@ class CalendarViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    //UITapGestureRecognizer
+    func dismissPopup(touch: UITapGestureRecognizer) {
+        if timeOfDayTableView.indexPathsForSelectedRows != nil {
+        dismissTimeOfDayTableOut()
+        }
+    }
+    
+    // Table for time of day
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "timeOfDayPrototypeCell", for: indexPath) as! timeOfDayTableViewCell
+        cell.timeOfDayTableLabel.text = timesOfDayArray[indexPath.row]
+        
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let topRows = [IndexPath(row:0, section: 0),IndexPath(row:1, section: 0),IndexPath(row:2, section: 0),IndexPath(row:3, section: 0)]
+        if indexPath == IndexPath(row:4, section: 0) {
+            for rowIndex in topRows {
+                self.timeOfDayTableView.deselectRow(at: rowIndex, animated: false)
+            }
+        }
+        if topRows.contains(indexPath) {
+            self.timeOfDayTableView.deselectRow(at: IndexPath(row:4, section:0), animated: false)
+        }
+    }
+    
     // MARK: Actions
     @IBAction func multipleDestinationsValueChanged(_ sender: Any) {
         if multipleDestinations.selectedSegmentIndex == 0 {
@@ -101,8 +155,16 @@ class CalendarViewController: UIViewController {
         let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestinationsValue, "selected_dates": selectedDates, "contacts_in_group": contacts] as [String : Any]
         existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
         DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
-
     }
+    
+    @IBAction func previousMonthPressed(_ sender: Any) {
+        calendarView.scrollToSegment(.previous)
+    }
+    
+    @IBAction func nextMonthPressed(_ sender: Any) {
+        calendarView.scrollToSegment(.next)
+    }
+    
 }
 
 // MARK: JTCalendarView Extension
@@ -131,63 +193,50 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         switch cellState.selectedPosition() {
         case .full:
             myCustomCell?.selectedView.isHidden = false
-            myCustomCell?.dayLabel.textColor = UIColor.black
+            myCustomCell?.dayLabel.textColor = UIColor(colorWithHexValue: 0x000000, alpha: 1)
             myCustomCell?.selectedView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-            myCustomCell?.selectedView.layer.cornerRadius =  ((myCustomCell?.frame.height)!/2)
+            myCustomCell?.selectedView.layer.cornerRadius =  ((myCustomCell?.selectedView.frame.height)!/2)
             myCustomCell?.rightSideConnector.isHidden = true
             myCustomCell?.leftSideConnector.isHidden = true
-            myCustomCell?.leftSideConnector.layer.borderWidth = 0
-            myCustomCell?.selectedView.layer.borderWidth = 0
-            myCustomCell?.rightSideConnector.layer.borderWidth = 0
+            myCustomCell?.middleConnector.isHidden = true
         case .left:
             myCustomCell?.selectedView.isHidden = false
-            myCustomCell?.dayLabel.textColor = UIColor.black
+            myCustomCell?.dayLabel.textColor = UIColor(colorWithHexValue: 0x000000, alpha: 1)
             myCustomCell?.selectedView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-            myCustomCell?.selectedView.layer.cornerRadius =  ((myCustomCell?.frame.height)!/2)
+            myCustomCell?.selectedView.layer.cornerRadius =  ((myCustomCell?.selectedView.frame.height)!/2)
             myCustomCell?.rightSideConnector.isHidden = false
             myCustomCell?.leftSideConnector.isHidden = true
-            myCustomCell?.leftSideConnector.layer.borderWidth = 0
-            myCustomCell?.rightSideConnector.layer.borderWidth = 0
-            myCustomCell?.selectedView.layer.borderWidth = 0
+            myCustomCell?.middleConnector.isHidden = true
         case .right:
             myCustomCell?.selectedView.isHidden = false
-            myCustomCell?.dayLabel.textColor = UIColor.black
+            myCustomCell?.dayLabel.textColor = UIColor(colorWithHexValue: 0x000000, alpha: 1)
             myCustomCell?.selectedView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-            myCustomCell?.selectedView.layer.cornerRadius =  ((myCustomCell?.frame.height)!/2)
+            myCustomCell?.selectedView.layer.cornerRadius =  ((myCustomCell?.selectedView.frame.height)!/2)
             myCustomCell?.leftSideConnector.isHidden = false
             myCustomCell?.rightSideConnector.isHidden = true
-            myCustomCell?.leftSideConnector.layer.borderWidth = 0
-            myCustomCell?.rightSideConnector.layer.borderWidth = 0
-            myCustomCell?.selectedView.layer.borderWidth = 0
+            myCustomCell?.middleConnector.isHidden = true
 
         case .middle:
-            myCustomCell?.selectedView.isHidden = false
-            myCustomCell?.selectedView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.33).cgColor
-            myCustomCell?.dayLabel.textColor = UIColor.white
+            myCustomCell?.selectedView.isHidden = true
+            myCustomCell?.middleConnector.isHidden = false
+            myCustomCell?.middleConnector.layer.backgroundColor = UIColor(colorWithHexValue: 0xFFFFFF, alpha: 0.33).cgColor
+            myCustomCell?.dayLabel.textColor = UIColor(colorWithHexValue: 0xFFFFFF, alpha: 1)
             myCustomCell?.selectedView.layer.cornerRadius =  0
             myCustomCell?.rightSideConnector.isHidden = true
             myCustomCell?.leftSideConnector.isHidden = true
-            myCustomCell?.leftSideConnector.layer.borderWidth = 0
-            myCustomCell?.rightSideConnector.layer.borderWidth = 0
-            myCustomCell?.selectedView.layer.borderWidth = 0
             middleDays += 1
         default:
             myCustomCell?.selectedView.isHidden = true
-            myCustomCell?.selectedView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0).cgColor
+            myCustomCell?.selectedView.layer.backgroundColor = UIColor(colorWithHexValue: 0xFFFFFF, alpha: 0).cgColor
             myCustomCell?.leftSideConnector.isHidden = true
             myCustomCell?.rightSideConnector.isHidden = true
-            myCustomCell?.leftSideConnector.layer.borderWidth = 0
-            myCustomCell?.rightSideConnector.layer.borderWidth = 0
-            myCustomCell?.selectedView.layer.borderWidth = 0
-            myCustomCell?.dayLabel.textColor = UIColor.white
+            myCustomCell?.middleConnector.isHidden = true
+            myCustomCell?.dayLabel.textColor = UIColor(colorWithHexValue: 0xFFFFFF, alpha: 1)
         }
-        if cellState.dateBelongsTo == .thisMonth {
-            myCustomCell?.isUserInteractionEnabled = true
+        if cellState.dateBelongsTo != .thisMonth {
+            myCustomCell?.dayLabel.textColor = UIColor(colorWithHexValue: 0x656565, alpha: 1)
         }
-        else {
-            myCustomCell?.dayLabel.textColor = UIColor.gray
-        }
-        
+
         // Enable Multiple Destinations Question if more than 3 middles (Total)
         if (middleDays + 2) >= minimumConsecutiveDaysForMultipleDestinations {
             multipleDestinations.isHidden = false
@@ -203,8 +252,14 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         handleSelection(cell: cell, cellState: cellState)
     }
     
-    
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
+        if cellState.dateBelongsTo == .previousMonthWithinBoundary {
+            calendarView.scrollToSegment(.previous)
+        }
+        if cellState.dateBelongsTo == .followingMonthWithinBoundary {
+            calendarView.scrollToSegment(.next)
+        }
+        
         if firstDate != nil && firstDate! < date {
             calendarView.selectDates(from: firstDate!, to: date,  triggerSelectionDelegate: false, keepSelectionIfMultiSelectionAllowed: true)
             firstDate = nil
@@ -212,7 +267,32 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         else {
             firstDate = date
         }
+
+        //Spawn time of day selection
         
+        let cellRow = cellState.row()
+        let cellCol = cellState.column()
+        var timeOfDayTable_X = cellCol * 50 + 39
+        let timeOfDayTable_Y = cellRow * 50 + 145 + 2 * (cellRow - 1)
+        if cellCol == 0 {
+            timeOfDayTable_X = (cellCol + 1) * 50 + 39
+        }
+        if cellCol == 6 {
+            timeOfDayTable_X = (cellCol - 1) * 50 + 39
+        }
+
+        if cellState.selectedPosition() == .left || cellState.selectedPosition() == .full {
+            
+            timeOfDayTableView.center = CGPoint(x: timeOfDayTable_X, y: timeOfDayTable_Y)
+            animateTimeOfDayTableIn()
+
+        }
+        if cellState.selectedPosition() == .right {
+            
+            timeOfDayTableView.center = CGPoint(x: timeOfDayTable_X, y: timeOfDayTable_Y)
+            animateTimeOfDayTableIn()
+        }
+
         handleSelection(cell: cell, cellState: cellState)
         
         // Create array of selected dates
@@ -238,6 +318,13 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleSelection(cell: cell, cellState: cellState)
         
+        if cellState.dateBelongsTo == .previousMonthWithinBoundary {
+            calendarView.scrollToSegment(.previous)
+        }
+        if cellState.dateBelongsTo == .followingMonthWithinBoundary {
+            calendarView.scrollToSegment(.next)
+        }
+
         // Create array of selected dates
         let selectedDates = calendarView.selectedDates
         
@@ -303,5 +390,42 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         } else if MonthHeader == "12" {
             headerCell.monthLabel.text = "December " + YearHeader
         }
+    }
+    
+    func animateTimeOfDayTableIn(){
+        timeOfDayTableView.layer.isHidden = false
+        timeOfDayTableView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        timeOfDayTableView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4) {
+            self.popupBackgroundView.isHidden = false
+            self.timeOfDayTableView.alpha = 1
+            self.timeOfDayTableView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func dismissTimeOfDayTableOut() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.timeOfDayTableView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.timeOfDayTableView.alpha = 0
+            let selectedRows = self.timeOfDayTableView.indexPathsForSelectedRows
+            self.popupBackgroundView.isHidden = true
+            for rowIndex in selectedRows! {
+                self.timeOfDayTableView.deselectRow(at: rowIndex, animated: false)
+            }
+        }) { (Success:Bool) in
+            self.timeOfDayTableView.layer.isHidden = true
+        }
+    }
+}
+
+extension UIColor {
+    convenience init(colorWithHexValue value: Int, alpha:CGFloat = 1.0){
+        self.init(
+            red: CGFloat((value & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((value & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(value & 0x0000FF) / 255.0,
+            alpha: alpha
+        )
     }
 }

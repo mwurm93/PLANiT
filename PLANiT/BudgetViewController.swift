@@ -14,9 +14,10 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     // MARK: Outlets
     @IBOutlet weak var budget: UITextField!
     @IBOutlet weak var tripNameLabel: UILabel!
+    @IBOutlet weak var whatDoYouCareAboutMoreLabel: UILabel!
+    @IBOutlet weak var CareAboutMoreSegmentControl: UISegmentedControl!
     
     var budgetValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "budget") as? String
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,9 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         budget.layer.borderWidth = 1
         budget.layer.borderColor = UIColor(red:1,green:1,blue:1,alpha:0.25).cgColor
         budget.layer.masksToBounds = true
+
+        whatDoYouCareAboutMoreLabel.isHidden = true
+        CareAboutMoreSegmentControl.isHidden = true
         
         let budgetLabelPlaceholder = budget!.value(forKey: "placeholderLabel") as? UILabel
         budgetLabelPlaceholder?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
@@ -44,6 +48,10 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         // Install the value into the label and unhide
         if budgetValue != nil {
         self.budget.text =  "\(budgetValue!)"
+        }
+        if budgetValue == nil {
+        whatDoYouCareAboutMoreLabel.isHidden = false
+        CareAboutMoreSegmentControl.isHidden = false
         }
     }
     override func didReceiveMemoryWarning() {
@@ -79,7 +87,18 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_dates":selectedDates, "contacts_in_group":contacts] as [String : Any]
         existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
         DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
+        
+        if budgetValue != nil {
+            whatDoYouCareAboutMoreLabel.isHidden = false
+            CareAboutMoreSegmentControl.isHidden = false
+        }
+        if budgetValue == nil {
+            whatDoYouCareAboutMoreLabel.isHidden = true
+            CareAboutMoreSegmentControl.isHidden = true
+        }
+        
     }
 
+    
 
 }

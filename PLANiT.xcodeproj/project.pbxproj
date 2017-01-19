@@ -20,6 +20,7 @@
 		FA2D13D21E21A664008CE66A /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D13CE1E21A664008CE66A /* CustomOverlayView.swift */; };
 		FA2D13D41E22C6C9008CE66A /* rankedRecommendationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D13D31E22C6C8008CE66A /* rankedRecommendationsTableViewCell.swift */; };
 		FA2D13D61E233C17008CE66A /* itemizedItineraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D13D51E233C17008CE66A /* itemizedItineraryTableViewCell.swift */; };
+		FA5058D61E2F25CB000C6887 /* timeOfDayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5058D51E2F25CB000C6887 /* timeOfDayTableViewCell.swift */; };
 		FA5A15621DB14E1200D70483 /* RecommedationSwipingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5A15611DB14E1200D70483 /* RecommedationSwipingViewController.swift */; };
 		FA93E57A1DAC53F400631767 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93E5791DAC53F400631767 /* EmailViewController.swift */; };
 		FA9599FC1E063E4600D1B7D6 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9599FB1E063E4500D1B7D6 /* RankingViewController.swift */; };
@@ -144,6 +145,7 @@
 		FA2D13CE1E21A664008CE66A /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomOverlayView.swift; path = "../../../Downloads/Koloda-master/Example/Koloda/CustomOverlayView.swift"; sourceTree = "<group>"; };
 		FA2D13D31E22C6C8008CE66A /* rankedRecommendationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rankedRecommendationsTableViewCell.swift; sourceTree = "<group>"; };
 		FA2D13D51E233C17008CE66A /* itemizedItineraryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemizedItineraryTableViewCell.swift; sourceTree = "<group>"; };
+		FA5058D51E2F25CB000C6887 /* timeOfDayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeOfDayTableViewCell.swift; sourceTree = "<group>"; };
 		FA5A15611DB14E1200D70483 /* RecommedationSwipingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommedationSwipingViewController.swift; sourceTree = "<group>"; };
 		FA93E5791DAC53F400631767 /* EmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		FA9599FB1E063E4500D1B7D6 /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				FA2D13D31E22C6C8008CE66A /* rankedRecommendationsTableViewCell.swift */,
 				FA2D13D51E233C17008CE66A /* itemizedItineraryTableViewCell.swift */,
 				FAB03C091E26CC4500F77BD6 /* contactsTableViewCell.swift */,
+				FA5058D51E2F25CB000C6887 /* timeOfDayTableViewCell.swift */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -857,6 +860,7 @@
 				FAD890451DB5C21400753FC9 /* ActivitiesViewController.swift in Sources */,
 				FAE518181DB1920D00177731 /* SettingsViewController.swift in Sources */,
 				FAD890411DB5C18800753FC9 /* BudgetViewController.swift in Sources */,
+				FA5058D61E2F25CB000C6887 /* timeOfDayTableViewCell.swift in Sources */,
 				FAF533C21DA604EC00BBE2C7 /* AppDelegate.swift in Sources */,
 				FAB03C0A1E26CC4500F77BD6 /* contactsTableViewCell.swift in Sources */,
 				FA5A15621DB14E1200D70483 /* RecommedationSwipingViewController.swift in Sources */,

@@ -14,6 +14,7 @@ class CellView: JTAppleDayCellView {
     @IBOutlet weak var selectedView: UIView!
     @IBOutlet weak var rightSideConnector: UIView!
     @IBOutlet weak var leftSideConnector: UIView!
+    @IBOutlet weak var middleConnector: UIView!
     
     
 }
