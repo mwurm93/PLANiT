@@ -16,8 +16,16 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tripNameLabel: UILabel!
     @IBOutlet weak var whatDoYouCareAboutMoreLabel: UILabel!
     @IBOutlet weak var CareAboutMoreSegmentControl: UISegmentedControl!
+    @IBOutlet weak var nightsTextField: UITextField!
+    @IBOutlet weak var splitByTextField: UITextField!
+    @IBOutlet weak var hotelTotalLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
     
     var budgetValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "budget") as? String
+    let segmentLengthValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "Availability_segment_lengths") as? [Int]
+    let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+    let hotelRoomsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "hotel_rooms") as? Float
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +36,48 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         budget.layer.borderWidth = 1
         budget.layer.borderColor = UIColor(red:1,green:1,blue:1,alpha:0.25).cgColor
         budget.layer.masksToBounds = true
+        nightsTextField.layer.cornerRadius = 5
+        nightsTextField.layer.borderWidth = 1
+        nightsTextField.layer.borderColor = UIColor(red:1,green:1,blue:1,alpha:0.25).cgColor
+        splitByTextField.layer.masksToBounds = true
+        splitByTextField.layer.cornerRadius = 5
+        splitByTextField.layer.borderWidth = 1
+        splitByTextField.layer.borderColor = UIColor(red:1,green:1,blue:1,alpha:0.25).cgColor
+        splitByTextField.layer.masksToBounds = true
 
         whatDoYouCareAboutMoreLabel.isHidden = true
         CareAboutMoreSegmentControl.isHidden = true
         
         let budgetLabelPlaceholder = budget!.value(forKey: "placeholderLabel") as? UILabel
         budgetLabelPlaceholder?.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
-
+        if segmentLengthValue != nil {
+            var maxSegmentLength = 0
+            for segmentIndex in 0...(segmentLengthValue?.count)!-1 {
+                if (segmentLengthValue?[segmentIndex])! > maxSegmentLength {
+                    maxSegmentLength = (segmentLengthValue?[segmentIndex])!
+                }
+            }
+            nightsTextField.text = "\(maxSegmentLength-1)"
+        }
+        if contacts != nil && hotelRoomsValue != nil {
+            let peoplePerRoom = Float((contacts?.count)! + 1)/hotelRoomsValue!
+            let roundedPeoplePerRoom = Int(roundf(peoplePerRoom))
+            
+            splitByTextField.text = "\(roundedPeoplePerRoom)"
+        } else {
+            splitByTextField.text = "2"
+        }
+        
+        //Update totals
+        var hotelTotalValue = 200
+        var totalValue = 600
+        if nightsTextField.text != "" && splitByTextField.text != "" && nightsTextField.text != nil && splitByTextField.text != nil {
+            hotelTotalValue = 200 * Int(nightsTextField.text!)! / Int(splitByTextField.text!)!
+            totalValue = 400 + hotelTotalValue
+        }
+        
+        hotelTotalLabel.text = "$\(hotelTotalValue)"
+        totalLabel.text = "$\(totalValue)"
         
         //Load the values from our shared data container singleton
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
@@ -54,10 +97,10 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         CareAboutMoreSegmentControl.isHidden = false
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
     
     func textFieldShouldReturn(_ textField:  UITextField) -> Bool {
     // Hide the keyboard.
@@ -66,14 +109,11 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        
     return true
     }
     
-// If budget field is changed, updated and save trip array
-    @IBAction func budgetEditingChanged(_ sender: Any) {
+    func saveBudget() {
         budgetValue = budget.text
-        
         var existing_trips = DataContainerSingleton.sharedDataContainer.usertrippreferences
         let currentTripIndex = DataContainerSingleton.sharedDataContainer.currenttrip!
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
@@ -83,22 +123,50 @@ class BudgetViewController: UIViewController, UITextFieldDelegate {
         let suggestedDestinationValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "suggested_destination") as? String
         let selectedDates = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_dates") as? [Date]
         let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+        let hotelRoomsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "hotel_rooms") as? Float
+        let segmentLengthValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "Availability_segment_lengths") as? [Int]
         
-        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_dates":selectedDates, "contacts_in_group":contacts] as [String : Any]
+        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "traveling_international": travelingInternationalValue, "suggest_destination_control": suggestDestinationControlValue, "suggested_destination": suggestedDestinationValue, "budget": budgetValue, "selected_dates":selectedDates, "contacts_in_group":contacts, "hotel_rooms":hotelRoomsValue, "Availability_segment_lengths": segmentLengthValue] as [String : Any]
         existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
         DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
-        
-        if budgetValue != nil {
-            whatDoYouCareAboutMoreLabel.isHidden = false
-            CareAboutMoreSegmentControl.isHidden = false
-        }
-        if budgetValue == nil {
-            whatDoYouCareAboutMoreLabel.isHidden = true
-            CareAboutMoreSegmentControl.isHidden = true
-        }
-        
     }
-
     
-
+// If budget field is changed, updated and save trip array
+    @IBAction func budgetEditingChanged(_ sender: Any) {
+        saveBudget()
+//        if budgetValue != nil {
+//            whatDoYouCareAboutMoreLabel.isHidden = false
+//            CareAboutMoreSegmentControl.isHidden = false
+//        }
+//        if budgetValue == nil {
+//            whatDoYouCareAboutMoreLabel.isHidden = true
+//            CareAboutMoreSegmentControl.isHidden = true
+//        }
+    }
+    @IBAction func nightsEditingChanged(_ sender: Any) {
+        var hotelTotalValue = 200
+        var totalValue = 600
+        if nightsTextField.text != "" && splitByTextField.text != "" &&  nightsTextField.text != nil && splitByTextField.text != nil {
+            hotelTotalValue = 200 * Int(nightsTextField.text!)! / Int(splitByTextField.text!)!
+            totalValue = 400 + hotelTotalValue
+        }
+        hotelTotalLabel.text = "$\(hotelTotalValue)"
+        totalLabel.text = "$\(totalValue)"
+    }
+    @IBAction func splitByEditingChanged(_ sender: Any) {
+        
+        var hotelTotalValue = 200
+        var totalValue = 600
+        if nightsTextField.text != "" && splitByTextField.text != "" && nightsTextField.text != nil && splitByTextField.text != nil {
+            hotelTotalValue = 200 * Int(nightsTextField.text!)! / Int(splitByTextField.text!)!
+            totalValue = 400 + hotelTotalValue
+        }
+        
+        hotelTotalLabel.text = "$\(hotelTotalValue)"
+        totalLabel.text = "$\(totalValue)"
+    }
+    @IBAction func useCalcButtonPressed(_ sender: Any) {
+        budget.text = totalLabel.text
+        saveBudget()
+    }
 }

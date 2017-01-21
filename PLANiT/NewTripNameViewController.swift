@@ -16,6 +16,7 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate, CNContac
     fileprivate var menuArray: NSMutableArray?
     let picker = CNContactPickerViewController()
     var objects: [CNContact]?
+    let sliderStep: Float = 1
 
 // MARK: Outlets
     
@@ -23,6 +24,10 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate, CNContac
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var groupMemberListTable: UITableView!
     @IBOutlet weak var whoToTravelWithLabel: UILabel!
+    @IBOutlet weak var addFromContactsButton: UIButton!
+    @IBOutlet weak var numberHotelRoomsLabel: UILabel!
+    @IBOutlet weak var numberHotelRoomsControl: UISlider!
+    @IBOutlet weak var numberHotelRoomsStack: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,25 +58,41 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate, CNContac
             numberSavedTrips = (SavedTrips?.count)! - 1
         }
         
-        let testvar1 = currentTripIndex
-        let testvar2 = numberSavedTrips
-        
         if currentTripIndex > numberSavedTrips! {
         }
         else {
             tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
             objects = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+            let hotelRoomsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "hotel_rooms") as? Float
+            
+            if hotelRoomsValue != nil {
+                numberHotelRoomsControl.setValue(hotelRoomsValue!, animated: false)
+            }
+
+            if objects == nil {
+                numberHotelRoomsLabel.alpha = 0
+                numberHotelRoomsControl.alpha = 0
+                numberHotelRoomsStack.alpha = 0
+            } else {
+                numberHotelRoomsLabel.alpha = 1
+                numberHotelRoomsControl.alpha = 1
+                numberHotelRoomsStack.alpha = 1
+            }
         }
         
         //Install the value into the label.
         if tripNameValue == nil {
-            nextButton.isEnabled = false
-            nextButton.isHidden =  true
+            nextButton.alpha =  0
+            groupMemberListTable.alpha = 0
+            whoToTravelWithLabel.alpha = 0
+            addFromContactsButton.alpha = 0
         }
         else {
         self.newTripNameTextField.text =  "\(tripNameValue!)"
-            nextButton.isEnabled = true
-            nextButton.isHidden =  false
+            nextButton.alpha = 1
+            groupMemberListTable.alpha = 1
+            whoToTravelWithLabel.alpha = 1
+            addFromContactsButton.alpha = 1
         }
         
     }
@@ -84,11 +105,9 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate, CNContac
         // Update our UI if the user has granted access to their Contacts
         case .authorized:
             self.showContactsPicker()
-            
         // Prompt the user for access to Contacts if there is no definitive answer
         case .notDetermined :
             self.requestContactsAccess()
-            
         // Display a message if the user has denied or restricted access to Contacts
         case .denied,
              .restricted:
@@ -101,7 +120,6 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate, CNContac
     }
     
     fileprivate func requestContactsAccess() {
-        
         addressBookStore.requestAccess(for: .contacts) {granted, error in
             if granted {
                 DispatchQueue.main.async {
@@ -111,7 +129,6 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate, CNContac
             }
         }
     }
-    
     
     //Show Contact Picker
     fileprivate  func showContactsPicker() {
@@ -198,23 +215,38 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate, CNContac
             existing_trips?.append(newTripToBeAppended as NSDictionary)
             DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
         }
-        
-        // Activate next button when text is entered in the text field
-        var numberOfRows = 0
+        }
+        // activate hotels room
         if objects != nil {
-            numberOfRows += objects!.count
+            numberHotelRoomsLabel.alpha = 1
+            numberHotelRoomsControl.alpha = 1
+            numberHotelRoomsStack.alpha = 1
+            
+            var roundedValue = roundf(Float((objects?.count)! + 1)/2)
+            if roundedValue > 4 {
+                roundedValue = 4
+            }
+            if roundedValue < 1 {
+                roundedValue = 1
+            }
+            numberHotelRoomsControl.setValue(roundedValue, animated: false)
+            //Save
+            var existing_trips = DataContainerSingleton.sharedDataContainer.usertrippreferences
+            let currentTripIndex = DataContainerSingleton.sharedDataContainer.currenttrip!
+            let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
+            let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+            let updatedTripToBeSaved = ["trip_name": tripNameValue, "contacts_in_group": contacts, "hotel_rooms": roundedValue] as [String : Any]
+            existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
+            DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
+
         }
-        if newTripNameTextField.text != nil && numberOfRows > 0 {
-            nextButton.isEnabled = true
-            nextButton.isHidden =  false
-        }
-        if newTripNameTextField.text == "" || numberOfRows == 0 {
-            nextButton.isEnabled = false
-            nextButton.isHidden =  true
+        if objects == nil {
+            numberHotelRoomsLabel.alpha = 0
+            numberHotelRoomsControl.alpha = 0
+            numberHotelRoomsStack.alpha = 0
         }
     }
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -291,22 +323,32 @@ class NewTripNameViewController: UIViewController, UITextFieldDelegate, CNContac
             DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
         }
 
-        // Activate next button when text is entered in the text field
-//        var numberOfRows = 0
-//        if objects != nil {
-//            numberOfRows += objects!.count
-//        }
-//        && numberOfRows > 0
         if newTripNameTextField.text != nil {
-            nextButton.isEnabled = true
-            nextButton.isHidden =  false
+            UIView.animate(withDuration: 1) {
+                self.nextButton.alpha = 1
+                self.groupMemberListTable.alpha = 1
+                self.whoToTravelWithLabel.alpha = 1
+                self.addFromContactsButton.alpha = 1
+            }
         }
         if newTripNameTextField.text == "" {
-//               || numberOfRows == 0
-            nextButton.isEnabled = false
-            nextButton.isHidden =  true
+            nextButton.alpha = 0
         }
     }
+    @IBAction func sliderValueChanged(_ sender: Any) {
+        let roundedValue = round(numberHotelRoomsControl.value / sliderStep)
+        numberHotelRoomsControl.setValue(roundedValue, animated: true)
+        
+        //Save
+        var existing_trips = DataContainerSingleton.sharedDataContainer.usertrippreferences
+        let currentTripIndex = DataContainerSingleton.sharedDataContainer.currenttrip!
+        let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
+        let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
+        let updatedTripToBeSaved = ["trip_name": tripNameValue, "contacts_in_group": contacts, "hotel_rooms": roundedValue] as [String : Any]
+        existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
+        DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
+    }
+    
 }
 
 extension String {

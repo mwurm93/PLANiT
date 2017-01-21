@@ -12,24 +12,76 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: Outlets
     @IBOutlet weak var existingTripsTable: UITableView!
-    @IBOutlet weak var noTripsLabel: UILabel!
+    @IBOutlet weak var createTripButton: UIButton!
+    @IBOutlet weak var addAnotherTripButton: UIButton!
+    @IBOutlet weak var myTripsTitleLabel: UILabel!
+    @IBOutlet weak var createTripArrow: UIButton!
     
+    // Outlets for instructions
+    @IBOutlet weak var instructionsTitleLabel: UILabel!
+    @IBOutlet weak var instruct1Label: UILabel!
+    @IBOutlet weak var instruct2Label: UILabel!
+    @IBOutlet weak var instruct3Label: UILabel!
+    @IBOutlet weak var instruct4Label: UILabel!
+    @IBOutlet weak var instruct5Label: UILabel!
+    @IBOutlet weak var instruct1image: UIImageView!
+    @IBOutlet weak var instruct2image: UIImageView!
+    @IBOutlet weak var instruct3image: UIImageView!
+    @IBOutlet weak var instruct4image: UIImageView!
+    
+    @IBOutlet weak var instruct5image: UIImageView!
     let sectionTitles = ["Still in the works...", "Booked and ticketed"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if DataContainerSingleton.sharedDataContainer.usertrippreferences == nil {
+            
+            DataContainerSingleton.sharedDataContainer.currenttrip = 0
+            
+            myTripsTitleLabel.isHidden = true
             existingTripsTable.isHidden = true
-            noTripsLabel.isHidden = false
-        //    DataContainerSingleton.sharedDataContainer.currenttrip = 0
+            addAnotherTripButton.isHidden = true
+            
+            createTripButton.isHidden = false
+            createTripArrow.isHidden = false
+            instructionsTitleLabel.isHidden = false
+            instruct1image.isHidden = false
+            instruct1Label.isHidden = false
+            instruct2image.isHidden = false
+            instruct2Label.isHidden = false
+            instruct3image.isHidden = false
+            instruct3Label.isHidden = false
+            instruct4image.isHidden = false
+            instruct4Label.isHidden = false
+            instruct5image.isHidden = false
+            instruct5Label.isHidden = false
+
             }
         else {
             existingTripsTable.isHidden = false
-            noTripsLabel.isHidden = true
             existingTripsTable.tableFooterView = UIView()
             existingTripsTable.layer.cornerRadius = 5
+            addAnotherTripButton.isHidden = false
+            
+            createTripButton.isHidden = true
+            createTripArrow.isHidden = true
+            instructionsTitleLabel.isHidden = true
+            instruct1image.isHidden = true
+            instruct1Label.isHidden = true
+            instruct2image.isHidden = true
+            instruct2Label.isHidden = true
+            instruct3image.isHidden = true
+            instruct3Label.isHidden = true
+            instruct4image.isHidden = true
+            instruct4Label.isHidden = true
+            instruct5image.isHidden = true
+            instruct5Label.isHidden = true
+
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,13 +90,16 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // MARK: Actions
     @IBAction func addTrip(_ sender: Any) {
-    let existing_trips = DataContainerSingleton.sharedDataContainer.usertrippreferences
-    if existing_trips == nil {
-        DataContainerSingleton.sharedDataContainer.currenttrip = 0
+        let existing_trips = DataContainerSingleton.sharedDataContainer.usertrippreferences
+        if existing_trips == nil {
+            DataContainerSingleton.sharedDataContainer.currenttrip = 0
+        }
+        else {
+            DataContainerSingleton.sharedDataContainer.currenttrip = DataContainerSingleton.sharedDataContainer.currenttrip! + 1
+        }
     }
-    else {
-        DataContainerSingleton.sharedDataContainer.currenttrip = DataContainerSingleton.sharedDataContainer.currenttrip! + 1
-    }
+    @IBAction func createTripButtonTouchDown(_ sender: Any) {
+        createTripArrow.isHighlighted = true
     }
  
     // # sections in table
@@ -63,14 +118,16 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITableVi
         var bookingStatuses: [Int] = []
         for index in 0...((DataContainerSingleton.sharedDataContainer.usertrippreferences?.count)! - 1) {
             let bookingStatus = DataContainerSingleton.sharedDataContainer.usertrippreferences?[index].object(forKey: "booking_status") as? Int
+            if bookingStatus != nil {
             bookingStatuses.append(bookingStatus!)
+            }
         }
         
         var countTripsBooked = 0
         var countTripsUnbooked = 0
         var countTripsTotal = 0
         
-        if DataContainerSingleton.sharedDataContainer.usertrippreferences != nil && section == 1 {
+        if DataContainerSingleton.sharedDataContainer.usertrippreferences != nil && section == 1 && bookingStatuses != [] {
             for index in 0...(bookingStatuses.count - 1) {
                 countTripsBooked += bookingStatuses[index]
             }
@@ -78,7 +135,7 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITableVi
                 return sectionTitles[section]
             }
         }
-        if DataContainerSingleton.sharedDataContainer.usertrippreferences != nil && section == 0 {
+        if DataContainerSingleton.sharedDataContainer.usertrippreferences != nil && section == 0 && bookingStatuses != [] {
         for index in 0...((DataContainerSingleton.sharedDataContainer.usertrippreferences?.count)! - 1) {
             countTripsBooked += bookingStatuses[index]
         }
@@ -112,7 +169,9 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITableVi
         var bookingStatuses: [Int] = []
         for index in 0...((DataContainerSingleton.sharedDataContainer.usertrippreferences?.count)! - 1) {
         let bookingStatus = DataContainerSingleton.sharedDataContainer.usertrippreferences?[index].object(forKey: "booking_status") as? Int
+            if bookingStatus != nil {
             bookingStatuses.append(bookingStatus!)
+            }
         }
         
         var countTripsBooked = 0
@@ -122,15 +181,17 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITableVi
         if DataContainerSingleton.sharedDataContainer.usertrippreferences == nil {
             return 0
         }
-        else if DataContainerSingleton.sharedDataContainer.usertrippreferences != nil && section == 1 {
+        else if DataContainerSingleton.sharedDataContainer.usertrippreferences != nil && section == 1 && bookingStatuses != [] {
             for index in 0...(bookingStatuses.count - 1) {
             countTripsBooked += bookingStatuses[index]
             }
             return countTripsBooked
         }
        // else if DataContainerSingleton.sharedDataContainer.usertrippreferences != nil && section == 0 {
+        if bookingStatuses != [] {
         for index in 0...((DataContainerSingleton.sharedDataContainer.usertrippreferences?.count)! - 1) {
             countTripsBooked += bookingStatuses[index]
+        }
         }
         countTripsTotal = (DataContainerSingleton.sharedDataContainer.usertrippreferences?.count)!
         countTripsUnbooked = countTripsTotal - countTripsBooked
@@ -155,10 +216,12 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITableVi
         for index in 0...((DataContainerSingleton.sharedDataContainer.usertrippreferences?.count)! - 1) {
             
             let bookingStatus = DataContainerSingleton.sharedDataContainer.usertrippreferences?[index].object(forKey: "booking_status") as? Int
+            if bookingStatus != nil {
             bookingStatuses.append(bookingStatus!)
+            }
         }
         
-        if DataContainerSingleton.sharedDataContainer.usertrippreferences != nil && indexPath.section == 0 {
+        if DataContainerSingleton.sharedDataContainer.usertrippreferences != nil && indexPath.section == 0 && bookingStatuses != [] {
             for unbookedIndex in 0...(bookingStatuses.count - 1)  {
                 if bookingStatuses[unbookedIndex] == 0 && unbookedIndex > lastUnbookedStatusIndexAddedToTable! {
                     let addedRowInUnbookedSection = unbookedIndex
@@ -172,7 +235,7 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITableVi
                 }
             }
         }
-        else if DataContainerSingleton.sharedDataContainer.usertrippreferences != nil && indexPath.section == 1 {
+        else if DataContainerSingleton.sharedDataContainer.usertrippreferences != nil && indexPath.section == 1 && bookingStatuses != [] {
             for bookedIndex in 0...(bookingStatuses.count - 1)  {
                 if bookingStatuses[bookedIndex] == 1 && bookedIndex > lastBookedStatusIndexAddedToTable!{
                     let addedRowInBookedSection = bookedIndex
@@ -203,5 +266,4 @@ class TripListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         self.performSegue(withIdentifier: "existingTripsToAddContacts", sender: self)
     }
-    
 }

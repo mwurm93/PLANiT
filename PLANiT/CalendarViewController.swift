@@ -23,13 +23,16 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
     
     var firstDate: Date?
     let timesOfDayArray = ["Early morning (12am-5am)","Morning (5am-11am)","Midday (11pm-5pm)","Night (5pm-12am)","Anytime"]
+    var leftDates = [Date]()
+    var rightDates = [Date]()
+    var fullDates = [Date]()
+    var lengthOfAvailabilitySegmentsArray = [Int]()
     
     //Load the values from our shared data container singleton: Multiple Destination Picker
     var multipleDestinationsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "multiple_destinations") as? String
     
     // Variable for asking question regarding multiple destinations
     var minimumConsecutiveDaysForMultipleDestinations = 5
-    var middleDays = 0
     
        override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,8 +154,10 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UITableView
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
         let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
         let selectedDates = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "selected_dates") as? [Date]
+        let hotelRoomsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "hotel_rooms") as? Float
+        let lengthOfAvailabilitySegmentsArray = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "Availability_segment_lengths") as? [Int]
 
-        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestinationsValue, "selected_dates": selectedDates, "contacts_in_group": contacts] as [String : Any]
+        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestinationsValue, "selected_dates": selectedDates, "contacts_in_group": contacts,"hotel_rooms": hotelRoomsValue, "Availability_segment_lengths": lengthOfAvailabilitySegmentsArray] as [String : Any]
         existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
         DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
     }
@@ -207,6 +212,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
             myCustomCell?.rightSideConnector.isHidden = false
             myCustomCell?.leftSideConnector.isHidden = true
             myCustomCell?.middleConnector.isHidden = true
+            
         case .right:
             myCustomCell?.selectedView.isHidden = false
             myCustomCell?.dayLabel.textColor = UIColor(colorWithHexValue: 0x000000, alpha: 1)
@@ -224,7 +230,6 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
             myCustomCell?.selectedView.layer.cornerRadius =  0
             myCustomCell?.rightSideConnector.isHidden = true
             myCustomCell?.leftSideConnector.isHidden = true
-            middleDays += 1
         default:
             myCustomCell?.selectedView.isHidden = true
             myCustomCell?.selectedView.layer.backgroundColor = UIColor(colorWithHexValue: 0xFFFFFF, alpha: 0).cgColor
@@ -237,12 +242,12 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
             myCustomCell?.dayLabel.textColor = UIColor(colorWithHexValue: 0x656565, alpha: 1)
         }
 
-        // Enable Multiple Destinations Question if more than 3 middles (Total)
-        if (middleDays + 2) >= minimumConsecutiveDaysForMultipleDestinations {
-            multipleDestinations.isHidden = false
-            multipleDestinations.isUserInteractionEnabled = true
-            multipleDestinationsQuestionLabel.isHidden = false
-        }
+//        // Enable Multiple Destinations Question if more than 3 middles (Total)
+//        if  >= minimumConsecutiveDaysForMultipleDestinations {
+//            multipleDestinations.isHidden = false
+//            multipleDestinations.isUserInteractionEnabled = true
+//            multipleDestinationsQuestionLabel.isHidden = false
+//        }
     }
     
     func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
@@ -261,8 +266,10 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         }
         
         if firstDate != nil && firstDate! < date {
-            calendarView.selectDates(from: firstDate!, to: date,  triggerSelectionDelegate: false, keepSelectionIfMultiSelectionAllowed: true)
-            firstDate = nil
+            if calendarView.cellStatus(for: firstDate!)?.selectedPosition() == .full {
+                calendarView.selectDates(from: firstDate!, to: date,  triggerSelectionDelegate: false, keepSelectionIfMultiSelectionAllowed: true)
+                firstDate = nil
+            }
         }
         else {
             firstDate = date
@@ -298,14 +305,17 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         // Create array of selected dates
         let selectedDates = calendarView.selectedDates
         
+        getLengthOfSelectedAvailabilities()
+        
         // Save array of selected activities to trip data model
         var existing_trips = DataContainerSingleton.sharedDataContainer.usertrippreferences
         let currentTripIndex = DataContainerSingleton.sharedDataContainer.currenttrip!
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
         let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
         let multipleDestionationsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "multiple_destinations") as? String
+        let hotelRoomsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "hotel_rooms") as? Float
         
-        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "selected_dates": selectedDates, "contacts_in_group": contacts] as [String : Any]
+        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "selected_dates": selectedDates, "contacts_in_group": contacts, "Availability_segment_lengths": lengthOfAvailabilitySegmentsArray, "hotel_rooms": hotelRoomsValue] as [String : Any]
         existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
         DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
         
@@ -328,14 +338,18 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         // Create array of selected dates
         let selectedDates = calendarView.selectedDates
         
+        getLengthOfSelectedAvailabilities()
+        
         // Save array of selected activities to trip data model
         var existing_trips = DataContainerSingleton.sharedDataContainer.usertrippreferences
         let currentTripIndex = DataContainerSingleton.sharedDataContainer.currenttrip!
         let tripNameValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "trip_name") as? String
         let contacts = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "contacts_in_group") as? [CNContact]
         let multipleDestionationsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "multiple_destinations") as? String
+        let hotelRoomsValue = DataContainerSingleton.sharedDataContainer.usertrippreferences?[DataContainerSingleton.sharedDataContainer.currenttrip!].object(forKey: "hotel_rooms") as? Float
+
         
-        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "selected_dates": selectedDates, "contacts_in_group": contacts] as [String : Any]
+        let updatedTripToBeSaved = ["trip_name": tripNameValue, "multiple_destinations": multipleDestionationsValue, "selected_dates": selectedDates, "contacts_in_group": contacts, "Availability_segment_lengths": lengthOfAvailabilitySegmentsArray,"hotel_rooms": hotelRoomsValue] as [String : Any]
         existing_trips?[currentTripIndex] = updatedTripToBeSaved as NSDictionary
         DataContainerSingleton.sharedDataContainer.usertrippreferences = existing_trips
         
@@ -344,6 +358,39 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
             nextButton.isUserInteractionEnabled = false
         }
     }
+    
+    // MARK custom func to get length of selected availability segments
+    func getLengthOfSelectedAvailabilities() {
+        let selectedDates = calendarView.selectedDates
+        leftDates = []
+        rightDates = []
+        fullDates = []
+        lengthOfAvailabilitySegmentsArray = []
+        for date in selectedDates {
+            if calendarView.cellStatus(for: date)?.selectedPosition() == .left {
+                leftDates.append(date)
+            }
+        }
+        for date in selectedDates {
+            if calendarView.cellStatus(for: date)?.selectedPosition() == .right {
+                rightDates.append(date)
+            }
+        }
+        for date in selectedDates {
+            if calendarView.cellStatus(for: date)?.selectedPosition() == .full {
+                fullDates.append(date)
+            }
+        }
+        if rightDates != [] {
+        for segment in 0...rightDates.count - 1 {
+            let segmentAvailability = rightDates[segment].timeIntervalSince(leftDates[segment]) / 86400 + 1
+            lengthOfAvailabilitySegmentsArray.append(Int(segmentAvailability))
+        }
+        } else {
+            lengthOfAvailabilitySegmentsArray = [1]
+        }
+    }
+    
     
     // MARK: Calendar header functions
     // Sets the height of your header

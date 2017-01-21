@@ -336,7 +336,7 @@
 				FAF533F41DA60C4700BBE2C7 /* Network */,
 				FAC95ED01DAD6B45006CD790 /* Transitions */,
 				FAF533F61DA60C5B00BBE2C7 /* Supporting Files */,
-				FAF533F01DA60BCD00BBE2C7 /* Controllers */,
+				FAF533F01DA60BCD00BBE2C7 /* View Controllers */,
 				FA3856911E1B534800CAB8E5 /* Table View Cells */,
 				FAD5F47D1E1EDA240031C3DC /* Collection View Cells */,
 				FAB03BF91E256CE000F77BD6 /* Calendar View */,
@@ -374,11 +374,9 @@
 			name = App;
 			sourceTree = "<group>";
 		};
-		FAF533F01DA60BCD00BBE2C7 /* Controllers */ = {
+		FAF533F01DA60BCD00BBE2C7 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA93E5791DAC53F400631767 /* EmailViewController.swift */,
-				FAF533C31DA604EC00BBE2C7 /* PasswordViewController.swift */,
 				FAE518171DB1920D00177731 /* SettingsViewController.swift */,
 				FAC95ED31DAD70AC006CD790 /* TripListViewController.swift */,
 				FAA280331E1426180058F8B7 /* InstructionsViewController.swift */,
@@ -394,8 +392,10 @@
 				FA5A15611DB14E1200D70483 /* RecommedationSwipingViewController.swift */,
 				FA9599FB1E063E4500D1B7D6 /* RankingViewController.swift */,
 				FAEF024E1DB5828800D4EF78 /* ReviewAndBookViewController.swift */,
+				FA93E5791DAC53F400631767 /* EmailViewController.swift */,
+				FAF533C31DA604EC00BBE2C7 /* PasswordViewController.swift */,
 			);
-			name = Controllers;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		FAF533F11DA60BD800BBE2C7 /* Views */ = {
